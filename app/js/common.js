@@ -62,27 +62,17 @@ $(".phone-mask").mask("099-999-99-99");
 	timer.countDown();
 	
 // sliders
-	var owl = $('#owl_slider');
+	var owl = $('#stars__slider');
 	owl.owlCarousel({
-		loop: true,
-		nav: true,
+		loop: false,
+		nav: false,
 		autoplay: true,
 		autoplayHoverPause: true,
 		autoplayTimeout: 3000,
 		margin: 5,
-		dots: false,
+		dots: true,
 		responsiveClass: true,
-		responsive: {
-			0:{
-				items: 1
-			},
-			600:{
-				items: 2
-			},
-			1000:{
-				items: 3
-			}
-		}
+		items: 1
 	});
 	$('.customPrevBtn').click(function() {
 		owl.trigger('prev.owl.carousel', [250]);

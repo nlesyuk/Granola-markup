@@ -607,17 +607,45 @@ header
 
 #stars
 	#stars__slider
-	.stars__slide
-	.stars__ava
-	.stars__cont
-	.stars__title
-	.stars__text1 br
-		b
-	.stars__slide 
-		.stars__ava 
-			.stars__cont
-	.stars__title
-	.stars__text1
+		width: 100%
+		position: relative
+		.owl-dots
+			width: 100px
+			display: flex
+			justify-content: space-between
+			justify-content: flex-start
+			// background: red
+			position: absolute
+			bottom: 20px
+			left: 40%
+			button
+				width: 18px
+				height: 18px
+				margin: 0 5px
+				border-radius: 50%
+				background: white
+				&.active
+					background: #4C4443
+	.stars__item
+		width: 100%
+		background: $green2
+		display: flex
+		justify-content: space-between
+		.stars__ava
+			display: block
+			width: 30%
+		.stars__cont
+			width: 70%
+			padding: 37px 250px 37px 87px
+			background: url(../img/stars__icon1.svg) no-repeat right center/contain
+			.stars__title
+				font: bold 1.5rem/1.2 $font
+				color: $grey
+				margin-bottom: 23px
+			.stars__text1
+				font: 1rem/1.2 $font
+				color: white
+
 
 
 
