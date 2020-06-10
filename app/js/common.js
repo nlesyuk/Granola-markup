@@ -1,28 +1,8 @@
 $(document).ready(function() {
 
-// mobile menu
-/* 	let mobileMenu = document.querySelector("#mobile-menu");
-	if( mobileMenu != null ){
-		var TouchMenu = TouchMenuLA({
-			target: mobileMenu,
-			width: 300,
-			onOpen: function(){
-				console.log(this.isVisible);
-			}
-		});
-
-		$('#menu_btn').on('click', function(){
-			TouchMenu.toggle();
-		});
-
-		$('#menu_close').on('click', function(){
-			TouchMenu.toggle();	
-		});
-
-		$('.items-menu').on('click', function(){
-			TouchMenu.toggle();	
-		});
-	} */
+// top paralax
+var scene = document.getElementById('scene');
+var parallaxInstance = new Parallax(scene);
 
 $(".phone-mask").mask("099-999-99-99");
 
