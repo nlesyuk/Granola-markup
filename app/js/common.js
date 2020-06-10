@@ -62,23 +62,30 @@ $(".phone-mask").mask("099-999-99-99");
 	timer.countDown();
 	
 // sliders
-	var owl = $('#stars__slider');
-	owl.owlCarousel({
+	$('#stars__slider').owlCarousel({
+		animateOut: 'fadeOut',
+		animateIn: 'fadeIn',
+		smartSpeed:450,
 		loop: false,
 		nav: false,
 		autoplay: true,
 		autoplayHoverPause: true,
 		autoplayTimeout: 3000,
-		margin: 5,
+		margin: 0,
 		dots: true,
 		responsiveClass: true,
 		items: 1
 	});
-	$('.customPrevBtn').click(function() {
-		owl.trigger('prev.owl.carousel', [250]);
-	});
-	$('.customNextBtn').click(function() {
-		owl.trigger('next.owl.carousel', [250]);
+	$('.rev__slider').owlCarousel({
+		loop: false,
+		nav: false,
+		autoplay: true,
+		autoplayHoverPause: true,
+		autoplayTimeout: 3000,
+		margin: 20,
+		dots: true,
+		responsiveClass: true,
+		items: 3
 	});
 
 //end ready

@@ -614,7 +614,6 @@ header
 			display: flex
 			justify-content: space-between
 			justify-content: flex-start
-			// background: red
 			position: absolute
 			bottom: 20px
 			left: 40%
@@ -624,8 +623,23 @@ header
 				margin: 0 5px
 				border-radius: 50%
 				background: white
+				position: relative
+				&:last-child.active
+					&::after
+						display: none
 				&.active
 					background: #4C4443
+					margin-right: 25px
+					&::after
+						content: ''
+						display: block
+						width: 9px
+						height: 2px
+						border-radius: 3px
+						background: white
+						position: absolute
+						top: calc(50% - 1px)
+						right: -18px
 	.stars__item
 		width: 100%
 		background: $green2
@@ -643,6 +657,7 @@ header
 				color: $grey
 				margin-bottom: 23px
 			.stars__text1
+				width: 80%
 				font: 1rem/1.2 $font
 				color: white
 
@@ -651,49 +666,226 @@ header
 
 
 #deliv
-	.title
+	padding: 60px 0
 	.deliv__cont
-		svg
-	.deliv__text1
-		span
-	.deliv__cont
-	.deliv__text1
-		span
-		svg
+		display: flex
+		justify-content: space-between
+		align-items: center
+		margin-bottom: 70px
+		.deliv__svgcont
+			width: 30%
+			position: relative
+			&::before
+				display: block
+				width: 100%
+				height: auto
+				font: bold 3.37rem/1 $font
+				text-align: center
+				color: $grey2
+				position: absolute
+				bottom: -7px
+			&.delivery::before
+				content: "ДОСТАВКА"
+			&.pay::before
+				content: "ОПЛАТА"
+			svg
+				display: block
+				width: 100%
+		.deliv__text1
+			display: block
+			width: 65%
+			font: 1rem/1.2 $font
+			color: $grey4
+			span
+				display: block
+				font: 1.125rem/1.2 $font
+				color: $grey2
+				margin-bottom: 20px
+				b
+					font-weight: bold
 
-
-#deliv 
-	.deliv__cont 
-	.deliv__countcont 
-	.deliv__img
-	.deliv__countcont-in
-		.deliv__text2
-		.deliv__counter
-		.deliv__text2
+	.deliv__countcont
+		width: 100%
+		background: $yellow
+		padding: 20px 0
+		padding: 0
+		display: flex
+		justify-content: center
+		align-items: center
+		position: relative
+		.deliv__img
+			display: block
+			margin: -30px 0 -50px -65px
 			&.second
+				margin: -30px -55px -50px 0
+		.deliv__countcont-in
+			.deliv__text2
+				font: bold 1rem/1.2 $font
+				text-align: center
+				color: $grey2
+				margin-top: 20px
+				margin-bottom: 12px
+				&.second
+					margin-top: 12px
+			.deliv__counter
+				width: 250px
+				height: auto
+				margin: 0 auto
+				display: flex
+				justify-content: space-between
+				span
+					display: flex
+					justify-content: center
+					align-items: center
+					width: 70px
+					height: 80px
+					margin: 0 2px
+					border-radius: 4px
+					background: #f0f0f0
+					font: bold 3.37rem/1.2 $font
+					text-align: center
+					color: $grey2
 
 
 
 #rev
+	padding-bottom: 60px
 	.title
-	.rev__slider 
-		.rev__item 
+		margin-bottom: 40px
+	.rev__slider
+		width: 100%
+		padding-bottom: 50px
+		position: relative
+		.owl-dots
+			width: 200px
+			display: flex
+			justify-content: space-between
+			justify-content: center
+			position: absolute
+			bottom: -20px
+			left: calc(50% - 100px)
+			button
+				width: 18px
+				height: 18px
+				margin: 0 5px
+				border-radius: 50%
+				background: #C4C4C4
+				position: relative
+				&:last-child.active
+					&::after
+						display: none
+				&.active
+					background: #4C4443
+					margin-right: 25px
+					&::after
+						content: ''
+						display: block
+						width: 9px
+						height: 2px
+						border-radius: 3px
+						background: #C4C4C4
+						position: absolute
+						top: calc(50% - 1px)
+						right: -18px
+		.rev__item
+			position: relative
 			.rev__ava
+				display: block
+				width: auto
+				max-width: 142px
+				margin: 0 auto
+				margin-bottom: 28px
 			.rev__fb
+				display: block
+				position: absolute
+				top: 25%
+				right: 0
+				filter: grayscale(1)
+				opacity: .3
+				&:hover
+					filter: grayscale(0)
+					opacity: 1
 			.rev__proffesion
+				width: 65%
+				margin: 0 auto
+				padding: 8px 5px
+				background: #E1E1E1
+				border-radius: 7px
+				font: .9rem/1.2 $font
+				text-align: center
+				color: $grey4
+				position: relative
+				z-index: 2
+				margin-top: -43px
+				margin-bottom: 10px
 			.rev__name
+				font: bold 1rem/1 $font
+				text-align: center
+				color: $grey2
+				margin-bottom: 18px
 			.rev__descr
+				font: 1rem/1.4 $font
+				text-align: center
+				color: $grey4
 
 
 
 #team
-	.title
+	padding: 28px 0
+	background: url(../img/team__peaple.jpg) no-repeat center right/contain
+	// .title
 	.team__text1
+		font: 600 1rem/1.4 $font
+		color: $grey2
+		margin-bottom: 16px
 	.team__cert
-		
-footer
-	ul
+		display: block
+		max-width: 100%
+
+
+
+
+#insta
+	padding: 120px 0 140px
+	.title
+		text-align: center
+		margin-bottom: 30px
 		a
+			text-decoration: none
+			color: $green2
+			&:hover
+				color: $greenH
+	.insta__photos
+		width: 100%
+		display: flex
+		justify-content: space-between
+		li
+			margin-right: 8px
+			&:last-child
+				margin-right: 0
+			img 
+				display: block
+				max-width: 100%
+
+
+footer
+	padding: 56px 0 24px
+	background: $grey
+	position: relative
+	&:before
+		content: url(../img/footer__img.png)
+		position: absolute
+		right: 0
+		bottom: 0
+	ul
+		display: flex
+		justify-content: space-between
+		li,	a
+			font: 300 .9rem/1.4 $font
+			text-decoration: none
+			color: white
+		a:hover
+			opacity: .5
 
 
 
