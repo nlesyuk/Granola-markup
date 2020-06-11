@@ -12,17 +12,22 @@
 
 .btn
 	display: block
-	font: 1rem/1 $font
-	text-transform: uppercase
-	text-align: center
-	color: white
-	padding: 12px
-	background: $btn
+	padding: 13px 28px
+	background: $green
 	border: none
-	position: relative
-	z-index: 99
-	&:hover
-		background: $accent
+	border-radius: 6px
+	font: 600 .8rem/1.25 $font
+	text-transform: uppercase
+	letter-spacing: 1.5px
+	color: white
+	&.btn-green
+		background: $green
+		&:hover
+			background: $greenH
+	&.btn-grey
+		background: $btnBack
+		&:hover
+			background: $grey4
 
 section,
 header,
@@ -163,11 +168,11 @@ header
 
 
 #first
-	border-top: 126px solid red
-	background: url(../img/first__bg1.jpg) no-repeat center center/cover
-	min-height: calc(100vh - 126px)
+	border-top: 126px solid white
+	background: url(../img/first__bg1.jpg) no-repeat center 70%/cover
+	min-height: 100vh
 	padding: 80px 0
-	// padding-top: 206px
+	position: relative
 	.first__title
 		display: flex
 		justify-content: space-between
@@ -188,21 +193,27 @@ header
 			color: $brown
 
 
-.parallax-scene
-	width: 100%
-	position: relative
-	z-index: 2
-	// background: blue
-	.paralax
+	.parallax-scene
 		width: 100%
-		height: 100%
 		min-height: 50vh
-		position: relative
-		z-index: 3
-		&.layer1
-			background: url(../img/first__paralax001.png) no-repeat center left/auto
-		&.layer2
-			background: url(../img/first__paralax002.png) no-repeat center right/auto
+		position: absolute
+		top: 20%
+		left: 0
+		right: 0
+		bottom: 10%
+		.paralax
+			width: 100%
+			height: 100%
+			position: relative
+			z-index: 3
+			&.layer1
+				background: url(../img/first__paralax11.png) no-repeat bottom center/auto
+			&.layer2
+				background: url(../img/first__paralax12.png) no-repeat 50% 70%/auto
+			&.layer3
+				background: url(../img/first__paralax13.png) no-repeat 50% 30%/auto
+			&.layer4
+				background: url(../img/first__paralax14.png) no-repeat center top/auto
 
 
 
@@ -251,6 +262,7 @@ header
 		font: .9rem/1.2 $font
 		color: $grey4
 		img
+			max-width: 226px
 			margin-right: 80px
 
 
@@ -557,9 +569,10 @@ header
 		padding: 25px 30px 25px 60px
 		background: $yellow
 		border-radius: 4px
-		.foot__bootle 
+		.food__bootle 
 			display: block
 			max-width: 100%
+			max-width: 266px
 			mix-blend-mode: multiply
 			opacity: 0.8
 			margin-right: 52px
@@ -651,8 +664,11 @@ header
 				background: white
 				position: relative
 				&:last-child.active
+					margin-right: 5px
+					margin-left: 25px
 					&::after
-						display: none
+						right: auto
+						left: -21px
 				&.active
 					background: #4C4443
 					margin-right: 25px
@@ -798,8 +814,11 @@ header
 				background: #C4C4C4
 				position: relative
 				&:last-child.active
+					margin-right: 5px
+					margin-left: 25px
 					&::after
-						display: none
+						right: auto
+						left: -21px
 				&.active
 					background: #4C4443
 					margin-right: 25px
@@ -828,7 +847,6 @@ header
 				position: absolute
 				bottom: 0
 				z-index: -1
-
 			.rev__ava
 				display: block
 				width: auto
@@ -931,11 +949,182 @@ footer
 
 
 
+// OTHER PAGE
+#order
+	border-top: 126px solid white
+	min-height: 100vh
+	background: url(../img/order__bg.jpg) no-repeat center center/cover #f0f1f5
+	padding: 60px 0
+	.order__steps
+		width: 70%
+		margin: 0 auto
+		display: flex
+		justify-content: space-between
+		margin-bottom: 38px
+		li
+			img
+				display: block
+				max-width: 100%
+				margin: 0 auto 
+				margin-bottom: 8px
+			p
+				font: bold 1rem/1.2 $font
+				text-align: center
+				color: $grey3
+	.title
+		text-align: center
+		margin-bottom: 25px
+	.order__form
+		width: 460px
+		margin: 0 auto
+		box-sizing: border-box
+		.order__select
+			margin-bottom: 10px
+			position: relative
+			&.opened::before
+				transform: rotateX(180deg)
+				top: calc(50% - 5px)
+			&::before
+				content: url(../img/arrow-down.svg)
+				position: absolute
+				right: 13px
+				top: calc(50% - 8px)
+			select
+				cursor: pointer
+				margin-bottom: 0
+		select,
+		input,
+		textarea
+			display: block
+			width: 100%
+			padding: 8px 13px
+			appearance: none
+			border: none
+			border-radius: 4px
+			font: .9rem/1.2 $font
+			color: $grey3
+			margin-bottom: 10px
+			&:focus
+				outline: none
+		textarea
+			resize: none
+			+placeholder
+				color: $grey3
+				text-indent: 0%
+				transition: all .25s
+			&:focus
+				outline: none
+				+placeholder
+					color: transparent
+					text-indent: -100%
+					transition: all .25s
+		.order__details
+			margin-bottom: 22px
+			display: none
+			&.opened
+				display: block
+		.order__days
+			display: flex
+			justify-content: space-between
+			margin-bottom: 8px
+			li
+				display: block
+				width: 24%
+				border-radius: 7px
+				box-sizing: border-box
+				padding: 9px
+				background: white
+				font: 1rem/1.2 $font
+				text-align: center
+				color: $grey3
+				position: relative
+				&:before
+					content: ''
+					display: block
+					width: 12px
+					height: 12px
+					border-radius: 50%
+					background: $grey6
+					position: absolute
+					top: calc(50% - 6px)
+					left: 10px
+				&.choosed
+					font-weight: bold
+					&:before
+						background: $green
+				&:hover
+					cursor: pointer
+					&::before
+						background: $green
+		.order__cost
+			display: flex
+			justify-content: space-between
+			.order__fullprice
+				width: 100%
+				padding: 8px 40px 8px 15px
+				background: white
+				border-radius: 7px
+				position: relative
+				.order__2price
+					font: bold 1.37rem/1.2 $font
+					text-align: center
+					color: $black
+					margin-bottom: 4px
+					position: relative
+					.old
+						display: inline-block
+						color: #979391
+						position: relative	
+						&::before
+							content: ''
+							display: block
+							width: 80px
+							height: 100%
+							background: url(../img/lines.svg) no-repeat center center/contain 
+							position: absolute
+							left: 0
+				.order__price-for-one
+					font: .75rem/1.2 $font
+					text-align: center
+					color: #979391
+				.order__promo
+					display: none
+					width: 70px
+					height: 60px
+					// display: flex
+					flex-direction: column
+					justify-content: center
+					align-items: center
+					background: $orange
+					border-radius: 5px
+					font: .75rem/1 $font
+					text-align: center
+					color: white
+					transform: rotate(4.75deg)
+					position: absolute
+					right: -25px
+					top: 0
+					&.active
+						display: flex
+					span
+						display: block
+						font-size: 1.3rem
+						font-weight: bold
 
-
-
-
-
+		.order__btncont
+			display: flex
+			justify-content: space-between
+			.order__btn-back
+				width: calc(40% - 5px)
+				padding: 13px 18px
+				display: flex
+				align-items: center
+				justify-content: center
+				svg
+					display: block
+					margin-right: 9px
+			.order__btn-order
+				width: calc(60% - 5px)
 
 
 

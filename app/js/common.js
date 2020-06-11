@@ -1,72 +1,97 @@
 $(document).ready(function() {
 
-// top paralax
-var scene = document.getElementById('scene');
-var parallaxInstance = new Parallax(scene);
+// MAIN PAGE
+var mainPage = document.getElementById('first')
+if( mainPage ) {
+	// top paralax
+	var scene = document.getElementById('scene');
+	var parallaxInstance = new Parallax(scene);
 
-$(".phone-mask").mask("099-999-99-99");
+	$(".phone-mask").mask("099-999-99-99");
 
-//scroll add .scroll to buttons for slowly move to anchor
-	$('.scroll').bind('click.smoothscroll',function (e) {
-		e.preventDefault();
-		
-		var target = this.hash,
-		$target = $(target);
-		
-		$('html, body').stop().animate({
-			'scrollTop': $target.offset().top
-		}, 900, 'swing', function () {
-			window.location.hash = target;
+	//scroll add .scroll to buttons for slowly move to anchor
+		$('.scroll').bind('click.smoothscroll',function (e) {
+			e.preventDefault();
+			
+			var target = this.hash,
+			$target = $(target);
+			
+			$('html, body').stop().animate({
+				'scrollTop': $target.offset().top
+			}, 900, 'swing', function () {
+				window.location.hash = target;
+			});
 		});
+
+	// countdown
+		var endTimer      = Date.now() + (60 * 60 * 3 * 1000) + (60 * 42 * 1000); // 3:42
+		var cookieName    = "endTimer";
+		var checkCookie   = getCookie(cookieName);
+		if(!checkCookie) setCookie(cookieName, endTimer, 30);
+		var cookie        = getCookie(cookieName);
+
+		var timerConfig = {
+			el: '.countdown',
+			endTimer: cookie
+		};
+
+		if( cookie > Date.now() ){
+			var timer = new CountdownTimer( timerConfig.el, timerConfig.endTimer);
+		} else {
+			setCookie(cookieName, endTimer, 30);
+			timerConfig.endTimer = getCookie(cookieName);
+			var timer = new CountdownTimer( timerConfig.el, timerConfig.endTimer);
+		}	
+		timer.countDown();
+		
+	// sliders
+		$('#stars__slider').owlCarousel({
+			animateOut: 'fadeOut',
+			animateIn: 'fadeIn',
+			smartSpeed:450,
+			loop: false,
+			nav: false,
+			autoplay: true,
+			autoplayHoverPause: true,
+			autoplayTimeout: 3000,
+			margin: 0,
+			dots: true,
+			responsiveClass: true,
+			items: 1
+		});
+		$('.rev__slider').owlCarousel({
+			loop: false,
+			nav: false,
+			autoplay: true,
+			autoplayHoverPause: true,
+			autoplayTimeout: 3000,
+			margin: 20,
+			dots: true,
+			responsiveClass: true,
+			items: 3
+		});
+
+}
+// SALE PAGE
+	$('.order__select select').on('click', function(e){
+		$('.order__select').toggleClass('opened')
+	});
+	$('.order__select select').on('change', function(e){
+		var selected = $('option:selected', e.target)
+		console.log( selected.val() )
+
+		if( selected.val() === 'consultation' ) {
+			$('.order__details').removeClass('opened')
+		} else {
+			$('.order__details').addClass('opened')
+		}
 	});
 
-// countdown
-	var endTimer      = Date.now() + (60 * 60 * 3 * 1000) + (60 * 42 * 1000); // 3:42
-	var cookieName    = "endTimer";
-	var checkCookie   = getCookie(cookieName);
-	if(!checkCookie) setCookie(cookieName, endTimer, 30);
-	var cookie        = getCookie(cookieName);
 
-	var timerConfig = {
-		el: '.countdown',
-		endTimer: cookie
-	};
 
-	if( cookie > Date.now() ){
-		var timer = new CountdownTimer( timerConfig.el, timerConfig.endTimer);
-	} else {
-		setCookie(cookieName, endTimer, 30);
-		timerConfig.endTimer = getCookie(cookieName);
-		var timer = new CountdownTimer( timerConfig.el, timerConfig.endTimer);
-	}	
-	timer.countDown();
-	
-// sliders
-	$('#stars__slider').owlCarousel({
-		animateOut: 'fadeOut',
-		animateIn: 'fadeIn',
-		smartSpeed:450,
-		loop: false,
-		nav: false,
-		autoplay: true,
-		autoplayHoverPause: true,
-		autoplayTimeout: 3000,
-		margin: 0,
-		dots: true,
-		responsiveClass: true,
-		items: 1
-	});
-	$('.rev__slider').owlCarousel({
-		loop: false,
-		nav: false,
-		autoplay: true,
-		autoplayHoverPause: true,
-		autoplayTimeout: 3000,
-		margin: 20,
-		dots: true,
-		responsiveClass: true,
-		items: 3
-	});
+
+
+
 
 //end ready
 });
