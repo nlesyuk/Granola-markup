@@ -29,13 +29,16 @@
 		&:hover
 			background: $grey4
 
-section,
-header,
-footer
+section,header,footer
 	width: 100%
+
 .wrapbefore:before
 	content: '\A'
 	white-space: pre
+
+
+// sections:
+
 
 
 header 
@@ -167,6 +170,8 @@ header
 				border-bottom: 1px solid $yellow
 
 
+
+
 #first
 	border-top: 126px solid white
 	background: url(../img/first__bg1.jpg) no-repeat center 70%/cover
@@ -214,9 +219,6 @@ header
 				background: url(../img/first__paralax13.png) no-repeat 50% 30%/auto
 			&.layer4
 				background: url(../img/first__paralax14.png) no-repeat center top/auto
-
-
-
 
 
 
@@ -582,6 +584,7 @@ header
 
 
 
+
 #steps
 	padding: 60px 0
 	.title
@@ -706,7 +709,6 @@ header
 
 
 
-
 #deliv
 	padding: 60px 0
 	.deliv__cont
@@ -787,6 +789,7 @@ header
 					font: bold 3.37rem/1.2 $font
 					text-align: center
 					color: $grey2
+
 
 
 
@@ -886,6 +889,7 @@ header
 				font: 1rem/1.4 $font
 				text-align: center
 				color: $grey4
+
 
 
 
@@ -1129,142 +1133,6 @@ footer
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-// sections end
-
-#owl_slider
-	position: relative
-	z-index: 2
-	&.owl-carousel
-		.owl-stage-outer 
-			width: 100%
-		.owl-nav
-			display: block
-			width: 100%
-			background: green
-			position: absolute
-			top: calc(50% - 19px)
-			display: flex
-			justify-content: space-between
-			pointer-events: none 
-			.owl-prev,
-			.owl-next
-				position: relative
-				width: 38px
-				height: 38px
-				padding: 5px 12px
-				border: 1px solid black
-				pointer-events: auto
-				&:hover,
-				&:focus
-					outline: none
-					border: 1px solid $accent
-		.owl-item
-			color: red
-			padding: 20px
-			background: blue
-
-
-.countdown
-	display: flex
-	justify-content: center
-	.number-wrapper
-		display: block
-		width: 30%
-		position: relative
-		&.last:after
-			display: none
-		&.end
-			width: 100%
-			&:after
-				display: none
-		&:after
-			content: ":"
-			position: absolute
-			top: -3px
-			right: -10px
-			font: 800 3rem/1 $font
-			color: black
-		.number
-			display: block
-			font: 800 3rem/1 $font
-			text-align: center
-			color: black
-		.caption
-			display: none
-
-
-#thy
-	width: 100%
-	height: auto
-	overflow: hidden
-	background: #212121
-	min-height: 100vh
-	padding-top: 90px
-	position: relative
-	z-index: 2
-	.title
-		font: 800 2rem/1 $font
-		margin-bottom: 20px
-		color: white
-	.thy__text1
-		font: 300 1.8rem/1.25 $font
-		color: white
-		margin-bottom: 30px
-	.thy__cont
-		display: inline-block
-		width: 100%
-		width: auto
-		max-width: 100%
-		padding: 25px 22px
-		background: red
-		.thy__text2
-			font: 500 .87rem/1.25 $font
-			color: white
-			margin-bottom: 10px
-		.thy__text3
-			font: italic 500 .87rem/1.25 $font
-			color: rgba(255,255,255,.5)
-
-
-.modal
-	.modal-content
-		border-radius: 0px
-		padding: 0%
-		margin-top: 25%
-		position: relative
-		z-index: 9999
-	.modal-body
-		.close
-			display: block
-			width: 35px
-			height: 35px
-			border-radius: 50%
-			background: transparent
-			position: absolute
-			right: -3%
-			top: -40px
-			font: 2.5rem/0  $font
-			color: black
-			border: none
-			opacity: .6
-			&:hover
-				opacitY: 1
 
 
 @media (max-width: 1200.98px)
