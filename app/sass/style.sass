@@ -1198,6 +1198,43 @@ footer
 				font: bold .9rem/1.25 $font
 
 
+	#first
+		border-top: 110px solid white
+		background: url(../img/first__bg1.jpg) no-repeat center 70%/cover
+		padding: 80px 0
+		.first__title
+			.big
+				width: 50%
+				font: 800 4.25rem/1.25 $font
+				padding-right: 43px
+			.small
+				width: 50%
+				font: 800 1.5rem/1.2 $font
+
+
+		.parallax-scene
+			width: 100%
+			min-height: 50vh
+			position: absolute
+			top: 20%
+			left: 0
+			right: 0
+			bottom: 10%
+			.paralax
+				width: 100%
+				height: 100%
+				position: relative
+				z-index: 3
+				&.layer1
+					background: url(../img/first__paralax11.png) no-repeat bottom center/auto
+				&.layer2
+					background: url(../img/first__paralax12.png) no-repeat 50% 70%/auto
+				&.layer3
+					background: url(../img/first__paralax13.png) no-repeat 50% 30%/auto
+				&.layer4
+					background: url(../img/first__paralax14.png) no-repeat center top/auto
+
+
 
 
 @media (max-width: 1200.98px)
@@ -1260,6 +1297,7 @@ footer
 			width: 53px
 			.header__btn-lang
 				font: bold .9rem/1.25 $font
+
 
 // md
 @media (max-width: 992.98px)
@@ -1370,6 +1408,23 @@ footer
 				svg
 					top: calc(50% - 8px)
 
+	#first
+		border-top: 110px solid white
+		background: url(../img/first__bg1.jpg) no-repeat center 70%/cover
+		.first__title
+			flex-direction: column
+			.big
+				width: 100%
+				font: 800 4.25rem/1.25 $font
+				padding-right: 0px
+				text-align: center
+			.small
+				width: 100%
+				font: 800 1.5rem/1.2 $font
+				text-align: center
+
+
+
 
 // sm
 @media (max-width: 768.98px)
@@ -1377,4 +1432,26 @@ footer
 
 // xs
 @media (max-width: 576.98px)
-	color: red
+	#first
+		background: url(../img/first__bg-sm.jpg) no-repeat center 70%/cover
+		.first__title
+			.big
+				font: 800 3rem/1.25 $font
+			.small
+				font: 800 1.125rem/1.2 $font
+
+// xs for iphoneX
+@media (width: 375px) and (height: 812px)
+	#first
+		background: url(../img/first__bg-sm.jpg) no-repeat center 110%/cover
+		min-height: 88vh
+
+// xs for iphone5
+@media (max-width: 374.98px)
+	#first
+		background: url(../img/first__bg-sm.jpg) no-repeat center 50%/cover
+		.first__title
+			.big
+				font: 800 2.75rem/1.25 $font
+			.small
+				font: 800 1rem/1.2 $font
