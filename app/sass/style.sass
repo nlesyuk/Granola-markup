@@ -51,6 +51,8 @@ header
 		max-width: 1500px
 		margin: 0 auto
 		padding: 0 15px
+		margin-right: auto
+		margin-left: auto
 		box-sizing: border-box
 		display: flex
 		justify-content: space-between
@@ -251,6 +253,7 @@ header
 				margin-bottom: 18px
 			.eggs__icons
 				display: block
+				max-width: 100%
 				margin: 0 auto
 				margin-bottom: 20px
 				position: relative
@@ -658,10 +661,12 @@ header
 			display: flex
 			justify-content: space-between
 			justify-content: flex-start
+			align-items: center
 			position: absolute
 			bottom: 20px
 			left: 40%
 			button
+				display: block
 				width: 18px
 				height: 18px
 				margin: 0 5px
@@ -713,6 +718,7 @@ header
 
 #deliv
 	padding: 60px 0
+	overflow: hidden
 	.deliv__cont
 		display: flex
 		justify-content: space-between
@@ -721,7 +727,7 @@ header
 		.deliv__svgcont
 			width: 30%
 			position: relative
-			&::before
+			&::after
 				display: block
 				width: 100%
 				height: auto
@@ -730,9 +736,9 @@ header
 				color: $grey2
 				position: absolute
 				bottom: -7px
-			&.delivery::before
+			&.delivery::after
 				content: "ДОСТАВКА"
-			&.pay::before
+			&.pay::after
 				content: "ОПЛАТА"
 			svg
 				display: block
@@ -1235,6 +1241,24 @@ footer
 					background: url(../img/first__paralax14.png) no-repeat center top/auto
 
 
+	#stars
+		#stars__slider
+			.owl-dots
+				align-items: center
+				bottom: 20px
+				left: 50%
+		.stars__item
+			.stars__ava
+				width: 40%
+			.stars__cont
+				width: 60%
+				padding: 37px 120px 37px 87px
+				.stars__title
+					font: bold 1.5rem/1.2 $font
+				.stars__text1
+					width: 100%
+					font: 1rem/1.2 $font
+
 
 
 @media (max-width: 1200.98px)
@@ -1297,6 +1321,33 @@ footer
 			width: 53px
 			.header__btn-lang
 				font: bold .9rem/1.25 $font
+	
+	
+	#first
+		border-top: 95px solid white
+
+	#stars
+		#stars__slider
+			.owl-dots
+				align-items: center
+				bottom: 10px
+				left: 50%
+		.stars__item
+			.stars__ava
+				width: 40%
+			.stars__cont
+				width: 60%
+				padding: 37px 120px 37px 37px
+				.stars__title
+					font: bold 1.5rem/1.2 $font
+				.stars__text1
+					width: 100%
+					font: 1rem/1.2 $font
+
+
+
+
+
 
 
 // md
@@ -1307,7 +1358,6 @@ footer
 		.header__container
 			max-width: 720px
 			margin: 0 auto
-		
 		// sm
 		.header__mobile
 			width: 100%
@@ -1408,6 +1458,7 @@ footer
 				svg
 					top: calc(50% - 8px)
 
+
 	#first
 		border-top: 110px solid white
 		background: url(../img/first__bg1.jpg) no-repeat center 70%/cover
@@ -1423,12 +1474,121 @@ footer
 				font: 800 1.5rem/1.2 $font
 				text-align: center
 
+		.parallax-scene
+			min-height: 50vh
+			background: url(../img/first__eat.png) no-repeat center center/contain
+			.paralax
+				background: none !important
+
+
+
+	#stars
+		#stars__slider
+			.owl-dots
+				align-items: center
+				bottom: 10px
+				left: calc(50% - 50px)
+		.stars__item
+			flex-wrap: wrap
+			.stars__ava
+				width: 100%
+			.stars__cont
+				width: 100%
+				padding: 15px 11px 40px
+				background: url(../img/slider__top-sm1.svg) no-repeat top right/auto $green
+				.stars__title
+					font: bold 1.5rem/1.2 $font
+				.stars__text1
+					width: 100%
+					font: 1rem/1.2 $font
+
+
+
+	#deliv
+		padding: 60px 0
+		overflow: hidden
+		.deliv__cont
+			flex-wrap: wrap
+			margin-bottom: 26px
+			&.second
+				flex-direction: column-reverse
+			.deliv__svgcont
+				width: 100%
+				display: flex
+				align-items: center
+				justify-content: center
+				margin-bottom: 0px
+				&::after
+					width: auto
+					font: bold 2rem/1 $font
+					text-align: center
+					position: relative
+					bottom: 0px
+				&.delivery::after
+					content: "ДОСТАВКА"
+				&.pay::after
+					content: "ОПЛАТА"
+				svg
+					width: 100px
+					margin-right: 5px
+			.deliv__text1
+				width: 100%
+				font: .9rem/1.2 $font
+				text-align: center
+				span
+					font: 1rem/1.2 $font
+					margin-bottom: 8px
+	// Доробити
+		.deliv__countcont
+			width: 100%
+			.deliv__img
+				margin: -30px 0 -50px -65px
+				&.second
+					margin: -30px -55px -50px 0
+			.deliv__countcont-in
+				.deliv__text2
+					font: bold 1rem/1.2 $font
+					margin-top: 20px
+					margin-bottom: 12px
+					&.second
+						margin-top: 12px
+				.deliv__counter
+					width: 250px
+					height: auto
+					margin: 0 auto
+					display: flex
+					justify-content: space-between
+					span
+						display: flex
+						justify-content: center
+						align-items: center
+						width: 70px
+						height: 80px
+						margin: 0 2px
+						border-radius: 4px
+						background: #f0f0f0
+						font: bold 3.37rem/1.2 $font
+						text-align: center
+						color: $grey2
+	// Доробити
 
 
 
 // sm
 @media (max-width: 768.98px)
-	color: red
+	header 
+		padding: 0
+		height: auto
+		max-width: 100%
+		box-sizing: border-box
+		.header__container
+			max-width: 100%
+			box-sizing: border-box
+			margin: 0 auto
+
+
+
+
 
 // xs
 @media (max-width: 576.98px)
@@ -1439,12 +1599,22 @@ footer
 				font: 800 3rem/1.25 $font
 			.small
 				font: 800 1.125rem/1.2 $font
+	.parallax-scene
+		display: none
+
+
+
 
 // xs for iphoneX
 @media (width: 375px) and (height: 812px)
 	#first
 		background: url(../img/first__bg-sm.jpg) no-repeat center 110%/cover
 		min-height: 88vh
+
+
+
+
+
 
 // xs for iphone5
 @media (max-width: 374.98px)

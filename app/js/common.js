@@ -1,27 +1,49 @@
 $(document).ready(function() {
+// GENERALS
+//scroll add .scroll to buttons for slowly move to anchor
+$('.scroll').bind('click.smoothscroll',function (e) {
+	e.preventDefault();
+	var target = this.hash,
+	$target = $(target);
+	$('html, body').stop().animate({
+		'scrollTop': $target.offset().top
+	}, 900, 'swing', function () {
+		window.location.hash = target;
+	});
+});
+
 
 // MAIN PAGE
 var mainPage = document.getElementById('first')
 if( mainPage ) {
+
+
 	// top paralax
-	var scene = document.getElementById('scene');
-	var parallaxInstance = new Parallax(scene);
+	if ( window.innerWidth > 992 ) {
+		var scene = document.getElementById('scene');
+		var parallaxInstance = new Parallax(scene);
+	}
 
-	$(".phone-mask").mask("099-999-99-99");
+	// $(".phone-mask").mask("099-999-99-99");
 
-	//scroll add .scroll to buttons for slowly move to anchor
-		$('.scroll').bind('click.smoothscroll',function (e) {
-			e.preventDefault();
-			
-			var target = this.hash,
-			$target = $(target);
-			
-			$('html, body').stop().animate({
-				'scrollTop': $target.offset().top
-			}, 900, 'swing', function () {
-				window.location.hash = target;
-			});
-		});
+	// EGGS
+	if ( window.innerWidth < 992 ) {
+		// $('.eggs__list').addClass('owl-carousel')
+		// $('.eggs__list').owlCarousel({
+		// 	animateOut: 'fadeOut',
+		// 	animateIn: 'fadeIn',
+		// 	smartSpeed: 450,
+		// 	loop: true,
+		// 	nav: false,
+		// 	autoplay: true,
+		// 	autoplayHoverPause: true,
+		// 	autoplayTimeout: 3000,
+		// 	margin: 0,
+		// 	dots: true,
+		// 	responsiveClass: true,
+		// 	items: 3
+		// });
+	}
 
 	// countdown
 		var endTimer      = Date.now() + (60 * 60 * 3 * 1000) + (60 * 42 * 1000); // 3:42
