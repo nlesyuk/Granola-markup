@@ -21,7 +21,7 @@ if( mainPage ) {
 	// top paralax
 	if ( window.innerWidth > 992 ) {
 		var scene = document.getElementById('scene');
-		var parallaxInstance = new Parallax(scene);
+		new Parallax(scene);
 	} else {
 
 	}
@@ -110,7 +110,37 @@ if( mainPage ) {
 			}
 		});
 
+	if (window.innerWidth < 768) {
+		$('.eggs__list').addClass(' owl-carousel')
+		$('.eggs__list').owlCarousel({
+			loop: false,
+			nav: false,
+			autoplay: false,
+			autoplayTimeout: 99000,
+			margin: 20,
+			dots: true,
+			responsiveClass: true,
+			// items: 3,
+			responsive: {
+				0: {
+					items: 1,
+					stagePadding: 25,
+					margin: 10
+				},
+				556: {
+					items: 3,
+					stagePadding: 50,
+					margin: 5
+				},
+				992: {
+					items: 3
+				}
+			}
+		});
+	}
+
 	if (window.innerWidth < 992) {
+		$('.steps__step').addClass(' owl-carousel')
 		$('.steps__step').owlCarousel({
 			loop: false,
 			nav: false,

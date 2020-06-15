@@ -602,16 +602,16 @@
 			</div>
 		</div>
 
-		<div class="parallax-scene" id="scene">
+		<!-- <div class="parallax-scene" id="scene">
 			<div class="paralax layer1" data-depth="0.1"></div>
 			<div class="paralax layer2" data-depth="0.2"></div>
 			<div class="paralax layer3" data-depth="0.3"></div>
 			<div class="paralax layer4" data-depth="0.5"></div>
-		</div>
+		</div> -->
 
 	</section>
 
-
+	<!-- 
 
 	<section id="eggs">
 		<div class="container">
@@ -651,7 +651,8 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> 
+-->
 
 
 
@@ -662,128 +663,129 @@
 
 					<h2 class="title">Виберіть збалансований раціон харчування</h2>
 
-					<ul class="food__set">
-						<li>
-							<p class="food__text1">Варіант № 1</p>
-							<img src="img/food__set1.svg" alt="" class="food__img" loading="lazy">
-							<p class="food__text2">Раціон “Max Light”</p>
-							<div class="food__cont">
-								<div class="food__kkal">2200ккал <span>(Зниження ваги)</span></div>
-								<div class="food__price">від 490грн на день</div>
-							</div>
-						</li>
-						<li>
-							<p class="food__text1">Варіант № 2</p>
-							<img src="img/food__set2.svg" alt="" class="food__img" loading="lazy">
-							<p class="food__text2"> Раціон “Light”</p>
-							<div class="food__cont">
-								<div class="food__kkal">2200ккал <span>(Зниження ваги)</span></div>
-								<div class="food__price">від 490грн на день</div>
-							</div>
-						</li>
-						<li class="active">
-							<p class="food__text1">Варіант № 3</p>
-							<img src="img/food__set3.svg" alt="" class="food__img" loading="lazy">
-							<p class="food__text2">Раціон “На кожен день”</p>
-							<div class="food__cont">
-								<div class="food__kkal">2200ккал</div>
-								<div class="food__price">від 490грн на день</div>
-							</div>
-						</li>
-						<li>
-							<p class="food__text1">Варіант № 4</p>
-							<img src="img/food__set4.svg" alt="" class="food__img" loading="lazy">
-							<p class="food__text2">Раціон “Інвідуальний”</p>
-							<div class="food__cont">
-								<div class="food__kkal">2200ккал</div>
-								<div class="food__price">від 490грн на день</div>
-							</div>
-						</li>
-						<li>
-							<p class="food__text1">Варіант № 5</p>
-							<img src="img/food__set5.svg" alt="" class="food__img" loading="lazy">
-							<p class="food__text2">Раціон “Vegan”</p>
-							<div class="food__cont">
-								<div class="food__kkal">2200ккал</div>
-								<div class="food__price">від 490грн на день</div>
-							</div>
-						</li>
-					</ul>
-
-
-					<div class="food__details">
-
-						<div class="food__item">
-
-							<div class="food__about">
-								<h5 class="food__subtitle">Раціон на кожен день <b>2200ккал</b></h5>
-								<p class="food__txt1">Це програма збалансованого харчування на кожен день.
-									Розроблено для підтримання маси тіла при середніх фізичних
-									навантаженнях, підходить вагітним.
-									Ретельно підібрані поєднання продуктів, баланс рослинних і тваринних
-									жирів, обмежена кількість цукру в меню цієї програми дозволяють
-									забезпечити організм всіма необхідними речовинами
-								</p>
-							</div>
-
-							<div class="food__prices">
-								<h5 class="food__subtitle black">Розрахунок ціни</h5>
-								<ul class="food__days">
-									<li>1 день</li>
-									<li>7 днів</li>
-									<li class="choosed">20 днів</li>
-									<li>30 днів</li>
-								</ul>
-								<div class="food__cost">
-									<div class="food__fullprice">
-										<p class="food__2price">
-											<span class="old">3150грн</span>
-											-
-											<span class="current">2835грн</span>
-										</p>
-										<p class="food__price-for-one">(Один день <span>450грн</span>)</p>
-										<div class="food__promo active">Знижка <span>-10%</span></div>
-									</div>
-									<button class="food__btn-order">Замовити</button>
+					<div class="food__globalcont">
+						<ul class="food__set">
+							<li>
+								<p class="food__text1" data-count="1">Варіант № 1</p>
+								<img src="img/food__set1.svg" alt="" class="food__img" loading="lazy">
+								<p class="food__text2">Раціон “Max Light”</p>
+								<div class="food__cont">
+									<div class="food__kkal">2200ккал <span>(Зниження ваги)</span></div>
+									<div class="food__price">від 490грн на день</div>
 								</div>
+							</li>
+							<li>
+								<p class="food__text1" data-count="2">Варіант № 2</p>
+								<img src="img/food__set2.svg" alt="" class="food__img" loading="lazy">
+								<p class="food__text2"> Раціон “Light”</p>
+								<div class="food__cont">
+									<div class="food__kkal">2200ккал <span>(Зниження ваги)</span></div>
+									<div class="food__price">від 490грн на день</div>
+								</div>
+							</li>
+							<li class="active">
+								<p class="food__text1" data-count="3">Варіант № 3</p>
+								<img src="img/food__set3.svg" alt="" class="food__img" loading="lazy">
+								<p class="food__text2">Раціон “На кожен день”</p>
+								<div class="food__cont">
+									<div class="food__kkal">2200ккал</div>
+									<div class="food__price">від 490грн на день</div>
+								</div>
+							</li>
+							<li>
+								<p class="food__text1" data-count="4">Варіант № 4</p>
+								<img src="img/food__set4.svg" alt="" class="food__img" loading="lazy">
+								<p class="food__text2">Раціон “Інвідуальний”</p>
+								<div class="food__cont">
+									<div class="food__kkal">2200ккал</div>
+									<div class="food__price">від 490грн на день</div>
+								</div>
+							</li>
+							<li>
+								<p class="food__text1" data-count="5">Варіант № 5</p>
+								<img src="img/food__set5.svg" alt="" class="food__img" loading="lazy">
+								<p class="food__text2">Раціон “Vegan”</p>
+								<div class="food__cont">
+									<div class="food__kkal">2200ккал</div>
+									<div class="food__price">від 490грн на день</div>
+								</div>
+							</li>
+						</ul>
+
+						<div class="food__details">
+
+							<div class="food__item">
+
+								<div class="food__about">
+									<h5 class="food__subtitle">Раціон на кожен день <b>2200ккал</b></h5>
+									<p class="food__txt1">Це програма збалансованого харчування на кожен день.
+										Розроблено для підтримання маси тіла при середніх фізичних
+										навантаженнях, підходить вагітним.
+										Ретельно підібрані поєднання продуктів, баланс рослинних і тваринних
+										жирів, обмежена кількість цукру в меню цієї програми дозволяють
+										забезпечити організм всіма необхідними речовинами
+									</p>
+								</div>
+
+								<div class="food__prices">
+									<h5 class="food__subtitle black">Розрахунок ціни</h5>
+									<ul class="food__days">
+										<li>1 день</li>
+										<li>7 днів</li>
+										<li class="choosed">20 днів</li>
+										<li>30 днів</li>
+									</ul>
+									<div class="food__cost">
+										<div class="food__fullprice">
+											<p class="food__2price">
+												<span class="old">3150грн</span>
+												-
+												<span class="current">2835грн</span>
+											</p>
+											<p class="food__price-for-one">(Один день <span>450грн</span>)</p>
+											<div class="food__promo active">Знижка <span>-10%</span></div>
+										</div>
+										<button class="food__btn-order">Замовити</button>
+									</div>
+								</div>
+
+								<ul class="food__products">
+									<li class="first">
+										<p class="food__text2">
+											<span>Приклад</span> меню на один день:
+										</p>
+										<img src="img/calendar.svg" alt="" class="food__calendar" loading="lazy">
+									</li>
+									<li>
+										<p class="food__text2"><span>Сніданок</span>Сирники з ягодами</p>
+										<img src="img/dish1.png" alt="" class="food__dish" loading="lazy">
+									</li>
+									<li>
+										<p class="food__text2"><span>Другий сніданок</span>Кавун і диня</p>
+										<img src="img/dish2.png" alt="" class="food__dish" loading="lazy">
+									</li>
+									<li>
+										<p class="food__text2"><span>Обід</span>Салат Цезар з індичкою та сиром Чедер
+										</p>
+										<img src="img/dish3.png" alt="" class="food__dish" loading="lazy">
+									</li>
+									<li>
+										<p class="food__text2"><span>Полудень</span>Смузі смородини та банана</p>
+										<img src="img/dish4.png" alt="" class="food__dish" loading="lazy">
+									</li>
+									<li>
+										<p class="food__text2"><span>Вечеря</span>Паста з овочами та куриною грудкою</p>
+										<img src="img/dish5.png" alt="" class="food__dish" loading="lazy">
+									</li>
+								</ul>
+
 							</div>
 
-							<ul class="food__products">
-								<li class="first">
-									<p class="food__text2">
-										<span>Приклад</span> меню на один день:
-									</p>
-									<img src="img/calendar.svg" alt="" class="food__calendar" loading="lazy">
-								</li>
-								<li>
-									<p class="food__text2"><span>Сніданок</span>Сирники з ягодами</p>
-									<img src="img/dish1.png" alt="" class="food__dish" loading="lazy">
-								</li>
-								<li>
-									<p class="food__text2"><span>Другий сніданок</span>Кавун і диня</p>
-									<img src="img/dish2.png" alt="" class="food__dish" loading="lazy">
-								</li>
-								<li>
-									<p class="food__text2"><span>Обід</span>Салат Цезар з індичкою та сиром Чедер</p>
-									<img src="img/dish3.png" alt="" class="food__dish" loading="lazy">
-								</li>
-								<li>
-									<p class="food__text2"><span>Полудень</span>Смузі смородини та банана</p>
-									<img src="img/dish4.png" alt="" class="food__dish" loading="lazy">
-								</li>
-								<li>
-									<p class="food__text2"><span>Вечеря</span>Паста з овочами та куриною грудкою</p>
-									<img src="img/dish5.png" alt="" class="food__dish" loading="lazy">
-								</li>
-							</ul>
+
+							2
 
 						</div>
-
-
-						2
-
 					</div>
-
 
 					<div class="food__detox">
 						<img src="img/bootle.png" alt="" class="food__bootle" loading="lazy">
@@ -809,7 +811,7 @@
 
 					<h2 class="title">Виберіть збалансований раціон харчування</h2>
 
-					<ul class="steps__step owl-carousel">
+					<ul class="steps__step">
 						<li>
 							<div class="steps__conimg first" data-item="1">
 								<img src="img/steps__icon1.svg" alt="" class="steps__icon" loading="lazy">
