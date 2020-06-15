@@ -22,6 +22,8 @@ if( mainPage ) {
 	if ( window.innerWidth > 992 ) {
 		var scene = document.getElementById('scene');
 		var parallaxInstance = new Parallax(scene);
+	} else {
+
 	}
 
 	// $(".phone-mask").mask("099-999-99-99");
@@ -81,17 +83,62 @@ if( mainPage ) {
 			responsiveClass: true,
 			items: 1
 		});
+
 		$('.rev__slider').owlCarousel({
 			loop: false,
 			nav: false,
-			autoplay: true,
+			autoplay: false,
 			autoplayHoverPause: true,
-			autoplayTimeout: 3000,
+			autoplayTimeout: 9000,
 			margin: 20,
 			dots: true,
 			responsiveClass: true,
-			items: 3
+			// items: 3,
+			responsive: {
+				0: {
+					items: 1,
+					stagePadding: 25,
+					margin: 10
+				},
+				556: {
+					items: 1,
+					stagePadding: 50
+				},
+				992: {
+					items: 3
+				}
+			}
 		});
+
+	if (window.innerWidth < 992) {
+		$('.steps__step').owlCarousel({
+			loop: false,
+			nav: false,
+			autoplay: false,
+			autoplayTimeout: 99000,
+			margin: 20,
+			dots: true,
+			responsiveClass: true,
+			// items: 3,
+			responsive: {
+				0: {
+					items: 1,
+					stagePadding: 25,
+					margin: 10
+				},
+				556: {
+					items: 1,
+					stagePadding: 50
+				},
+				992: {
+					items: 3
+				}
+			}
+		});
+	}
+
+
+
 
 }
 // SALE PAGE
