@@ -274,7 +274,6 @@ header
 
 
 
-
 #food
 	padding-top: 60px
 	.food__set
@@ -1486,6 +1485,9 @@ footer
 
 
 
+
+
+
 	#stars
 		#stars__slider
 			.owl-dots
@@ -1704,32 +1706,43 @@ footer
 						margin-bottom: 18px
 
 
-
 	#eggs
+		// .eggs__list
+		// 	display: block
+		// 	margin-top: 0px
+		// 	margin-bottom: 60px
+		// 	.owl-stage
+		// 		//padding-left: 0px!important
+		// 		.owl-item
+		// 			transofrm: translate
 		.eggs__list
-			margin-top: -41px
-			margin-bottom: 60px
 			li
-				width: 32%
-				padding: 31px
+				width: 100%
+				// min-height: 335px
+				padding: 15px 10px
+				display: flex
+				flex-direction: column
+				align-items: space-between
 				&:before
-					content: url(../img/checked.svg)
-					position: absolute
 					top: 20px
 					left: 20px
-					z-index: 2
-				&:nth-child(1) .eggs__icons
-					margin-bottom: 38px
-				&:nth-child(2)
-					padding: 31px 10px
-					.eggs__icons
-						margin-bottom: 28px
-				&:nth-child(3) .eggs__icons 
-					margin-bottom: 18px
+				&:nth-child(1),
+				&:nth-child(2),
+				&:nth-child(3) 
+					.eggs__icons 
+						margin-bottom: 18px
 				.eggs__icons
+					width: 120px
+					height: 150px
 					margin-bottom: 20px
+					z-index: 5
 				.eggs__text1
 					font: bold 1rem/1.2 $font
+					text-align: center
+
+
+
+
 		.eggs__text2
 			font: .9rem/1.2 $font
 			img
@@ -1742,6 +1755,9 @@ footer
 		padding-top: 60px
 		.food__globalcont
 			display: flex
+			justify-content: space-between
+			align-items: stretch
+			margin-bottom: 40px
 		.food__set
 			width: 200px
 			margin: 0 auto
@@ -1751,10 +1767,12 @@ footer
 			margin-bottom: 0px
 			li
 				width: 100%
+				display: flex
+				flex-direction: column
 				box-sizing: border-box
 				opacity: 1
 				z-index: 10
-				margin-bottom: 4px
+				margin-bottom: 8px
 				&.active,
 				&:hover
 					&::before
@@ -1762,52 +1780,39 @@ footer
 						display: block
 						background: red
 						background: white
-						box-shadow: 0px -10px 15px 0px #52525224
-						border-radius: 32px 32px 0 0
+						box-shadow: 0px 0px 0px 0px white
+						border-radius: 0
 						position: absolute
-						top: -10px
-						left: -8px
-						right: -8px
-						bottom: -29px
+						top: 0px
+						left: 0px
+						right: -5px
+						bottom: 0px
 						z-index: -1
+					.food__text2
+						font: bold 1rem/1.2 $font
+						color: $green
 					.food__cont
 						&::before
 							content: ''
-							display: block
-							width: 50px
-							height: 50px
 							background: url(../img/mount.svg) no-repeat center center/contain
 							transform: rotateY(-180deg)
-							position: absolute
-							bottom: -25px
-							left: -50px
-							z-index: 2
+							top: -50px
+							right: -12px
+							left: auto
 						&::after
 							content: ''
-							content: ''
-							display: block
-							width: 50px
-							height: 50px
 							background: url(../img/mount.svg) no-repeat center center/contain
-							position: absolute
-							bottom: -25px
-							right: -50px
-							z-index: 2
+							transform: rotate(180deg)
+							bottom: -50px
+							right: -12px
 				&:first-child:hover
 					.food__cont
-						&::before
-							display: none
 						&::after
 							content: ''
-							content: ''
-							display: block
-							width: 50px
-							height: 50px
 							background: url(../img/mount.svg) no-repeat center center/contain
-							position: absolute
-							bottom: -25px
-							right: -50px
-							z-index: 2
+							transform: rotate(180deg)
+							bottom: -50px
+							right: -12px
 				&:last-child:hover
 					.food__cont
 						&::after
@@ -1824,64 +1829,70 @@ footer
 					color: $grey4
 					position: absolute
 					top: 0
-					left: 0
+					left: 4px
 			.food__img
 				display: block
 				max-width: 100%
+				padding-top: 20px
 				height: auto
-				margin-bottom: 8px
+				margin-bottom: -18px
 			.food__text2
 				font: bold 1rem/1.2 $font
-				text-align: center
-				color: $grey4
-				margin-bottom: 8px
+				margin-bottom: 4px
+				margin-top: 4px
+				order: 2
+				span
+					display: none
 			.food__cont
 				display: flex
-				justify-content: space-between
-				align-items: center
-				background: #E1E1E1
-				overflow: hidden
-				border-radius: 7px
+				justify-content: flex-start
+				align-items: stretch
+				flex-direction: column
+				background: none
+				border-radius: 0
+				order: 1
 				.food__kkal
-					width: 53%
-					font: bold .87rem/1 $font
-					text-align: center
-					color: $grey4
+					width: 80%
+					padding: 2px 5px 2px 20%
+					border-radius: 0px 50px 50px 0
+					background: #E1E1E1
+					font: bold 1rem/1 $font
+					text-align: left
+					margin-bottom: -4px
+					position: relative
+					z-index: 2
 					span
-						font-size: .7rem
+						display: none
 				.food__price
-					width: 47%
-					padding: 5px 10px
-					background: $yellow
-					font: bold .87rem/1 $font
-					text-align: center
-					color: $brown
+					width: 90%
+					padding: 8px 5px 8px 20%
+					border-radius: 0 50px 50px 0
+					font: bold 1rem/1 $font
+					text-align: left
+					span
+						display: none
 
 		.food__details
 			width: calc(100% - 200px)
 			margin-left: 0px
 			padding: 12px 6px
-			border: 4px solid $green2
 			box-shadow: 0px 4px 65px rgba(0, 0, 0, 0.06)
-			border-radius: 29px
-			margin-bottom: 60px
+			border-radius: 11px
+			margin-bottom: 0px
 			.food__item
 				display: flex
+				height: 100%
 				justify-content: space-between
+				justify-content: center
+				align-items: flex-start
 				flex-wrap: wrap
 				.food__subtitle
 					font: bold 1.25rem/1.2 $font
-					color: $green
 					margin-bottom: 4px
-					b
-						color: $grey3
-					&.black
-						color: $grey3
-
 				.food__about
 					width: 100%
 					padding: 15px 23px
-					background: $grey6
+					background: white
 					border-radius: 4px
 					.food__txt1
 						font: .9rem/1.2 $font
@@ -1899,49 +1910,29 @@ footer
 						justify-content: space-between
 						margin-bottom: 6px
 						li
-							display: block
 							width: 24%
 							border-radius: 7px
-							box-sizing: border-box
 							padding: 9px
-							background: white
 							font: 1rem/1.2 $font
-							text-align: center
-							color: $grey3
-							position: relative
 							&:before
 								content: ''
 								display: block
 								width: 12px
 								height: 12px
 								border-radius: 50%
-								background: $grey6
 								position: absolute
 								top: calc(50% - 6px)
 								left: 10px
-							&.choosed
-								font-weight: bold
-								&:before
-									background: $green
-							&:hover
-								cursor: pointer
-								&::before
-									background: $green
 					.food__cost
 						display: flex
 						justify-content: space-between
 						.food__fullprice
 							width: 60%
 							padding: 8px 40px 8px 15px
-							background: white
 							border-radius: 7px
-							position: relative
 							.food__2price
 								font: bold 1.37rem/1.2 $font
-								text-align: center
-								color: $black
 								margin-bottom: 4px
-								position: relative
 								.old
 									display: inline-block
 									color: #979391
@@ -1957,7 +1948,6 @@ footer
 							.food__price-for-one
 								font: .75rem/1.2 $font
 								text-align: center
-								color: #979391
 							.food__promo
 								display: none
 								width: 70px
@@ -1966,11 +1956,7 @@ footer
 								flex-direction: column
 								justify-content: center
 								align-items: center
-								background: $orange
-								border-radius: 5px
 								font: .75rem/1 $font
-								text-align: center
-								color: white
 								transform: rotate(4.75deg)
 								position: absolute
 								right: -45px
@@ -1996,37 +1982,38 @@ footer
 								transition: all .25s
 								background: $greenH
 
+				.food__contb
+					max-width: 100%
+					.food__caltext
+						font: bold 1rem/1.2 $font
+						color: $grey3
+						padding-left: 40px
+						margin-bottom: 12px
+						position: relative
+						span
+							color: $green
+						&:before
+							content: url(../img/food__calendar.svg)
+							position: absolute
+							left: 10px
+							top: calc(50% - 13px)
 				.food__products
-					width: 100%
 					margin-top: 12px
-					display: flex
 					align-items: space-between
 					margin-bottom: 10px
+					.owl-stage
+						padding-left: 10px !important
 					li 
-						width: 20%
-						width: calc(80% / 5)
+						width: 100%
+						min-height: 220px
 						display: flex
 						align-items: center
 						flex-direction: column
 						justify-content: space-between
-						&.first
-							width: 20%
-							justify-content: space-around
-							justify-content: center
-							.food__text2
-								font-size: 1.125rem
-								span
-									display: inline
-									color: $green
-									font-weight: bold
-							.food__calendar
-								display: block
-								width: 90%
 						.food__text2
-							// background: red
 							min-height: 50px
 							font: bold .9rem/1.2 $font
-							text-align: center
+							text-align: left
 							color: $grey3
 							margin-bottom: 10px
 							span
@@ -2036,31 +2023,21 @@ footer
 						.food__dish
 							display: block
 							max-width: 100%
-							// width: 80%
+							width: auto
 							margin: 0 auto
 
 
 		.food__detox
-			display: flex
-			justify-content: space-between
-			align-items: center
-			padding: 25px 30px 25px 60px
-			background: $yellow
-			border-radius: 4px
+			flex-wrap: wrap
+			padding: 25px 10px 25px 10px
 			.food__bootle 
-				display: block
+				width: 250px
+				margin-right: 0px
+				margin: 0 auto
+				margin-bottom: 14px
 				max-width: 100%
-				max-width: 266px
-				mix-blend-mode: multiply
-				opacity: 0.8
-				margin-right: 52px
 			.food__text3
-				font: .9rem/1.2 $font
-				color: $brown2
-
-
-
-
+				text-align: center
 
 
 
@@ -2171,6 +2148,275 @@ footer
 			img
 				max-width: 226px
 				margin-right: 80px
+
+
+
+
+	#food
+		padding-top: 60px
+		.title
+			text-align: center
+		.food__globalcont
+			display: flex
+			justify-content: space-between
+			align-items: stretch
+			margin-bottom: 40px
+		//left
+		.food__set
+			width: 150px
+			margin: 0 auto
+			display: flex
+			flex-direction: column
+			justify-content: space-between
+			margin-bottom: 0px
+			li
+				width: 100%
+				display: flex
+				flex-direction: column
+				box-sizing: border-box
+				opacity: 1
+				z-index: 10
+				margin-bottom: 8px
+				&.active,
+				&:hover
+					&::before
+						content: ''
+						display: block
+						background: red
+						background: white
+						box-shadow: 0px 0px 0px 0px white
+						border-radius: 0
+						position: absolute
+						top: 0px
+						left: 0px
+						right: -5px
+						bottom: 0px
+						z-index: -1
+					.food__text2
+						font: bold 1rem/1.2 $font
+						color: $green
+					.food__cont
+						&::before
+							content: ''
+							background: url(../img/mount.svg) no-repeat center center/contain
+							transform: rotateY(-180deg)
+							top: -50px
+							right: -12px
+							left: auto
+						&::after
+							content: ''
+							background: url(../img/mount.svg) no-repeat center center/contain
+							transform: rotate(180deg)
+							bottom: -50px
+							right: -12px
+				&:first-child:hover
+					&::before
+						border-top-right-radius: 10px
+					.food__cont
+						&::after
+							content: ''
+							background: url(../img/mount.svg) no-repeat center center/contain
+							transform: rotate(180deg)
+							bottom: -50px
+							right: -12px
+				&:last-child:hover
+					&::before
+						border-bottom-right-radius: 10px
+					.food__cont
+						&::after
+							display: none
+			.food__text1
+				width: 1px
+				height: 1px
+				color: transparent
+				margin-bottom: 0px
+				position: relative
+				&:before
+					content: attr(data-count)
+					font: bold 2rem/1.2 $font
+					color: $grey4
+					position: absolute
+					top: 0
+					left: 4px
+			.food__img
+				width: 100px
+				padding-top: 10px
+				margin-bottom: -12px
+			.food__text2
+				font: bold .9rem/1.2 $font
+				margin-bottom: 4px
+				margin-top: 4px
+				order: 2
+				span
+					display: none
+			.food__cont
+				display: flex
+				justify-content: flex-start
+				align-items: stretch
+				flex-direction: column
+				background: none
+				border-radius: 0
+				order: 1
+				.food__kkal
+					width: 80%
+					padding: 2px 5px 2px 20%
+					border-radius: 0px 50px 50px 0
+					background: #E1E1E1
+					font: bold 1rem/1 $font
+					text-align: left
+					margin-bottom: -4px
+					position: relative
+					z-index: 2
+					span
+						display: none
+				.food__price
+					width: 90%
+					padding: 8px 5px 8px 20%
+					border-radius: 0 50px 50px 0
+					font: bold 1rem/1 $font
+					text-align: left
+					span
+						display: none
+		// right
+		.food__details
+			width: calc(100% - 150px)
+			margin-left: 0px
+			padding: 12px 6px
+			box-shadow: 0px 4px 65px rgba(0, 0, 0, 0.06)
+			border-radius: 11px
+			margin-bottom: 0px
+			.food__item
+				display: flex
+				height: 100%
+				justify-content: space-between
+				justify-content: center
+				align-items: flex-start
+				flex-wrap: wrap
+				.food__subtitle
+					font: bold 1.25rem/1.2 $font
+					margin-bottom: 4px
+				.food__about
+					width: 100%
+					padding: 0 8px 5px 
+					.food__txt1
+						font: .9rem/1.2 $font
+				.food__prices
+					width: 100%
+					padding: 7px 8px
+					margin-bottom: 16px
+					.food__subtitle
+						margin-bottom: 16px
+					.food__days
+						flex-wrap: wrap
+						margin-bottom: 6px
+						li
+							width: calc(50% - 3px)
+							margin-bottom: 4px
+							padding: 9px
+					.food__cost
+						flex-wrap: wrap
+						.food__fullprice
+							width: calc(100% - 50px)
+							padding: 8px 40px 8px 15px
+							margin-bottom: 10px
+							.food__2price
+								font: bold 1.37rem/1.2 $font
+								margin-bottom: 4px
+								.old
+									display: inline-block
+									color: #979391
+									position: relative	
+									&::before
+										content: ''
+										display: block
+										width: 80px
+										height: 100%
+										background: url(../img/lines.svg) no-repeat center center/contain 
+										position: absolute
+										left: 0
+							.food__price-for-one
+								font: .75rem/1.2 $font
+								text-align: center
+							.food__promo
+								display: none
+								width: 70px
+								height: 60px
+								flex-direction: column
+								justify-content: center
+								align-items: center
+								font: .75rem/1 $font
+								transform: rotate(4.75deg)
+								position: absolute
+								right: -45px
+								top: 0
+								&.active
+									display: flex
+								span
+									display: block
+									font-size: 1.3rem
+									font-weight: bold
+						.food__btn-order
+							width: 100%
+							padding: 10px
+							font: bold .75rem/1.2 $font
+
+				.food__contb
+					max-width: 100%
+					.food__caltext
+						font: bold 1rem/1.2 $font
+						color: $grey3
+						padding-left: 40px
+						margin-bottom: 12px
+						position: relative
+						span
+							color: $green
+						&:before
+							content: url(../img/food__calendar.svg)
+							position: absolute
+							left: 10px
+							top: calc(50% - 13px)
+				.food__products
+					margin-top: 12px
+					align-items: space-between
+					margin-bottom: 10px
+					.owl-stage
+						padding-left: 10px !important
+					li 
+						width: 100%
+						min-height: 220px
+						display: flex
+						align-items: center
+						flex-direction: column
+						justify-content: space-between
+						.food__text2
+							min-height: 50px
+							font: bold .9rem/1.2 $font
+							text-align: left
+							color: $grey3
+							margin-bottom: 10px
+							span
+								display: block
+								font-weight: normal
+								color: #949B9E
+						.food__dish
+							display: block
+							max-width: 100%
+							width: auto
+							margin: 0 auto
+
+
+		.food__detox
+			flex-wrap: wrap
+			padding: 25px 10px 25px 10px
+			.food__bootle 
+				width: 250px
+				margin-right: 0px
+				margin: 0 auto
+				margin-bottom: 14px
+				max-width: 100%
+			.food__text3
+				text-align: center
+
 
 
 
@@ -2325,6 +2571,234 @@ footer
 
 
 
+	#food
+		padding-top: 60px
+		overflow: hidden
+		.food__globalcont
+			width: calc(100% + 30px)
+			margin-left: -15px
+		//left
+		.food__set
+			width: 124px
+			margin: 0 auto
+			display: flex
+			flex-direction: column
+			justify-content: space-between
+			margin-bottom: 0px
+			li
+				width: 100%
+				display: flex
+				flex-direction: column
+				box-sizing: border-box
+				opacity: 1
+				z-index: 10
+				margin-bottom: 8px
+				&.active,
+				&:hover
+					&::before
+						content: ''
+						display: block
+						background: red
+						background: white
+						box-shadow: 0px 0px 0px 0px white
+						border-radius: 0
+						position: absolute
+						top: 0px
+						left: 0px
+						right: -5px
+						bottom: 0px
+						z-index: -1
+					.food__text2
+						font: bold 1rem/1.2 $font
+						color: $green
+					.food__cont
+						&::before
+							content: ''
+							background: url(../img/mount.svg) no-repeat center center/contain
+							transform: rotateY(-180deg)
+							top: -50px
+							right: -12px
+							left: auto
+						&::after
+							content: ''
+							background: url(../img/mount.svg) no-repeat center center/contain
+							transform: rotate(180deg)
+							bottom: -50px
+							right: -12px
+				&:first-child:hover
+					&::before
+						border-top-right-radius: 10px
+					.food__cont
+						&::after
+							content: ''
+							background: url(../img/mount.svg) no-repeat center center/contain
+							transform: rotate(180deg)
+							bottom: -50px
+							right: -12px
+				&:last-child:hover
+					&::before
+						border-bottom-right-radius: 10px
+					.food__cont
+						&::after
+							display: none
+			.food__text1
+				&:before
+					font: bold 1.5rem/1.2 $font
+					top: 0
+					left: 4px
+			.food__img
+				width: 100px
+				padding-top: 10px
+				margin-bottom: -5px
+			.food__text2
+				font: bold .9rem/1.2 $font
+				margin-bottom: 4px
+				margin-top: 4px
+				order: 2
+			.food__cont
+				display: flex
+				justify-content: flex-start
+				align-items: stretch
+				flex-direction: column
+				background: none
+				border-radius: 0
+				order: 1
+				.food__kkal
+					width: 80%
+					padding: 2px 5px 2px 10px
+					border-radius: 0px 50px 50px 0
+					font: bold 1rem/1 $font
+					margin-bottom: -4px
+				.food__price
+					width: 90%
+					padding: 8px 5px 8px 10px
+					border-radius: 0 10px 10px 0
+					font: bold 1rem/1 $font
+		
+		// right
+		.food__details
+			width: calc(100% - 120px)
+			margin-left: 0px
+			margin-right: -4px
+			padding: 12px 6px
+			box-shadow: 0px 4px 65px rgba(0, 0, 0, 0.06)
+			border-radius: 11px 0 0 11px
+			margin-bottom: 0px
+			.food__item
+				display: flex
+				height: 100%
+				justify-content: space-between
+				justify-content: center
+				align-items: flex-start
+				flex-wrap: wrap
+				.food__subtitle
+					font: bold 1.25rem/1.2 $font
+					margin-bottom: 4px
+				.food__about
+					width: 100%
+					padding: 0 8px 5px 
+					.food__txt1
+						font: .9rem/1.2 $font
+				.food__prices
+					width: 100%
+					padding: 7px 8px
+					margin-bottom: 16px
+					.food__subtitle
+						margin-bottom: 16px
+					.food__days
+						flex-wrap: wrap
+						margin-bottom: 6px
+						li
+							width: calc(50% - 3px)
+							margin-bottom: 4px
+							padding: 8px 4px 8px 12px
+					.food__cost
+						flex-wrap: wrap
+						.food__fullprice
+							width: 100%
+							padding: 8px 15px 8px 15px
+							margin-bottom: 10px
+							.food__2price
+								font: bold 1.37rem/1.2 $font
+								margin-bottom: 4px
+								.old
+									display: inline-block
+									color: #979391
+									position: relative	
+									&::before
+										content: ''
+										display: block
+										width: 80px
+										height: 100%
+										background: url(../img/lines.svg) no-repeat center center/contain 
+										position: absolute
+										left: 0
+							.food__price-for-one
+								font: .75rem/1.2 $font
+								text-align: center
+							.food__promo
+								width: 37px
+								height: 25px
+								transform: rotate(4.75deg)
+								right: 5px
+								top: auto
+								bottom: 0
+								b
+									display: none
+								span
+									display: block
+									font-size: .9rem
+									font-weight: bold
+						.food__btn-order
+							width: 100%
+							padding: 14px
+							font: bold .9rem/1.2 $font
+
+				.food__contb
+					max-width: 100%
+					.food__caltext
+						font: bold 1rem/1.2 $font
+						color: $grey3
+						padding-left: 40px
+						margin-bottom: 12px
+						position: relative
+						span
+							color: $green
+						&:before
+							content: url(../img/food__calendar.svg)
+							position: absolute
+							left: 10px
+							top: calc(50% - 13px)
+				.food__products
+					margin-top: 12px
+					align-items: space-between
+					margin-bottom: 10px
+					.owl-stage
+						padding-left: 10px !important
+					li 
+						width: 100%
+						min-height: 220px
+						display: flex
+						align-items: center
+						flex-direction: column
+						justify-content: space-between
+						.food__text2
+							min-height: 50px
+							font: bold .9rem/1.2 $font
+							text-align: left
+							color: $grey3
+							margin-bottom: 10px
+							span
+								display: block
+								font-weight: normal
+								color: #949B9E
+						.food__dish
+							display: block
+							max-width: 100%
+							width: auto
+							margin: 0 auto
+
+
 
 // xs for iphoneX
 @media (width: 375px) and (height: 812px)
@@ -2449,4 +2923,173 @@ footer
 			.small
 				font: 800 1rem/1.2 $font
 
+
+
+	#food
+		padding-top: 60px
+		.food__globalcont
+			width: calc(100% + 30px)
+			margin-left: -15px
+		//left
+		.food__set
+			width: 124px
+			margin: 0 auto
+			display: flex
+			flex-direction: column
+			justify-content: space-between
+			margin-bottom: 0px
+			li
+				margin-bottom: 8px
+			.food__text1
+				&:before
+					font: bold 1.5rem/1.2 $font
+					top: 0
+					left: 4px
+			.food__img
+				width: 100px
+				padding-top: 10px
+				margin-bottom: -5px
+			.food__text2
+				font: bold .9rem/1.2 $font
+				margin-bottom: 4px
+				margin-top: 4px
+				order: 2
+			.food__cont
+				background: none
+				.food__kkal
+					width: 80%
+					padding: 2px 5px 2px 10px
+					border-radius: 0px 50px 50px 0
+					font: bold 1rem/1 $font
+					margin-bottom: -4px
+				.food__price
+					width: 90%
+					padding: 8px 5px 8px 10px
+					border-radius: 0 10px 10px 0
+					font: bold 1rem/1 $font
+		
+		// right
+		.food__details
+			width: calc(100% - 120px)
+			margin-left: 0px
+			margin-right: -4px
+			padding: 12px 6px
+			box-shadow: 0px 4px 65px rgba(0, 0, 0, 0.06)
+			border-radius: 11px 0 0 11px
+			margin-bottom: 0px
+			.food__item
+				display: flex
+				height: 100%
+				justify-content: space-between
+				justify-content: center
+				align-items: flex-start
+				flex-wrap: wrap
+				.food__subtitle
+					font: bold 1.25rem/1.2 $font
+					margin-bottom: 4px
+				.food__about
+					width: 100%
+					padding: 0 8px 5px 
+					.food__txt1
+						font: .9rem/1.2 $font
+				.food__prices
+					width: 100%
+					padding: 7px 3px
+					margin-bottom: 16px
+					.food__subtitle
+						margin-bottom: 16px
+					.food__days
+						flex-wrap: wrap
+						margin-bottom: 6px
+						li
+							width: calc(50% - 3px)
+							margin-bottom: 4px
+							padding: 8px 2px 8px 12px
+							&:before
+								left: 3px
+					.food__cost
+						flex-wrap: wrap
+						.food__fullprice
+							width: 100%
+							padding: 8px 1px 8px
+							margin-bottom: 10px
+							.food__2price
+								font: bold 1.1rem/1.2 $font
+								margin-bottom: 4px
+								.old
+									display: inline-block
+									color: #979391
+									position: relative	
+									&::before
+										content: ''
+										display: block
+										width: 80px
+										height: 100%
+										background: url(../img/lines.svg) no-repeat center center/contain 
+										position: absolute
+										left: 0
+							.food__price-for-one
+								font: .75rem/1.2 $font
+								text-align: center
+							.food__promo
+								width: 37px
+								height: 25px
+								transform: rotate(4.75deg)
+								right: 0px
+								top: auto
+								bottom: 0
+								b
+									display: none
+								span
+									display: block
+									font-size: .9rem
+									font-weight: bold
+						.food__btn-order
+							width: 100%
+							padding: 14px
+							font: bold .9rem/1.2 $font
+
+				.food__contb
+					max-width: 100%
+					.food__caltext
+						font: bold 1rem/1.2 $font
+						color: $grey3
+						padding-left: 40px
+						margin-bottom: 12px
+						position: relative
+						span
+							color: $green
+						&:before
+							content: url(../img/food__calendar.svg)
+							position: absolute
+							left: 10px
+							top: calc(50% - 13px)
+				.food__products
+					margin-top: 12px
+					align-items: space-between
+					margin-bottom: 10px
+					.owl-stage
+						padding-left: 10px !important
+					li 
+						width: 100%
+						min-height: 220px
+						display: flex
+						align-items: center
+						flex-direction: column
+						justify-content: space-between
+						.food__text2
+							min-height: 50px
+							font: bold .9rem/1.2 $font
+							text-align: left
+							color: $grey3
+							margin-bottom: 10px
+							span
+								display: block
+								font-weight: normal
+								color: #949B9E
+						.food__dish
+							display: block
+							max-width: 100%
+							width: auto
+							margin: 0 auto
 

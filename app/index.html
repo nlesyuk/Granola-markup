@@ -70,12 +70,16 @@
 		integrity="sha256-6hqHMqXTVEds1R8HgKisLm3l/doneQs+rS1a5NLmwwo=" crossorigin="anonymous" />
 
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+
+
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+	<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" rel="stylesheet" /> -->
+	<!-- <link rel="stylesheet" href="libs/Cross-browser-3D-Rotator-Plugin-For-jQuery-rollingslider-js/style/index.css"> -->
+	<link rel="stylesheet" href="libs/jquery-flipster-master/dist/jquery.flipster.min.css">
 </head>
 
 <body>
-
-
-
 
 	<header>
 		<div class="header__container d-none d-lg-flex">
@@ -611,33 +615,45 @@
 
 	</section>
 
-	<!-- 
+
 
 	<section id="eggs">
 		<div class="container">
 			<div class="row">
 				<div class="col">
 
-					<ul class="eggs__list">
-						<li>
-							<img src="img/eggs__icon1.svg" alt="" class="eggs__icons" loading="lazy">
-							<p class="eggs__text1">89 страв без повторення за місяць,
-								формуєм правильні гастрономічні
-								звички
-							</p>
-						</li>
-						<li>
-							<img src="img/eggs__icon2.svg" alt="" class="eggs__icons" loading="lazy">
-							<p class="eggs__text1">Тільки свіжі сезонні продукти від локальних фермерських господарств
-							</p>
-						</li>
-						<li>
-							<img src="img/eggs__icon3.svg" alt="" class="eggs__icons" loading="lazy">
-							<p class="eggs__text1">Здорові способи приготування - запікання, пароконвектомат, сувід</p>
-						</li>
-					</ul>
-
-
+					<div id="slid">
+						<ul class="eggs__list flip-items">
+							<li>
+								<img src="img/eggs__icon1.svg" alt="" class="eggs__icons" loading="lazy">
+								<p class="eggs__text1">89 страв без повторення за місяць,
+									формуєм правильні гастрономічні
+									звички
+								</p>
+							</li>
+							<li>
+								<img src="img/eggs__icon2.svg" alt="" class="eggs__icons" loading="lazy">
+								<p class="eggs__text1">Тільки свіжі сезонні продукти від локальних фермерських
+									господарств
+								</p>
+							</li>
+							<li>
+								<img src="img/eggs__icon3.svg" alt="" class="eggs__icons" loading="lazy">
+								<p class="eggs__text1">Здорові способи приготування - запікання, пароконвектомат, сувід
+								</p>
+							</li>
+							<li>
+								<img src="img/eggs__icon3.svg" alt="" class="eggs__icons" loading="lazy">
+								<p class="eggs__text1">Здорові способи приготування - запікання, пароконвектомат, сувід
+								</p>
+							</li>
+							<li>
+								<img src="img/eggs__icon3.svg" alt="" class="eggs__icons" loading="lazy">
+								<p class="eggs__text1">Здорові способи приготування - запікання, пароконвектомат, сувід
+								</p>
+							</li>
+						</ul>
+					</div>
 					<p class="eggs__text2">
 						<img src="img/certify.png" alt="" loading="lazy">
 						Вибір фітнес тренерів 2018, 100% Відповідність нормам Екологічної Асоціації. Lorem ipsum dolor
@@ -646,14 +662,10 @@
 						ex ea commodo consequat.
 					</p>
 
-
-
 				</div>
 			</div>
 		</div>
-	</section> 
--->
-
+	</section>
 
 
 	<section id="food">
@@ -664,50 +676,53 @@
 					<h2 class="title">Виберіть збалансований раціон харчування</h2>
 
 					<div class="food__globalcont">
+
 						<ul class="food__set">
 							<li>
 								<p class="food__text1" data-count="1">Варіант № 1</p>
 								<img src="img/food__set1.svg" alt="" class="food__img" loading="lazy">
-								<p class="food__text2">Раціон “Max Light”</p>
+								<p class="food__text2"><span>Раціон “</span>Max Light<span>”</span></p>
 								<div class="food__cont">
 									<div class="food__kkal">2200ккал <span>(Зниження ваги)</span></div>
-									<div class="food__price">від 490грн на день</div>
+									<div class="food__price">від 490грн <span>на день</span></div>
 								</div>
 							</li>
 							<li>
 								<p class="food__text1" data-count="2">Варіант № 2</p>
-								<img src="img/food__set2.svg" alt="" class="food__img" loading="lazy">
-								<p class="food__text2"> Раціон “Light”</p>
+								<!-- <img src="img/food__set2-sm.svg" alt="" class="food__img d-block d-lg-none" loading="lazy"> -->
+								<img src="img/food__set2.svg" alt="" class="food__img d-none1 d-lg-block"
+									loading="lazy">
+								<p class="food__text2"><span>Раціон “</span>Light<span>”</span></p>
 								<div class="food__cont">
 									<div class="food__kkal">2200ккал <span>(Зниження ваги)</span></div>
-									<div class="food__price">від 490грн на день</div>
+									<div class="food__price">від 490грн <span>на день</span></div>
 								</div>
 							</li>
 							<li class="active">
 								<p class="food__text1" data-count="3">Варіант № 3</p>
 								<img src="img/food__set3.svg" alt="" class="food__img" loading="lazy">
-								<p class="food__text2">Раціон “На кожен день”</p>
+								<p class="food__text2"><span>Раціон “</span>На кожен день<span>”</span></p>
 								<div class="food__cont">
 									<div class="food__kkal">2200ккал</div>
-									<div class="food__price">від 490грн на день</div>
+									<div class="food__price">від 490грн <span>на день</span></div>
 								</div>
 							</li>
 							<li>
 								<p class="food__text1" data-count="4">Варіант № 4</p>
 								<img src="img/food__set4.svg" alt="" class="food__img" loading="lazy">
-								<p class="food__text2">Раціон “Інвідуальний”</p>
+								<p class="food__text2"><span>Раціон “</span>Інвідуальний<span>”</span></p>
 								<div class="food__cont">
 									<div class="food__kkal">2200ккал</div>
-									<div class="food__price">від 490грн на день</div>
+									<div class="food__price">від 490грн <span>на день</span></div>
 								</div>
 							</li>
 							<li>
 								<p class="food__text1" data-count="5">Варіант № 5</p>
 								<img src="img/food__set5.svg" alt="" class="food__img" loading="lazy">
-								<p class="food__text2">Раціон “Vegan”</p>
+								<p class="food__text2"><span>Раціон “</span>Vegan<span>”</span></p>
 								<div class="food__cont">
 									<div class="food__kkal">2200ккал</div>
-									<div class="food__price">від 490грн на день</div>
+									<div class="food__price">від 490грн <span>на день</span></div>
 								</div>
 							</li>
 						</ul>
@@ -743,46 +758,51 @@
 												<span class="current">2835грн</span>
 											</p>
 											<p class="food__price-for-one">(Один день <span>450грн</span>)</p>
-											<div class="food__promo active">Знижка <span>-10%</span></div>
+											<div class="food__promo active"><b>Знижка</b> <span>-10%</span></div>
 										</div>
 										<button class="food__btn-order">Замовити</button>
 									</div>
 								</div>
 
-								<ul class="food__products">
-									<li class="first">
-										<p class="food__text2">
-											<span>Приклад</span> меню на один день:
-										</p>
-										<img src="img/calendar.svg" alt="" class="food__calendar" loading="lazy">
-									</li>
-									<li>
-										<p class="food__text2"><span>Сніданок</span>Сирники з ягодами</p>
-										<img src="img/dish1.png" alt="" class="food__dish" loading="lazy">
-									</li>
-									<li>
-										<p class="food__text2"><span>Другий сніданок</span>Кавун і диня</p>
-										<img src="img/dish2.png" alt="" class="food__dish" loading="lazy">
-									</li>
-									<li>
-										<p class="food__text2"><span>Обід</span>Салат Цезар з індичкою та сиром Чедер
-										</p>
-										<img src="img/dish3.png" alt="" class="food__dish" loading="lazy">
-									</li>
-									<li>
-										<p class="food__text2"><span>Полудень</span>Смузі смородини та банана</p>
-										<img src="img/dish4.png" alt="" class="food__dish" loading="lazy">
-									</li>
-									<li>
-										<p class="food__text2"><span>Вечеря</span>Паста з овочами та куриною грудкою</p>
-										<img src="img/dish5.png" alt="" class="food__dish" loading="lazy">
-									</li>
-								</ul>
+								<div class="food__contb">
+									<p class="food__caltext"><span>Приклад</span> меню на один день: </p>
+									<ul class="food__products">
+										<li class="first">
+											<p class="food__text2">
+												<span>Приклад</span> меню на один день:
+											</p>
+											<img src="img/calendar.svg" alt="" class="food__calendar" loading="lazy">
+										</li>
+										<li>
+											<p class="food__text2"><span>Сніданок</span>Сирники з ягодами</p>
+											<img src="img/dish1.png" alt="" class="food__dish" loading="lazy">
+										</li>
+										<li>
+											<p class="food__text2"><span>Другий сніданок</span>Кавун і диня</p>
+											<img src="img/dish2.png" alt="" class="food__dish" loading="lazy">
+										</li>
+										<li>
+											<p class="food__text2"><span>Обід</span>Салат Цезар з індичкою та сиром
+												Чедер
+											</p>
+											<img src="img/dish3.png" alt="" class="food__dish" loading="lazy">
+										</li>
+										<li>
+											<p class="food__text2"><span>Полудень</span>Смузі смородини та банана</p>
+											<img src="img/dish4.png" alt="" class="food__dish" loading="lazy">
+										</li>
+										<li>
+											<p class="food__text2"><span>Вечеря</span>Паста з овочами та куриною грудкою
+											</p>
+											<img src="img/dish5.png" alt="" class="food__dish" loading="lazy">
+										</li>
+									</ul>
+								</div>
 
 							</div>
 
 
-							2
+							<!-- 2 -->
 
 						</div>
 					</div>
@@ -1331,9 +1351,18 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
 		integrity="sha256-pTxD+DSzIwmwhOqTFN+DB+nHjO4iAsbgfyFq5K5bcE0=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-	<script src="libs/jquery.maskedinput.js"></script>
-	<script src="js/common.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
 
+
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script> 
+	<script
+		src="libs/Cross-browser-3D-Rotator-Plugin-For-jQuery-rollingslider-js/script/jquery.rollingslider.js"></script>-->
+	<script src="libs/jquery.maskedinput.js"></script>
+	<script src="libs/jquery-flipster-master/dist/jquery.flipster.min.js"></script>
+	<script src="js/common.js"></script>
+	<script>
+
+	</script>
 </body>
 
 </html>

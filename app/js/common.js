@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function(e) {
 // GENERALS
 //scroll add .scroll to buttons for slowly move to anchor
 $('.scroll').bind('click.smoothscroll',function (e) {
@@ -12,84 +12,75 @@ $('.scroll').bind('click.smoothscroll',function (e) {
 	});
 });
 
+		$("#slid").flipster({
+			// itemContainer: 'eggs__list',
+			// itemSelector: 'li',
+			style: 'carousel',
+			spacing: -0.5,
+			nav: true,
+			buttons: true,
+		});
 
 // MAIN PAGE
 var mainPage = document.getElementById('first')
 if( mainPage ) {
 
-
-	// top paralax
-	if ( window.innerWidth > 992 ) {
-		var scene = document.getElementById('scene');
-		new Parallax(scene);
-	} else {
-
-	}
-
-	// $(".phone-mask").mask("099-999-99-99");
-
-	// EGGS
-	if ( window.innerWidth < 992 ) {
-		// $('.eggs__list').addClass('owl-carousel')
-		// $('.eggs__list').owlCarousel({
-		// 	animateOut: 'fadeOut',
-		// 	animateIn: 'fadeIn',
-		// 	smartSpeed: 450,
-		// 	loop: true,
-		// 	nav: false,
-		// 	autoplay: true,
-		// 	autoplayHoverPause: true,
-		// 	autoplayTimeout: 3000,
-		// 	margin: 0,
-		// 	dots: true,
-		// 	responsiveClass: true,
-		// 	items: 3
-		// });
-	}
-
-	// countdown
-		var endTimer      = Date.now() + (60 * 60 * 3 * 1000) + (60 * 42 * 1000); // 3:42
-		var cookieName    = "endTimer";
-		var checkCookie   = getCookie(cookieName);
-		if(!checkCookie) setCookie(cookieName, endTimer, 30);
-		var cookie        = getCookie(cookieName);
-
-		var timerConfig = {
-			el: '.countdown',
-			endTimer: cookie
-		};
-
-		if( cookie > Date.now() ){
-			var timer = new CountdownTimer( timerConfig.el, timerConfig.endTimer);
-		} else {
-			setCookie(cookieName, endTimer, 30);
-			timerConfig.endTimer = getCookie(cookieName);
-			var timer = new CountdownTimer( timerConfig.el, timerConfig.endTimer);
-		}	
-		timer.countDown();
-		
 	// sliders
-		$('#stars__slider').owlCarousel({
-			animateOut: 'fadeOut',
-			animateIn: 'fadeIn',
-			smartSpeed:450,
-			loop: false,
-			nav: false,
-			autoplay: true,
-			autoplayHoverPause: true,
-			autoplayTimeout: 3000,
-			margin: 0,
-			dots: true,
-			responsiveClass: true,
-			items: 1
-		});
+	$('#stars__slider').owlCarousel({
+		animateOut: 'fadeOut',
+		animateIn: 'fadeIn',
+		smartSpeed:450,
+		loop: false,
+		nav: false,
+		autoplay: true,
+		autoplayHoverPause: true,
+		autoplayTimeout: 3000,
+		margin: 0,
+		dots: true,
+		responsiveClass: true,
+		items: 1
+	});
 
-		$('.rev__slider').owlCarousel({
+	$('.rev__slider').owlCarousel({
+		loop: false,
+		nav: false,
+		autoplay: false,
+		autoplayHoverPause: true,
+		autoplayTimeout: 9000,
+		margin: 20,
+		dots: true,
+		responsiveClass: true,
+		// items: 3,
+		responsive: {
+			0: {
+				items: 1,
+				stagePadding: 25,
+				margin: 10
+			},
+			556: {
+				items: 1,
+				stagePadding: 50
+			},
+			992: {
+				items: 3
+			}
+		}
+	});
+
+	// lg >992
+	if ( window.innerWidth > 992 ) {
+		// top paralax
+		// new Parallax(document.getElementById('scene'));
+	}
+	// md0 <992
+	if ( window.innerWidth < 992 ) {
+
+		$('.steps__step').addClass(' owl-carousel')
+		$('.steps__step').owlCarousel({
 			loop: false,
 			nav: false,
 			autoplay: false,
-			autoplayHoverPause: true,
-			autoplayTimeout: 9000,
+			autoplayTimeout: 99000,
 			margin: 20,
 			dots: true,
 			responsiveClass: true,
@@ -110,7 +101,78 @@ if( mainPage ) {
 			}
 		});
 
-	if (window.innerWidth < 768) {
+		$('.food__products li:first-child').remove()
+		$('.food__products').addClass('owl-carousel')
+		$('.food__products').owlCarousel({
+			loop: false,
+			nav: false,
+			autoplay: false,
+			autoplayTimeout: 99000,
+			margin: 0,
+			dots: true,
+			responsiveClass: true,
+			// items: 3,
+			responsive: {
+				0: {
+					items: 1,
+					stagePadding: 25,
+					margin: 10
+				},
+				556: {
+					items: 2,
+					stagePadding: 40
+				},
+				768: {
+					items: 2,
+					stagePadding: 40
+				},
+				992: {
+					items: 3
+				}
+			}
+		});
+			
+			
+		// slider
+		// $('.eggs__list').addClass('owl-carousel');
+		// $('.eggs__list').owlCarousel({
+		// 	loop: true,
+		// 	nav: false,
+		// 	autoplay: false,
+		// 	autoWidth: true,
+		// 	center: true,
+		// 	autoplayTimeout: 99000,
+		// 	margin: 10,
+		// 	items: 1,
+		// 	dots: true,
+		// 	responsiveClass: true,
+		// 	responsive: {
+		// 		0: {
+		// 			stagePadding: 25,
+		// 			margin: 10
+		// 		},
+		// 		556: {
+		// 			stagePadding: 40
+		// 		},
+		// 		768: {
+		// 			//stagePadding: 100,
+		// 			stagePadding: 0
+		// 		},
+		// 		// breakpoint from 992 up
+		// 		992: {
+		// 			items: 1,
+		// 			margin: 30,
+		// 		}
+		// 	}
+		// });
+		// console.log('test')
+		// $(".eggs__list").flipster({
+		// 	itemContainer: 'eggs__list',
+		// 	itemSelector: 'li',
+		// 	start: 'center',
+		// });
+
+	} else if (window.innerWidth < 768) {
 		$('.eggs__list').addClass(' owl-carousel')
 		$('.eggs__list').owlCarousel({
 			loop: false,
@@ -138,36 +200,6 @@ if( mainPage ) {
 			}
 		});
 	}
-
-	if (window.innerWidth < 992) {
-		$('.steps__step').addClass(' owl-carousel')
-		$('.steps__step').owlCarousel({
-			loop: false,
-			nav: false,
-			autoplay: false,
-			autoplayTimeout: 99000,
-			margin: 20,
-			dots: true,
-			responsiveClass: true,
-			// items: 3,
-			responsive: {
-				0: {
-					items: 1,
-					stagePadding: 25,
-					margin: 10
-				},
-				556: {
-					items: 1,
-					stagePadding: 50
-				},
-				992: {
-					items: 3
-				}
-			}
-		});
-	}
-
-
 
 
 }
