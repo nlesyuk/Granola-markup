@@ -1707,19 +1707,29 @@ footer
 
 
 	#eggs
-		// .eggs__list
-		// 	display: block
-		// 	margin-top: 0px
-		// 	margin-bottom: 60px
-		// 	.owl-stage
-		// 		//padding-left: 0px!important
-		// 		.owl-item
-		// 			transofrm: translate
 		.eggs__list
+			margin-top: -115px
+			.owl-stage
+				padding: 90px 0
+				.owl-item
+					&.active.center
+						transform: scale(1.25)
+						z-index: 999
+						box-shadow: 0px 0px 48px rgba(0, 0, 0, 0.28)
+						li
+							transform: scale(1) !important
+						& + .owl-item.active + .owl-item
+							opacity: 0
+					li
+						transform: scale(.8)!important
+						width: 220px
+						// width: 120%
+						min-height: 220px
+						// height: 120%
 			li
 				width: 100%
 				// min-height: 335px
-				padding: 15px 10px
+				padding: 5px 10px
 				display: flex
 				flex-direction: column
 				align-items: space-between
@@ -1732,22 +1742,27 @@ footer
 					.eggs__icons 
 						margin-bottom: 18px
 				.eggs__icons
-					width: 120px
-					height: 150px
+					width: 100px
+					height: 100px
 					margin-bottom: 20px
 					z-index: 5
 				.eggs__text1
 					font: bold 1rem/1.2 $font
 					text-align: center
-
-
+					padding-bottom: 25px
 
 
 		.eggs__text2
+			margin-top: -50px
+			display: flex
+			flex-wrap: wrap
+			justify-content: center
 			font: .9rem/1.2 $font
+			text-align: center
 			img
 				max-width: 226px
-				margin-right: 80px
+				margin-right: 00px
+				margin-bottom: 18px
 
 
 
@@ -2116,42 +2131,6 @@ footer
 
 
 
-	#eggs
-		.eggs__list
-			margin-top: -41px
-			margin-bottom: 60px
-			li
-				width: 100%
-				padding: 31px
-				&:before
-					content: url(../img/checked.svg)
-					position: absolute
-					top: 20px
-					left: 20px
-					z-index: 2
-				&:nth-child(1) .eggs__icons
-					margin-bottom: 38px
-				&:nth-child(2)
-					padding: 31px 10px
-					.eggs__icons
-						margin-bottom: 28px
-				&:nth-child(3) .eggs__icons 
-					margin-bottom: 18px
-				.eggs__icons
-					width: 50%
-					margin: 0 auto
-					margin-bottom: 20px
-				.eggs__text1
-					font: bold 1rem/1.2 $font
-		.eggs__text2
-			font: .9rem/1.2 $font
-			img
-				max-width: 226px
-				margin-right: 80px
-
-
-
-
 	#food
 		padding-top: 60px
 		.title
@@ -2418,6 +2397,51 @@ footer
 				text-align: center
 
 
+
+	#eggs
+		.eggs__list
+			margin-top: -100px
+			.owl-stage
+				padding: 90px 0
+				.owl-item
+					&.active.center
+						transform: scale(1.25)
+						z-index: 999
+						box-shadow: 0px 0px 48px rgba(0, 0, 0, 0.28)
+						& + .owl-item.active + .owl-item
+							opacity: 0
+						li
+							transform: scale(1) !important
+					li
+						transform: scale(.9)!important
+						width: 180px
+						// width: 120%
+						min-height: 180px
+						// height: 120%
+			li
+				width: 100%
+				// min-height: 335px
+				padding: 5px 10px
+				display: flex
+				flex-direction: column
+				align-items: space-between
+				&:before
+					top: 20px
+					left: 20px
+				&:nth-child(1),
+				&:nth-child(2),
+				&:nth-child(3) 
+					.eggs__icons 
+						margin-bottom: 18px
+				.eggs__icons
+					width: 80px
+					height: 80px
+					margin-bottom: 20px
+					z-index: 5
+				.eggs__text1
+					font: bold .9rem/1.2 $font
+					text-align: center
+					padding-bottom: 25px
 
 
 
@@ -2800,6 +2824,53 @@ footer
 
 
 
+	#eggs
+		.eggs__list
+			width: calc(100% + 30px)
+			margin-left: -15px
+			margin-top: -100px
+			.owl-stage
+				padding: 90px 0
+				.owl-item
+					&.active.center
+						transform: scale(1.25)
+						z-index: 999
+						box-shadow: 0px 0px 48px rgba(0, 0, 0, 0.28)
+						& + .owl-item.active + .owl-item
+							opacity: 0
+						li
+							transform: scale(1) !important
+					li
+						transform: scale(.9)!important
+						width: 180px
+						// width: 120%
+						min-height: 180px
+						// height: 120%
+			li
+				width: 100%
+				// min-height: 335px
+				padding: 5px 10px
+				display: flex
+				flex-direction: column
+				align-items: space-between
+				&:before
+					top: 20px
+					left: 20px
+				&:nth-child(1),
+				&:nth-child(2),
+				&:nth-child(3) 
+					.eggs__icons 
+						margin-bottom: 18px
+				.eggs__icons
+					width: 80px
+					height: 80px
+					margin-bottom: 20px
+					z-index: 5
+				.eggs__text1
+					font: bold .9rem/1.2 $font
+					text-align: center
+					padding-bottom: 25px
+
 // xs for iphoneX
 @media (width: 375px) and (height: 812px)
 	#first
@@ -2912,6 +2983,53 @@ footer
 						margin-bottom: 18px
 
 
+
+	#eggs
+		.eggs__list
+			width: calc(100% + 30px)
+			margin-left: -15px
+			margin-top: -100px
+			.owl-stage
+				padding: 90px 0
+				.owl-item
+					&.active.center
+						transform: scale(1.1)
+						z-index: 999
+						box-shadow: 0px 0px 48px rgba(0, 0, 0, 0.28)
+						& + .owl-item.active + .owl-item
+							opacity: 0
+						li
+							transform: scale(1) !important
+					li
+						transform: scale(.9)!important
+						width: 190px
+						// width: 120%
+						min-height: 150px
+						// height: 120%
+			li
+				width: 100%
+				// min-height: 335px
+				padding: 5px 10px
+				display: flex
+				flex-direction: column
+				align-items: space-between
+				&:before
+					top: 20px
+					left: 20px
+				&:nth-child(1),
+				&:nth-child(2),
+				&:nth-child(3) 
+					.eggs__icons 
+						margin-bottom: 18px
+				.eggs__icons
+					width: 80px
+					height: 80px
+					margin-bottom: 20px
+					z-index: 5
+				.eggs__text1
+					font: bold .9rem/1.2 $font
+					text-align: center
+					padding-bottom: 25px
 
 // xs for iphone5
 @media (max-width: 374.98px)

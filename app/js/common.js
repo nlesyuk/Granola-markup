@@ -12,14 +12,11 @@ $('.scroll').bind('click.smoothscroll',function (e) {
 	});
 });
 
-		$("#slid").flipster({
-			// itemContainer: 'eggs__list',
-			// itemSelector: 'li',
-			style: 'carousel',
-			spacing: -0.5,
-			nav: true,
-			buttons: true,
-		});
+// 
+$(document).on('click', '.header__btn', function(){
+	window.location.href = window.location.href + 'order.html'
+})
+
 
 // MAIN PAGE
 var mainPage = document.getElementById('first')
@@ -70,7 +67,8 @@ if( mainPage ) {
 	// lg >992
 	if ( window.innerWidth > 992 ) {
 		// top paralax
-		// new Parallax(document.getElementById('scene'));
+		var scene = document.getElementById('scene');
+		var parallaxInstance = new Parallax(scene);
 	}
 	// md0 <992
 	if ( window.innerWidth < 992 ) {
@@ -134,74 +132,24 @@ if( mainPage ) {
 			
 			
 		// slider
-		// $('.eggs__list').addClass('owl-carousel');
-		// $('.eggs__list').owlCarousel({
-		// 	loop: true,
-		// 	nav: false,
-		// 	autoplay: false,
-		// 	autoWidth: true,
-		// 	center: true,
-		// 	autoplayTimeout: 99000,
-		// 	margin: 10,
-		// 	items: 1,
-		// 	dots: true,
-		// 	responsiveClass: true,
-		// 	responsive: {
-		// 		0: {
-		// 			stagePadding: 25,
-		// 			margin: 10
-		// 		},
-		// 		556: {
-		// 			stagePadding: 40
-		// 		},
-		// 		768: {
-		// 			//stagePadding: 100,
-		// 			stagePadding: 0
-		// 		},
-		// 		// breakpoint from 992 up
-		// 		992: {
-		// 			items: 1,
-		// 			margin: 30,
-		// 		}
-		// 	}
-		// });
-		// console.log('test')
-		// $(".eggs__list").flipster({
-		// 	itemContainer: 'eggs__list',
-		// 	itemSelector: 'li',
-		// 	start: 'center',
-		// });
-
-	} else if (window.innerWidth < 768) {
-		$('.eggs__list').addClass(' owl-carousel')
-		$('.eggs__list').owlCarousel({
-			loop: false,
-			nav: false,
-			autoplay: false,
-			autoplayTimeout: 99000,
-			margin: 20,
-			dots: true,
-			responsiveClass: true,
-			// items: 3,
-			responsive: {
-				0: {
-					items: 1,
-					stagePadding: 25,
-					margin: 10
-				},
-				556: {
-					items: 3,
-					stagePadding: 50,
-					margin: 5
-				},
-				992: {
-					items: 3
+		$('.eggs__list').addClass('owl-carousel');
+		$(".eggs__list").owlCarousel({
+			center: true,
+			autoWidth: true,
+			stagePadding: 0,
+			items:1,
+			loop:true,
+			margin:0,
+			responsive:{
+				0:{
+					items:1
 				}
 			}
 		});
+
+
 	}
-
-
+	
 }
 // SALE PAGE
 	$('.order__select select').on('click', function(e){
