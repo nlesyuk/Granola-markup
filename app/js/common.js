@@ -12,7 +12,7 @@ $('.scroll').bind('click.smoothscroll',function (e) {
 	});
 });
 
-// 
+// HEADER
 $(document).on('click', '.header__btn', function(){
 	window.location.href = window.location.href + 'order.html'
 })
@@ -64,11 +64,53 @@ if( mainPage ) {
 		}
 	});
 
+	// FOOD Menu
+		$('.food__set li').on('click', function(e){
+			$('.food__set li').removeClass('active')
+			$(this).addClass('active')
+			var item = $(this).data('item')
+
+			$('.food__item').removeClass('active')
+			$('.food__item[data-item='+item+']').addClass('active')
+		});
+		// days 
+		$(document).on('click','.food__item.active .food__days li', function(e){
+			$('.food__item.active .food__days li').removeClass('choosed')
+			$(this).addClass('choosed')
+			// days
+			var text = $(this).text()
+			console.log(text, parseInt(text))
+			var days = parseInt(text)
+			// change price
+			var currentPrice = (days * 450) + 'грн'
+			var oldPrice = ((days * 450) * 0.9) + 'грн'
+			$('.food__item.active .food__2price .old').text(oldPrice)
+			$('.food__item.active .food__2price .current').text(currentPrice)
+		});
+		// make order
+		$(document).on('click', '.food__item.active .food__btn-order', function(){
+			// get name
+			var food = $('.food__set li.active .food__text2').html()
+			food = removeElements(food, 'span')
+			
+			var days = $('.food__item.active .food__days li.choosed').text()
+			var oldPrice = $('.food__item.active .food__2price .old').text()
+			var currentPrice = $('.food__item.active .food__2price .current').text()
+			console.log(food, days, oldPrice, currentPrice)
+		});
+		function removeElements(text, tag) {
+			var wrapped = $("<div>" + text + "</div>");
+			wrapped.find(tag).remove();
+			return wrapped.html();
+		}
+
 	// lg >992
 	if ( window.innerWidth > 992 ) {
 		// top paralax
 		var scene = document.getElementById('scene');
 		var parallaxInstance = new Parallax(scene);
+	} else {
+		$('#scene').remove()
 	}
 	// md0 <992
 	if ( window.innerWidth < 992 ) {
@@ -151,6 +193,8 @@ if( mainPage ) {
 	}
 	
 }
+
+
 // SALE PAGE
 	$('.order__select select').on('click', function(e){
 		$('.order__select').toggleClass('opened')

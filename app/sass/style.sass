@@ -327,7 +327,8 @@ header
 						bottom: -25px
 						right: -50px
 						z-index: 2
-			&:first-child:hover
+			&:first-child:hover,
+			&:first-child.active
 				.food__cont
 					&::before
 						display: none
@@ -342,7 +343,8 @@ header
 						bottom: -25px
 						right: -50px
 						z-index: 2
-			&:last-child:hover
+			&:last-child:hover,
+			&:last-child.active
 				.food__cont
 					&::after
 						display: none
@@ -395,8 +397,11 @@ header
 		margin-bottom: 60px
 		.food__item
 			display: flex
+			display: none
 			justify-content: space-between
 			flex-wrap: wrap
+			&.active
+				display: flex
 			.food__subtitle
 				font: bold 1.25rem/1.2 $font
 				color: $green
@@ -567,7 +572,8 @@ header
 						// width: 80%
 						margin: 0 auto
 
-
+	.food__caltext
+		display: none
 	.food__detox
 		display: flex
 		justify-content: space-between
@@ -1464,7 +1470,7 @@ footer
 
 	#first
 		border-top: 110px solid white
-		background: url(../img/first__bg1.jpg) no-repeat center 70%/cover
+		background: url(../img/first__bg-md.jpg) no-repeat center 70%/cover
 		.first__title
 			flex-direction: column
 			.big
@@ -1776,7 +1782,6 @@ footer
 		.food__set
 			width: 200px
 			margin: 0 auto
-			display: flex
 			flex-direction: column
 			justify-content: space-between
 			margin-bottom: 0px
@@ -1895,7 +1900,6 @@ footer
 			border-radius: 11px
 			margin-bottom: 0px
 			.food__item
-				display: flex
 				height: 100%
 				justify-content: space-between
 				justify-content: center
