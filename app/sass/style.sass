@@ -1008,6 +1008,7 @@ footer
 				position: absolute
 				right: 13px
 				top: calc(50% - 8px)
+				pointer-events: none
 			select
 				cursor: pointer
 				margin-bottom: 0
@@ -1364,6 +1365,86 @@ footer
 	header 
 		padding: 0
 		height: auto
+		&.header__slick
+			// background: red
+			// top
+			.header__social
+				width: 60px
+				padding-right: 0
+				.header__social-list
+					li
+						margin-right: 6px
+						a
+							font: 300 .9rem/1.25 $font
+							span
+								display: none
+							svg
+								margin-right: 0
+			.header__smlang
+				width: 60px
+				&:before
+					right: 5px
+			.header__smtop
+				.header__info
+					display: flex
+					justify-content: flex-start
+					align-items: center
+					flex-direction: row
+					width: calc(100% -120px)
+					padding-bottom: 0px
+					.header__text1
+						display: block
+						width: 60px
+						box-sizing: border-box
+						font: 300 .9rem/1.25 $font
+						padding-left: 20px
+						margin-bottom: 0px
+						&.bottom
+							width: calc(100% - 60px)
+						svg
+							top: calc(50% - 6px)
+			// bottom
+			.header__smbottom
+				.header__info
+					display: none
+			.logo
+				width: 80px
+				min-width: 80px
+				margin-bottom: -80px
+				left: -15px
+				svg
+					width: 80px
+					height: 80px
+			.header__smcont
+				min-width: calc(100% - 80px)
+			.header__order
+				flex-direction: row
+				padding: 3px
+				margin-right: 0px
+				margin-bottom: 6px
+				&.without__btn
+					justify-content: center
+					.header__phone
+						width: auto
+						text-align: center
+				.header__phone
+					width: 50%
+					font: 600 .9rem/1.87 $font
+					white-space: nowrap
+					padding-left: 15px
+					margin-right: 0px
+					margin-left: 5px
+					svg 
+						width: 12px
+						top: calc(50% - 9px)
+						left: 0
+				.header__btn
+					width: 45%
+					padding: 8px
+					font: 600 .8rem/1.25 $font
+					transition: none
+
+
 		.header__container
 			max-width: 720px
 			margin: 0 auto
@@ -1380,6 +1461,8 @@ footer
 			justify-content: space-between
 			align-items: center
 			margin-bottom: 6px
+			.header__info
+				display: none
 		.header__social
 			padding: 6px
 			.header__social-list
@@ -1438,7 +1521,7 @@ footer
 
 		.header__smcont
 			width: auto
-			min-width: 60%
+			width: 60%
 		.header__order
 			padding: 3px
 			margin-right: 0px
@@ -2061,9 +2144,6 @@ footer
 
 
 
-
-
-
 	footer
 		padding: 40px 0 20px
 		&:before
@@ -2086,6 +2166,126 @@ footer
 							position: absolute
 							left: 0
 							top: calc(50% - 7px)
+
+
+
+	// OTHER PAGE
+	#order
+		padding: 60px 0
+		.order__steps
+			width: 90%
+			flex-wrap: wrap
+			margin-bottom: 18px
+			li
+				width: 260px
+				max-width: 100%
+				margin: 0 auto
+				position: relative
+				margin-bottom: 10px
+				img
+					width: 20px
+					margin-bottom: 0px
+					position: absolute
+					left: 0
+				p
+					font: bold 1rem/1.2 $font
+					text-align: left
+					padding-left: 30px
+		.title
+			margin-bottom: 25px
+		.order__form
+			width: 460px
+			max-width: 100%
+			margin: 0 auto
+			box-sizing: border-box
+			.order__select
+				margin-bottom: 10px
+				position: relative
+				&.opened::before
+					transform: rotateX(180deg)
+					top: calc(50% - 5px)
+				&::before
+					content: url(../img/arrow-down.svg)
+					position: absolute
+					right: 13px
+					top: calc(50% - 8px)
+					pointer-events: none
+				select
+					cursor: pointer
+					margin-bottom: 0
+			select,
+			input,
+			textarea
+				padding: 8px 13px
+				font: .9rem/1.2 $font
+				margin-bottom: 10px
+			.order__details
+				margin-bottom: 22px
+			.order__days
+				margin-bottom: 8px
+				li
+					width: 24%
+					padding: 9px
+					font: 1rem/1.2 $font
+					&:before
+						content: ''
+						width: 12px
+						height: 12px
+						position: absolute
+						top: calc(50% - 6px)
+						left: 10px
+			.order__cost
+				justify-content: space-between
+				.order__fullprice
+					padding: 8px 40px 8px 15px
+					.order__2price
+						font: bold 1.37rem/1.2 $font
+						margin-bottom: 4px
+						.old
+							display: inline-block
+							position: relative	
+							&::before
+								content: ''
+								width: 80px
+								height: 100%
+								background: url(../img/lines.svg) no-repeat center center/contain 
+								left: 0
+					.order__price-for-one
+						font: .75rem/1.2 $font
+					.order__promo
+						width: 37px
+						height: 30px
+						flex-direction: column
+						justify-content: center
+						align-items: center
+						font: .75rem/1 $font
+						transform: rotate(4.75deg)
+						right: 5px
+						top: auto
+						bottom: 0
+						span
+							font-size: 1rem
+						b 
+							display: none
+
+			.order__btncont
+				.order__btn-back
+					width: calc(40% - 5px)
+					padding: 13px 18px
+					svg
+						display: none
+						margin-right: 9px
+				.order__btn-order
+					width: calc(60% - 5px)
+
+
+
+
+
+
+
+
+
 
 
 // sm
@@ -2269,7 +2469,6 @@ footer
 			border-radius: 11px
 			margin-bottom: 0px
 			.food__item
-				display: flex
 				height: 100%
 				justify-content: space-between
 				justify-content: center
@@ -2713,7 +2912,6 @@ footer
 			border-radius: 11px 0 0 11px
 			margin-bottom: 0px
 			.food__item
-				display: flex
 				height: 100%
 				justify-content: space-between
 				justify-content: center
@@ -2875,6 +3073,122 @@ footer
 					text-align: center
 					padding-bottom: 25px
 
+
+
+	// OTHER PAGE
+	#order
+		border-top: 126px solid white
+		padding: 60px 0
+		.order__steps
+			width: 90%
+			flex-wrap: wrap
+			margin-bottom: 18px
+			li
+				width: 260px
+				max-width: 100%
+				margin: 0 auto
+				position: relative
+				margin-bottom: 10px
+				img
+					width: 20px
+					margin-bottom: 0px
+					position: absolute
+					left: 0
+				p
+					font: bold 1rem/1.2 $font
+					text-align: left
+					padding-left: 30px
+		.title
+			margin-bottom: 18px
+		.order__form
+			width: 460px
+			max-width: 100%
+			margin: 0 auto
+			box-sizing: border-box
+			.order__select
+				margin-bottom: 10px
+				position: relative
+				&.opened::before
+					transform: rotateX(180deg)
+					top: calc(50% - 5px)
+				&::before
+					content: url(../img/arrow-down.svg)
+					position: absolute
+					right: 13px
+					top: calc(50% - 8px)
+					pointer-events: none
+				select
+					cursor: pointer
+					margin-bottom: 0
+			select,
+			input,
+			textarea
+				padding: 8px 13px
+				font: .9rem/1.2 $font
+				margin-bottom: 10px
+			.order__details
+				margin-bottom: 22px
+
+			.order__days
+				margin-bottom: 8px
+				flex-wrap: wrap
+				li
+					width: calc(50% - 3px)
+					margin-bottom: 6px
+					padding: 9px
+					font: 1rem/1.2 $font
+					&:before
+						content: ''
+						width: 12px
+						height: 12px
+						position: absolute
+						top: calc(50% - 6px)
+						left: 10px
+
+			.order__cost
+				justify-content: space-between
+				.order__fullprice
+					padding: 4px 15px
+					.order__2price
+						font: bold 1.37rem/1.2 $font
+						margin-bottom: 4px
+						.old
+							display: inline-block
+							&::before
+								content: ''
+								width: 80px
+								height: 100%
+								background: url(../img/lines.svg) no-repeat center center/contain 
+								left: 0
+					.order__price-for-one
+						font: .75rem/1.2 $font
+					.order__promo
+						width: 37px
+						height: 30px
+						flex-direction: column
+						justify-content: center
+						align-items: center
+						font: .75rem/1 $font
+						transform: rotate(4.75deg)
+						right: 5px
+						top: auto
+						bottom: 0
+						span
+							font-size: 1rem
+						b 
+							display: none
+
+			.order__btncont
+				.order__btn-back
+					width: calc(40% - 0px)
+					padding: 13px 18px
+					svg
+						display: none
+						margin-right: 9px
+				.order__btn-order
+					width: calc(60% - 4px)
+
+
 // xs for iphoneX
 @media (width: 375px) and (height: 812px)
 	#first
@@ -2885,6 +3199,88 @@ footer
 
 
 @media (max-width: 400.98px)
+	header 
+		padding: 0
+		height: auto
+		&.header__slick
+			// top
+			.header__social
+				width: 60px
+				padding-right: 0
+				.header__social-list
+					li
+						margin-right: 6px
+						a
+							font: 300 .9rem/1.25 $font
+							span
+								display: none
+							svg
+								margin-right: 0
+			.header__smlang
+				width: 60px
+				&:before
+					right: 5px
+			.header__smtop
+				.header__info
+					display: flex
+					justify-content: flex-start
+					align-items: center
+					flex-direction: row
+					width: calc(100% -120px)
+					padding-bottom: 0px
+					.header__text1
+						display: block
+						width: 60px
+						box-sizing: border-box
+						font: 300 .9rem/1.25 $font
+						padding-left: 20px
+						margin-bottom: 0px
+						&.bottom
+							width: calc(100% - 60px)
+						svg
+							top: calc(50% - 6px)
+			// bottom
+			.header__smbottom
+				.header__info
+					display: none
+			.logo
+				width: 80px
+				min-width: 80px
+				margin-bottom: -80px
+				left: -15px
+				svg
+					width: 80px
+					height: 80px
+			.header__smcont
+				// min-width: auto
+				width: calc(100% + 0px)
+				left: -15px
+				flex-shrink: 0.75
+				position: relative
+			.header__order
+				flex-direction: row
+				padding: 3px
+				margin-right: 0px
+				margin-bottom: 6px
+				.header__phone
+					width: 50%
+					font: 600 .9rem/1.87 $font
+					white-space: nowrap
+					padding-left: 15px
+					margin-right: 0px
+					margin-left: 5px
+					svg 
+						width: 12px
+						top: calc(50% - 9px)
+						left: 0
+				.header__btn
+					width: 40%
+					padding: 8px 2px
+					font: 600 .8rem/1.25 $font
+					transition: none
+
+
+
 	#rev
 		padding-bottom: 60px
 		.title
@@ -3100,7 +3496,6 @@ footer
 			border-radius: 11px 0 0 11px
 			margin-bottom: 0px
 			.food__item
-				display: flex
 				height: 100%
 				justify-content: space-between
 				justify-content: center
@@ -3215,3 +3610,36 @@ footer
 							width: auto
 							margin: 0 auto
 
+// xs for iphone5
+@media (max-width: 354.98px)
+	header 
+		padding: 0
+		height: auto
+		&.header__slick
+			.header__smcont
+				// min-width: auto
+				width: calc(100% + 0px)
+				left: -15px
+				flex-shrink: 0.75
+				position: relative
+			.header__order
+				flex-direction: row
+				padding: 3px
+				margin-right: 0px
+				margin-bottom: 6px
+				.header__phone
+					width: 50%
+					font: 600 .8rem/1.87 $font
+					white-space: nowrap
+					padding-left: 10px
+					margin-right: 0px
+					margin-left: 5px
+					svg 
+						width: 12px
+						top: calc(50% - 9px)
+						left: -5px
+				.header__btn
+					width: 40%
+					padding: 7px 2px
+					font: 600 .7rem/1.25 $font
+					transition: none

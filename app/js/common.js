@@ -16,7 +16,16 @@ $('.scroll').bind('click.smoothscroll',function (e) {
 $(document).on('click', '.header__btn', function(){
 	window.location.href = window.location.href + 'order.html'
 })
+if( window.innerWidth < 992 ) {
+	$(window).on('scroll', function(){
 
+		if( window.pageYOffset > 100 ) {
+			$('header').addClass('header__slick')
+		} else {
+			$('header').removeClass('header__slick')
+		}
+	})
+}
 
 // MAIN PAGE
 var mainPage = document.getElementById('first')
@@ -82,27 +91,39 @@ if( mainPage ) {
 			console.log(text, parseInt(text))
 			var days = parseInt(text)
 			// change price
-			var currentPrice = (days * 450) + 'грн'
-			var oldPrice = ((days * 450) * 0.9) + 'грн'
+			var oldPrice = (days * 450) + 'грн'
+			var currentPrice = ((days * 450) * 0.9) + 'грн'
 			$('.food__item.active .food__2price .old').text(oldPrice)
 			$('.food__item.active .food__2price .current').text(currentPrice)
 		});
 		// make order
 		$(document).on('click', '.food__item.active .food__btn-order', function(){
 			// get name
-			var food = $('.food__set li.active .food__text2').html()
-			food = removeElements(food, 'span')
+			// var food = $('.food__set li.active .food__text2').html()
+			// food = removeElements(food, 'span')
+			var food = $('.food__set li.active').data('name')
 			
 			var days = $('.food__item.active .food__days li.choosed').text()
 			var oldPrice = $('.food__item.active .food__2price .old').text()
 			var currentPrice = $('.food__item.active .food__2price .current').text()
-			console.log(food, days, oldPrice, currentPrice)
+
+			// console.log(food, days, oldPrice, currentPrice)
+			var dataOrder = {
+				food: food,
+				days: days,
+				oldPrice: oldPrice,
+				currentPrice: currentPrice,
+			}
+			console.log(dataOrder)
+			var isOK = setOrderInLS(dataOrder)
+			if( isOK ) {
+				window.location.href = window.location.href + 'order.html'
+			} else {
+				alert('Something went wrong')
+			}
 		});
-		function removeElements(text, tag) {
-			var wrapped = $("<div>" + text + "</div>");
-			wrapped.find(tag).remove();
-			return wrapped.html();
-		}
+
+
 
 	// lg >992
 	if ( window.innerWidth > 992 ) {
@@ -112,7 +133,7 @@ if( mainPage ) {
 	} else {
 		$('#scene').remove()
 	}
-	// md0 <992
+	// md <992
 	if ( window.innerWidth < 992 ) {
 
 		$('.steps__step').addClass(' owl-carousel')
@@ -195,14 +216,15 @@ if( mainPage ) {
 }
 
 
-// SALE PAGE
+// ORDER PAGE
+var orderPage = document.getElementById('order')
+if( orderPage ) {
+
 	$('.order__select select').on('click', function(e){
 		$('.order__select').toggleClass('opened')
 	});
 	$('.order__select select').on('change', function(e){
 		var selected = $('option:selected', e.target)
-		console.log( selected.val() )
-
 		if( selected.val() === 'consultation' ) {
 			$('.order__details').removeClass('opened')
 		} else {
@@ -210,27 +232,122 @@ if( mainPage ) {
 		}
 	});
 
+	// btns
+	$('.order__btn-back').on('click', function(){
+		window.history.back()
+	})
+	// $('.order__btn-order').on('submit', function(e){
+	$('.order__form').on('submit', function(e){
+		e.preventDefault()
+		console.log( $( this ).serialize() );
 
+		var form = $(this);
+		var url = form.attr('action');
 
+		$.ajax({
+			type: 'POST',
+			url: url,
+			data: form.serialize(),
+			success: function(data) {
+				console.log(data)
+				alert('Заказ був відправлений! Дякуюємо!')
+				clearAfterSubmit()
+			},
+			fail: function(data) {
+				console.log(data)
+				alert('Щось поламалось або попробуйте почистити кеш і сробувати знову! Вибачте за незручність')
+			},
+		})
+	})
 
+	// select order
+	var order = getOrderFromLS('order')
+	if( order ) {
+		console.log(order)
+		$('.order__select select option[value='+order.food+']').attr('selected', true)
+		$('.order__details').addClass('opened')
 
+		// set days
+		var days = parseInt(order.days)
+		$('.order__days li').removeClass('choosed')
+		switch(days) {
+			case 1 :
+				$('.order__days li:nth-child(1)').addClass('choosed')
+				break
+			case 7 :
+				$('.order__days li:nth-child(2)').addClass('choosed')
+				break
+			case 20 :
+				$('.order__days li:nth-child(3)').addClass('choosed')
+				break
+			case 30 :
+				$('.order__days li:nth-child(4)').addClass('choosed')
+				break
+			default:
+				$('.order__days li:nth-child(1)').addClass('choosed')
+		}
+		// set price
+		$('.order__2price .old').text(order.oldPrice)
+		$('.order__2price .current').text(order.currentPrice)
+		// set inputs
+		$('.order__form input[name=price_old]').val(order.oldPrice)
+		$('.order__form input[name=price_current]').val(order.currentPrice)
+		$('.order__form input[name=days]').val(days)
+	}
 
+	// days 
+	$(document).on('click','.order__days li', function(e){
+		$('.order__days li').removeClass('choosed')
+		$(this).addClass('choosed')
+		// days
+		var text = $(this).text()
+		var days = parseInt(text)
+		// change price
+		var oldPrice = (days * 450) + 'грн'
+		var currentPrice = ((days * 450) * 0.9) + 'грн'
+		$('.order__2price .old').text(oldPrice)
+		$('.order__2price .current').text(currentPrice)
+		// set in inputs
+		$('.order__form input[name=price_old]').val(oldPrice)
+		$('.order__form input[name=price_current]').val(currentPrice)
+		$('.order__form input[name=days]').val(days)
+	});
 
+	$("input[name=phone]").mask("+38(099)999-99-99");
+}
 //end ready
 });
 
 
 
-
-
-
-
-
-
-
-
-
 // FUNCTION DECLARATIONS:
+	function removeElements(text, tag) {
+		var wrapped = $("<div>" + text + "</div>");
+		wrapped.find(tag).remove();
+		return wrapped.html();
+	}
+	function setOrderInLS(order) {
+		if( order ) {
+			var jsonOrder = JSON.stringify(order)
+			localStorage.setItem('order', jsonOrder);
+			return true
+		}
+		return false
+	}
+	function getOrderFromLS(key) {
+		if( key ) {
+			var jsonOrder = localStorage.getItem(key);
+			var order = JSON.parse(jsonOrder)
+			return order
+		}
+		return false
+	}
+	function clearAfterSubmit() {
+		localStorage.removeItem('order');
+		$('.order__form')[0].reset();
+		$('.order__details').removeClass('opened')
+		$('.order__select select').prop('selectedIndex',0)
+	}
 	// cookie
 	function setCookie(cname, cvalue, exdays) {
 		var d = new Date();

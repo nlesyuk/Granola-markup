@@ -74,6 +74,8 @@
 
 <body>
 
+
+
 	<header>
 		<div class="header__container d-none d-lg-flex">
 
@@ -254,7 +256,7 @@
 					</svg>
 					+38 066 727-71-55
 				</a>
-				<button class="header__btn" type="button">Хочу Спробувати</button>
+				<!-- <button class="header__btn" type="button">Хочу Спробувати</button> -->
 			</div>
 
 			<div class="header__social">
@@ -292,7 +294,7 @@
 									</linearGradient>
 								</defs>
 							</svg>
-							Instagram
+							<span>Instagram</span>
 						</a></li>
 					<li><a href="//www.facebook.com/granola.kiev.ua" target="_blank">
 							<svg width="19" height="19" viewBox="0 0 19 19" fill="none"
@@ -311,7 +313,7 @@
 									</clipPath>
 								</defs>
 							</svg>
-							Facebook
+							<span>Facebook</span>
 						</a></li>
 				</ul>
 			</div>
@@ -361,7 +363,7 @@
 											</linearGradient>
 										</defs>
 									</svg>
-									Instagram
+									<span>Instagram</span>
 								</a></li>
 							<li><a href="//www.facebook.com/granola.kiev.ua" target="_blank">
 									<svg width="19" height="19" viewBox="0 0 19 19" fill="none"
@@ -380,9 +382,32 @@
 											</clipPath>
 										</defs>
 									</svg>
-									Facebook
+									<span>Facebook</span>
 								</a></li>
 						</ul>
+					</div>
+
+					<div class="header__info">
+						<p class="header__text1">
+							<svg width="12" height="13" viewBox="0 0 12 13" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M6.77856 8.73491L8.65113 5.27809C8.92755 4.75881 9.07375 4.1714 9.07375 3.57897C9.07377 1.60551 7.49085 0 5.54509 0C3.59933 0 2.01641 1.60551 2.01641 3.57897C2.01641 4.1714 2.16263 4.75881 2.44002 5.27958L4.31167 8.73489C2.65904 8.84127 0 9.20973 0 10.4813C0 12.2206 4.97748 12.2708 5.54509 12.2708C6.1127 12.2708 11.0902 12.2206 11.0902 10.4813C11.0902 9.20973 8.43119 8.8413 6.77856 8.73491ZM3.5287 3.57897C3.5287 2.45131 4.43327 1.53385 5.54509 1.53385C6.65691 1.53385 7.56148 2.45131 7.56148 3.57897C7.56148 4.70664 6.65691 5.6241 5.54509 5.6241C4.43327 5.6241 3.5287 4.70664 3.5287 3.57897ZM5.54509 11.2482C3.0667 11.2482 1.44141 10.7886 1.06064 10.4813C1.4044 10.2038 2.76511 9.80343 4.8496 9.72801L5.32432 10.6044C5.36839 10.6863 5.45305 10.7369 5.54511 10.7369C5.63717 10.7369 5.72184 10.6862 5.76591 10.6044L6.24065 9.72801C8.32511 9.80343 9.6858 10.2038 10.0296 10.4813C9.64877 10.7886 8.02348 11.2482 5.54509 11.2482Z"
+									fill="#403736" />
+							</svg>
+							<b>Київ</b></p>
+
+						<p class="header__text1 bottom">
+							<svg width="13" height="13" viewBox="0 0 13 13" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M12.974 5.56499C12.9289 5.46901 12.8327 5.40761 12.7262 5.40761H11.9166C11.4019 2.61433 8.94907 0.490947 6.00919 0.490947C2.69592 0.490947 0 3.18687 0 6.50014C0 9.81341 2.69564 12.5091 6.00919 12.5091C8.14751 12.5091 10.1417 11.3582 11.2135 9.50612C11.3645 9.24474 11.2755 8.9109 11.0138 8.7596C10.7527 8.60831 10.4186 8.69737 10.2678 8.95875C9.3905 10.4747 7.75862 11.4168 6.00919 11.4168C3.29833 11.4168 1.09253 9.21127 1.09253 6.50069C1.09253 3.78956 3.29833 1.58403 6.00919 1.58403C8.34416 1.58403 10.3005 3.22172 10.7989 5.40789H9.99568C9.88919 5.40789 9.79322 5.46929 9.74786 5.56526C9.70277 5.66124 9.71743 5.77437 9.78547 5.85596L11.1513 7.49476C11.2033 7.55699 11.2799 7.59295 11.3612 7.59295C11.4422 7.59295 11.5191 7.55671 11.5709 7.49476L12.9367 5.85596C13.0047 5.77409 13.0191 5.66096 12.974 5.56499Z"
+									fill="#403736" />
+								<path
+									d="M6.00912 1.85675C5.70736 1.85675 5.46285 2.10125 5.46285 2.40301V5.71767C5.21586 5.89081 5.05322 6.17625 5.05322 6.50042C5.05322 7.0276 5.48221 7.45659 6.00939 7.45659C6.15377 7.45659 6.28986 7.42201 6.41266 7.36421L8.31283 8.46089C8.39913 8.51095 8.49262 8.53446 8.58555 8.53446C8.77418 8.53446 8.95784 8.43654 9.05907 8.26119C9.20981 8.00036 9.12047 7.66597 8.85882 7.51522L6.95671 6.41689C6.93127 6.12813 6.78108 5.87588 6.55593 5.71822V2.40301C6.55538 2.10153 6.3106 1.85675 6.00912 1.85675ZM6.00912 6.90977C5.78314 6.90977 5.59949 6.72584 5.59949 6.50042C5.59949 6.27472 5.78342 6.09079 6.00912 6.09079C6.23481 6.09079 6.41875 6.27472 6.41875 6.50042C6.41875 6.72584 6.23481 6.90977 6.00912 6.90977Z"
+									fill="#403736" />
+							</svg>
+							пн.-пт. <b>9:00-20:00</b></p>
 					</div>
 
 					<div class="header__smlang">
@@ -583,7 +608,6 @@
 	</header>
 
 
-
 	<section id="first">
 		<div class="container">
 			<div class="row">
@@ -693,7 +717,7 @@
 					<div class="food__globalcont">
 
 						<ul class="food__set">
-							<li class="active" data-item="1">
+							<li class="active" data-item="1" data-name="max-light">
 								<p class="food__text1" data-count="1">Варіант № 1</p>
 								<img src="img/food__set1.svg" alt="" class="food__img" loading="lazy">
 								<p class="food__text2"><span>Раціон “</span>Max Light<span>”</span></p>
@@ -702,9 +726,8 @@
 									<div class="food__price">від 490грн <span>на день</span></div>
 								</div>
 							</li>
-							<li data-item="2">
+							<li data-item="2" data-name="light">
 								<p class="food__text1" data-count="2">Варіант № 2</p>
-								<!-- <img src="img/food__set2-sm.svg" alt="" class="food__img d-block d-lg-none" loading="lazy"> -->
 								<img src="img/food__set2.svg" alt="" class="food__img d-none1 d-lg-block"
 									loading="lazy">
 								<p class="food__text2"><span>Раціон “</span>Light<span>”</span></p>
@@ -713,7 +736,7 @@
 									<div class="food__price">від 490грн <span>на день</span></div>
 								</div>
 							</li>
-							<li data-item="3">
+							<li data-item="3" data-name="every-day">
 								<p class="food__text1" data-count="3">Варіант № 3</p>
 								<img src="img/food__set3.svg" alt="" class="food__img" loading="lazy">
 								<p class="food__text2"><span>Раціон “</span>На кожен день<span>”</span></p>
@@ -722,7 +745,7 @@
 									<div class="food__price">від 490грн <span>на день</span></div>
 								</div>
 							</li>
-							<li data-item="4">
+							<li data-item="4" data-name="individual">
 								<p class="food__text1" data-count="4">Варіант № 4</p>
 								<img src="img/food__set4.svg" alt="" class="food__img" loading="lazy">
 								<p class="food__text2"><span>Раціон “</span>Інвідуальний<span>”</span></p>
@@ -731,7 +754,7 @@
 									<div class="food__price">від 490грн <span>на день</span></div>
 								</div>
 							</li>
-							<li data-item="5">
+							<li data-item="5" data-name="vegan">
 								<p class="food__text1" data-count="5">Варіант № 5</p>
 								<img src="img/food__set5.svg" alt="" class="food__img" loading="lazy">
 								<p class="food__text2"><span>Раціон “</span>Vegan<span>”</span></p>
@@ -761,8 +784,8 @@
 									<h5 class="food__subtitle black">Розрахунок ціни</h5>
 									<ul class="food__days">
 										<li>1 день</li>
-										<li>7 днів</li>
-										<li class="choosed">20 днів</li>
+										<li class="choosed">7 днів</li>
+										<li>20 днів</li>
 										<li>30 днів</li>
 									</ul>
 									<div class="food__cost">
@@ -833,8 +856,8 @@
 									<h5 class="food__subtitle black">Розрахунок ціни</h5>
 									<ul class="food__days">
 										<li>1 день</li>
-										<li>7 днів</li>
-										<li class="choosed">20 днів</li>
+										<li class="choosed">7 днів</li>
+										<li>20 днів</li>
 										<li>30 днів</li>
 									</ul>
 									<div class="food__cost">
@@ -905,8 +928,8 @@
 									<h5 class="food__subtitle black">Розрахунок ціни</h5>
 									<ul class="food__days">
 										<li>1 день</li>
-										<li>7 днів</li>
-										<li class="choosed">20 днів</li>
+										<li class="choosed">7 днів</li>
+										<li>20 днів</li>
 										<li>30 днів</li>
 									</ul>
 									<div class="food__cost">
@@ -977,8 +1000,8 @@
 									<h5 class="food__subtitle black">Розрахунок ціни</h5>
 									<ul class="food__days">
 										<li>1 день</li>
-										<li>7 днів</li>
-										<li class="choosed">20 днів</li>
+										<li class="choosed">7 днів</li>
+										<li>20 днів</li=>
 										<li>30 днів</li>
 									</ul>
 									<div class="food__cost">
@@ -1049,8 +1072,8 @@
 									<h5 class="food__subtitle black">Розрахунок ціни</h5>
 									<ul class="food__days">
 										<li>1 день</li>
-										<li>7 днів</li>
-										<li class="choosed">20 днів</li>
+										<li class="choosed">7 днів</li>
+										<li>20 днів</li>
 										<li>30 днів</li>
 									</ul>
 									<div class="food__cost">
