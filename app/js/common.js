@@ -38,7 +38,7 @@ if( mainPage ) {
 		smartSpeed:450,
 		loop: false,
 		nav: false,
-		autoplay: true,
+		autoplay: false,
 		autoplayHoverPause: true,
 		autoplayTimeout: 3000,
 		margin: 0,
@@ -63,8 +63,12 @@ if( mainPage ) {
 				stagePadding: 25,
 				margin: 10
 			},
-			556: {
+			578: {
 				items: 1,
+				stagePadding: 50
+			},
+			768: {
+				items: 2,
 				stagePadding: 50
 			},
 			992: {
@@ -136,31 +140,7 @@ if( mainPage ) {
 	// md <992
 	if ( window.innerWidth < 992 ) {
 
-		$('.steps__step').addClass(' owl-carousel')
-		$('.steps__step').owlCarousel({
-			loop: false,
-			nav: false,
-			autoplay: false,
-			autoplayTimeout: 99000,
-			margin: 20,
-			dots: true,
-			responsiveClass: true,
-			// items: 3,
-			responsive: {
-				0: {
-					items: 1,
-					stagePadding: 25,
-					margin: 10
-				},
-				556: {
-					items: 1,
-					stagePadding: 50
-				},
-				992: {
-					items: 3
-				}
-			}
-		});
+
 
 		$('.food__products li:first-child').remove()
 		$('.food__products').addClass('owl-carousel')
@@ -193,6 +173,11 @@ if( mainPage ) {
 			}
 		});
 			
+
+
+	}
+	// md < 768
+	if ( window.innerWidth <= 768 ) {
 			
 		// slider
 		$('.eggs__list').addClass('owl-carousel');
@@ -210,7 +195,31 @@ if( mainPage ) {
 			}
 		});
 
-
+		$('.steps__step').addClass(' owl-carousel')
+		$('.steps__step').owlCarousel({
+			loop: false,
+			nav: false,
+			autoplay: false,
+			autoplayTimeout: 99000,
+			margin: 20,
+			dots: true,
+			responsiveClass: true,
+			// items: 3,
+			responsive: {
+				0: {
+					items: 1,
+					stagePadding: 25,
+					margin: 10
+				},
+				556: {
+					items: 1,
+					stagePadding: 50
+				},
+				992: {
+					// items: 3
+				}
+			}
+		});
 	}
 	
 }
@@ -220,9 +229,15 @@ if( mainPage ) {
 var orderPage = document.getElementById('order')
 if( orderPage ) {
 
-	$('.order__select select').on('click', function(e){
-		$('.order__select').toggleClass('opened')
+	$(document).on('click', function(e){
+		console.log(e.target.tagName)
+		if( e.target.tagName === 'SELECT') {
+			$('.order__select').toggleClass('opened')
+		} else {
+			$('.order__select').removeClass('opened')
+		}
 	});
+
 	$('.order__select select').on('change', function(e){
 		var selected = $('option:selected', e.target)
 		if( selected.val() === 'consultation' ) {
@@ -255,7 +270,7 @@ if( orderPage ) {
 			},
 			fail: function(data) {
 				console.log(data)
-				alert('Щось поламалось або попробуйте почистити кеш і сробувати знову! Вибачте за незручність')
+				alert('Щось поламалось або попробуйте почистити кеш і спробувати знову! Вибачте за незручність')
 			},
 		})
 	})

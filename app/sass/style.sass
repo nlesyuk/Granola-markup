@@ -43,12 +43,14 @@ section,header,footer
 
 header 
 	padding: 27px 0
+	padding: 16px 0
 	background: white
 	position: fixed
 	border: 1px solid #E4E4E4
 	z-index: 101
 	.header__container
 		max-width: 1500px
+		// max-width: 100%
 		margin: 0 auto
 		padding: 0 15px
 		margin-right: auto
@@ -58,10 +60,12 @@ header
 		justify-content: space-between
 	.logo
 		display: block
+		margin-top: -10px
 		margin-bottom: -80px
 		svg
-			width: 150px
-			height: 150px
+			width: 140px
+			height: 140px
+			box-shadow: -14px 14px 29px rgba(166, 94, 21, 0.2)
 	.header__info
 		display: flex
 		flex-direction: column
@@ -88,6 +92,8 @@ header
 		background: #F6F6F6
 		border-radius: 6px
 		padding: 15px 18px
+		&.without__btn
+			padding: 12px 50px
 		.header__phone
 			font: 600 1.3rem/1.87 $font
 			text-decoration: none
@@ -114,6 +120,9 @@ header
 			&:hover
 				background: $greenH
 	.header__social
+		display: flex
+		flex-direction: column
+		justify-content: center
 		.header__text2
 			font: bold .9rem/1.25 $font
 			color: $grey3
@@ -177,7 +186,7 @@ header
 
 
 #first
-	border-top: 126px solid white
+	border-top: 100px solid white
 	background: url(../img/first__bg1.jpg) no-repeat center 70%/cover
 	min-height: 100vh
 	padding: 80px 0
@@ -288,6 +297,10 @@ header
 			position: relative
 			z-index: 10
 			cursor: pointer
+			&.active
+				.food__text1,
+				.food__text2
+					color: $green2
 			&.active,
 			&:hover
 				opacity: 1
@@ -363,6 +376,8 @@ header
 			text-align: center
 			color: $grey4
 			margin-bottom: 8px
+			b
+				font-size: 90%
 		.food__cont
 			display: flex
 			justify-content: space-between
@@ -389,6 +404,7 @@ header
 		width: calc(100% + 36px)
 		margin-left: -18px
 		padding: 30px 40px
+		padding: 14px
 		background: #FFFFFF
 		border: 4px solid $green2
 		box-sizing: border-box
@@ -556,6 +572,7 @@ header
 							display: block
 							width: 90%
 					.food__text2
+						width: 80%
 						// background: red
 						min-height: 50px
 						font: bold .9rem/1.2 $font
@@ -669,8 +686,8 @@ header
 			justify-content: flex-start
 			align-items: center
 			position: absolute
-			bottom: 20px
-			left: 40%
+			bottom: 10px
+			left: 35%
 			button
 				display: block
 				width: 18px
@@ -709,7 +726,7 @@ header
 		.stars__cont
 			width: 70%
 			padding: 37px 250px 37px 87px
-			background: url(../img/stars__icon1.svg) no-repeat right center/contain
+			background: url(../img/stars__icon1.svg) no-repeat 120% center/contain
 			.stars__title
 				font: bold 1.5rem/1.2 $font
 				color: $grey
@@ -822,7 +839,7 @@ header
 			justify-content: space-between
 			justify-content: center
 			position: absolute
-			bottom: -20px
+			bottom: 0px
 			left: calc(50% - 100px)
 			button
 				width: 18px
@@ -910,8 +927,17 @@ header
 
 #team
 	padding: 28px 0
-	background: url(../img/team__peaple.jpg) no-repeat center right/contain
-	// .title
+	position: relative
+	// background: url(../img/team__peaple.jpg) no-repeat center right/contain
+	&::before
+		content: ''
+		display: block
+		width: 50%
+		background: url(../img/team__peaple.jpg) no-repeat center right/cover
+		position: absolute
+		right: 0
+		top: 0
+		bottom: 0
 	.team__text1
 		font: 600 1rem/1.4 $font
 		color: $grey2
@@ -928,6 +954,7 @@ header
 	.title
 		text-align: center
 		margin-bottom: 30px
+
 		a
 			text-decoration: none
 			color: $green2
@@ -937,6 +964,13 @@ header
 		width: 100%
 		display: flex
 		justify-content: space-between
+		position: relative
+		&:before
+			content: url(../img/instagram-icon-lg.svg)
+			position: absolute
+			left: -110px
+			top: -110px
+			z-index: -1
 		li
 			margin-right: 8px
 			&:last-child
@@ -971,6 +1005,7 @@ footer
 // OTHER PAGE
 #order
 	border-top: 126px solid white
+	border-top: 95px solid white
 	min-height: 100vh
 	background: url(../img/order__bg.jpg) no-repeat center center/cover #f0f1f5
 	padding: 60px 0
@@ -1002,12 +1037,13 @@ footer
 			position: relative
 			&.opened::before
 				transform: rotateX(180deg)
-				top: calc(50% - 5px)
+				top: calc(50% - 4px)
 			&::before
 				content: url(../img/arrow-down.svg)
 				position: absolute
 				right: 13px
 				top: calc(50% - 8px)
+				top: calc(50% - 10px)
 				pointer-events: none
 			select
 				cursor: pointer
@@ -1155,25 +1191,39 @@ footer
 	header 
 		padding: 16px 0
 		.header__container
-			max-width: 1140px
+			// max-width: 1140px
+			// max-width: 1240px
+			max-width: 90%
+			max-width: 100%
 			margin: 0 auto
 		.logo
 			display: block
+			margin-top: 0px
 			margin-bottom: -80px
 			svg
 				width: 120px
 				height: 120px
 		.header__info
-			width: 32%
+			width: 37%
 			.header__text1
 				font: 300 .9rem/1.25 $font
 				padding-left: 30px
 				margin-bottom: 5px
+				margin-bottom: 10px
 				svg
 					top: calc(50% - 10px)
 		.header__order
-			padding: 5px 15px
+			padding: 15px
 			margin-right: 6px
+			&.without__btn
+				padding: 12px 30px
+				.header__phone
+					font: 600 1.2rem/1.87 $font
+					padding-left: 20px
+					svg 
+						width: 15px
+						top: calc(50% - 8px)
+						left: 0
 			.header__phone
 				font: 600 .9rem/1.87 $font
 				white-space: nowrap
@@ -1188,16 +1238,21 @@ footer
 				padding: 11px
 				font: 600 .8rem/1.25 $font
 		.header__social
+			display: flex
+			flex-direction: column
+			// align-items: center
+			justify-content: center
 			.header__text2
 				font: bold .9rem/1.25 $font
-				margin-bottom: 4px
+				margin-bottom: 8px
 			.header__social-list
 				flex-wrap: wrap
 				align-items: center
 				li
-					width: 100%
-					margin-right: 0px
+					width: calc(50% - 4px)
+					margin-right: 8px
 					margin-bottom: 8px
+					margin-bottom: 0px
 					&:last-child
 						margin-bottom: 0
 					a
@@ -1206,14 +1261,24 @@ footer
 						text-align: left
 						svg
 							margin-right: 6px
+						&.insta
+							svg
+								width: 24px
+								height: 24px
+						&.fb
+							svg
+								width: 19px
+								height: 19px
 		.header__lang
 			width: 43px
+			height: 74px
 			.header__btn-lang
 				font: bold .9rem/1.25 $font
 
 
 	#first
-		border-top: 110px solid white
+		border-top: 105px solid white
+		border-top: 95px solid white
 		background: url(../img/first__bg1.jpg) no-repeat center 70%/cover
 		padding: 80px 0
 		.first__title
@@ -1252,9 +1317,10 @@ footer
 	#stars
 		#stars__slider
 			.owl-dots
+				width: 120px
 				align-items: center
-				bottom: 20px
-				left: 50%
+				bottom: 35px
+				left: 45.8%
 		.stars__item
 			.stars__ava
 				width: 40%
@@ -1269,13 +1335,21 @@ footer
 
 
 	#team
-		background: url(../img/team__peaple1500.jpg) no-repeat center right/contain
-
+		&::before
+			content: ''
+			display: block
+			width: 49%
+			background: url(../img/team__peaple.jpg) no-repeat center right/cover
+			position: absolute
+			right: 0
+			top: 0
+			bottom: 0
 @media (max-width: 1200.98px)
 	header 
 		padding: 8px 0
 		.header__container
 			max-width: 960px
+			max-width: 100%
 			margin: 0 auto
 		.logo
 			display: block
@@ -1295,8 +1369,17 @@ footer
 			padding: 5px 15px 10px
 			margin-right: 6px
 			flex-direction: column
+			&.without__btn
+				padding: 12px 25px
+				justify-content: center
+				.header__phone
+					font: 600 1.2rem/1.87 $font
+					padding-left: 20px
+					svg 
+						width: 15px
+						top: calc(50% - 8px)
 			.header__phone
-				font: 600 .9rem/1.87 $font
+				font: 600 1rem/1.87 $font
 				white-space: nowrap
 				padding-left: 15px
 				margin-right: 15px
@@ -1306,7 +1389,7 @@ footer
 					left: 0
 			.header__btn
 				width: 100%
-				padding: 11px
+				padding: 8px 11px
 				font: 600 .8rem/1.25 $font
 		.header__social
 			.header__text2
@@ -1316,9 +1399,9 @@ footer
 				flex-wrap: wrap
 				align-items: center
 				li
-					width: 100%
-					margin-right: 0px
-					margin-bottom: 8px
+					// width: 100%
+					// margin-right: 0px
+					// margin-bottom: 8px
 					&:last-child
 						margin-bottom: 0
 					a
@@ -1327,6 +1410,7 @@ footer
 						text-align: left
 						svg
 							margin-right: 6px
+
 		.header__lang
 			width: 53px
 			.header__btn-lang
@@ -1409,12 +1493,16 @@ footer
 					display: none
 			.logo
 				width: 80px
-				min-width: 80px
+				// width: 62px
+				// min-width: 80px
 				margin-bottom: -80px
 				left: -15px
+				left: -8px
 				svg
 					width: 80px
+					width: 62px
 					height: 80px
+					height: 62px
 			.header__smcont
 				min-width: calc(100% - 80px)
 			.header__order
@@ -1447,6 +1535,7 @@ footer
 
 		.header__container
 			max-width: 720px
+			max-width: 100%
 			margin: 0 auto
 		// sm
 		.header__mobile
@@ -1515,13 +1604,16 @@ footer
 			margin-bottom: -80px
 			position: relative
 			left: -15px
+			left: -8px
 			svg
 				width: 135px
+				width: 121px
 				height: 135px
+				height: 121px
 
 		.header__smcont
 			width: auto
-			width: 60%
+			width: 100%
 		.header__order
 			padding: 3px
 			margin-right: 0px
@@ -1542,13 +1634,21 @@ footer
 
 		.header__info
 			width: 100%
+			width: auto
 			padding-bottom: 5px
+			display: flex
+			flex-direction: row
+			justify-content: space-around
 			.header__text1
+				display: block
+				width: 200px
+				width: auto
 				font: 300 .8rem/1.25 $font
 				padding-left: 20px
 				margin-bottom: 5px
 				svg
 					top: calc(50% - 8px)
+
 
 
 	#first
@@ -1575,13 +1675,11 @@ footer
 
 
 
-
-
 	#stars
 		#stars__slider
 			.owl-dots
 				align-items: center
-				bottom: 10px
+				bottom: 20px
 				left: calc(50% - 50px)
 		.stars__item
 			flex-wrap: wrap
@@ -1596,6 +1694,7 @@ footer
 				.stars__text1
 					width: 100%
 					font: 1rem/1.2 $font
+					padding-bottom: 40px
 
 
 
@@ -1669,6 +1768,7 @@ footer
 						font: bold 3.37rem/1.2 $font
 
 
+	
 
 	#rev
 		padding-bottom: 60px
@@ -1680,9 +1780,11 @@ footer
 				padding-left: 0 !important
 			.owl-dots
 				width: 200px
+				width: 100%
 				position: absolute
 				bottom: -20px
 				left: calc(50% - 100px)
+				left: 0
 
 			.rev__item
 				padding-bottom: 36px
@@ -1717,6 +1819,8 @@ footer
 	#team
 		padding: 28px 0
 		background: transparent
+		&::before
+			display: none
 		.team__peaple
 			display: block
 			max-width: 100%
@@ -1748,6 +1852,7 @@ footer
 			justify-content: space-between
 			li 
 				width: 100%
+				width: 32%
 				counter-increment: mylist
 				position: relative
 				&.last
@@ -1755,8 +1860,9 @@ footer
 						display: none
 				&:after
 					content: url(../img/arrow-right.svg)
-					top: 30px
-					right: -16%
+					top: -10px
+					transform: scale(.5)
+					right: -100px
 				&:nth-child(2)
 					.steps__conimg::before
 						left: 30px
@@ -1766,14 +1872,14 @@ footer
 					.steps__conimg::before
 						left: 1px
 				.steps__conimg
-					min-height: 200px
+					min-height: 100px
 					flex-direction: column
 					align-items: center
 					justify-content: flex-end
 					margin-bottom: -18px
 					&:before
 						content: attr(data-item)
-						font: bold 7.5rem/1 $font
+						font: bold 5.5rem/1 $font
 						left: 40px
 						bottom: -12px
 					.steps__icon 
@@ -1788,16 +1894,18 @@ footer
 							width: 30%
 				.steps__text1 
 					min-height: 250px
-					padding: 43px 27px 
+					padding: 23px 16px 
 					font: .9rem/1.2 $font
 					span
 						font-size: 1.125rem
 						margin-bottom: 18px
 
 
+
 	#eggs
 		.eggs__list
 			margin-top: -115px
+			// margin-bottom: 50px
 			.owl-stage
 				padding: 90px 0
 				.owl-item
@@ -1812,13 +1920,11 @@ footer
 					li
 						transform: scale(.8)!important
 						width: 220px
-						// width: 120%
 						min-height: 220px
-						// height: 120%
 			li
 				width: 100%
-				// min-height: 335px
-				padding: 5px 10px
+				width: 32%
+				padding: 5px 5px
 				display: flex
 				flex-direction: column
 				align-items: space-between
@@ -1842,7 +1948,7 @@ footer
 
 
 		.eggs__text2
-			margin-top: -50px
+			margin-top: -10px
 			display: flex
 			flex-wrap: wrap
 			justify-content: center
@@ -1876,19 +1982,23 @@ footer
 				opacity: 1
 				z-index: 10
 				margin-bottom: 8px
+				&.active
+					.food__text1,
+					.food__text2
+						color: transparent
 				&.active,
 				&:hover
 					&::before
 						content: ''
 						display: block
-						background: red
 						background: white
 						box-shadow: 0px 0px 0px 0px white
-						border-radius: 0
+						border-radius: 10px 0 0 10px
 						position: absolute
 						top: 0px
 						left: 0px
 						right: -5px
+						right: -9px
 						bottom: 0px
 						z-index: -1
 					.food__text2
@@ -1900,26 +2010,29 @@ footer
 							background: url(../img/mount.svg) no-repeat center center/contain
 							transform: rotateY(-180deg)
 							top: -50px
-							right: -12px
+							right: -13px
 							left: auto
 						&::after
 							content: ''
 							background: url(../img/mount.svg) no-repeat center center/contain
 							transform: rotate(180deg)
 							bottom: -50px
-							right: -12px
-				&:first-child:hover
+							right: -13px
+				&:first-child:hover,
+				&.active:first-child
 					.food__cont
 						&::after
 							content: ''
 							background: url(../img/mount.svg) no-repeat center center/contain
 							transform: rotate(180deg)
 							bottom: -50px
-							right: -12px
-				&:last-child:hover
+							right: -13px
+				&:last-child:hover,
+				&.active:last-child
 					.food__cont
 						&::after
 							display: none
+
 			.food__text1
 				width: 1px
 				height: 1px
@@ -1982,6 +2095,8 @@ footer
 			box-shadow: 0px 4px 65px rgba(0, 0, 0, 0.06)
 			border-radius: 11px
 			margin-bottom: 0px
+			position: relative
+			top: -4px
 			.food__item
 				height: 100%
 				justify-content: space-between
@@ -2083,6 +2198,66 @@ footer
 							&:hover
 								transition: all .25s
 								background: $greenH
+				
+				.food__prices
+					width: 100%
+					padding: 7px 8px
+					margin-bottom: 16px
+					.food__subtitle
+						margin-bottom: 16px
+					.food__days
+						flex-wrap: wrap
+						margin-bottom: 6px
+						li
+							width: calc(50% - 3px)
+							margin-bottom: 4px
+							padding: 9px
+					.food__cost
+						flex-wrap: wrap
+						.food__fullprice
+							width: calc(100% - 50px)
+							padding: 8px 40px 8px 15px
+							margin-bottom: 10px
+							.food__2price
+								font: bold 1.37rem/1.2 $font
+								margin-bottom: 4px
+								.old
+									display: inline-block
+									color: #979391
+									position: relative	
+									&::before
+										content: ''
+										display: block
+										width: 80px
+										height: 100%
+										background: url(../img/lines.svg) no-repeat center center/contain 
+										position: absolute
+										left: 0
+							.food__price-for-one
+								font: .75rem/1.2 $font
+								text-align: center
+							.food__promo
+								display: none
+								width: 70px
+								height: 60px
+								flex-direction: column
+								justify-content: center
+								align-items: center
+								font: .75rem/1 $font
+								transform: rotate(4.75deg)
+								position: absolute
+								right: -45px
+								top: 0
+								&.active
+									display: flex
+								span
+									display: block
+									font-size: 1.3rem
+									font-weight: bold
+						.food__btn-order
+							width: 100%
+							padding: 10px
+							font: bold .75rem/1.2 $font
 
 				.food__contb
 					max-width: 100%
@@ -2140,7 +2315,6 @@ footer
 				max-width: 100%
 			.food__text3
 				text-align: center
-
 
 
 
@@ -2208,7 +2382,6 @@ footer
 					content: url(../img/arrow-down.svg)
 					position: absolute
 					right: 13px
-					top: calc(50% - 8px)
 					pointer-events: none
 				select
 					cursor: pointer
@@ -2280,14 +2453,6 @@ footer
 
 
 
-
-
-
-
-
-
-
-
 // sm
 @media (max-width: 768.98px)
 	header 
@@ -2321,6 +2486,9 @@ footer
 			display: flex
 			justify-content: space-between
 			flex-wrap: wrap
+			position: relative
+			&:before
+				display: none
 			li
 				width: calc(50% - 4px)
 				margin-right: 0px
@@ -2365,15 +2533,7 @@ footer
 					&::before
 						content: ''
 						display: block
-						background: red
-						background: white
-						box-shadow: 0px 0px 0px 0px white
-						border-radius: 0
-						position: absolute
-						top: 0px
-						left: 0px
-						right: -5px
-						bottom: 0px
+						// border-radius: 0
 						z-index: -1
 					.food__text2
 						font: bold 1rem/1.2 $font
@@ -2381,30 +2541,20 @@ footer
 					.food__cont
 						&::before
 							content: ''
-							background: url(../img/mount.svg) no-repeat center center/contain
 							transform: rotateY(-180deg)
 							top: -50px
-							right: -12px
 							left: auto
 						&::after
 							content: ''
 							background: url(../img/mount.svg) no-repeat center center/contain
-							transform: rotate(180deg)
 							bottom: -50px
-							right: -12px
 				&:first-child:hover
-					&::before
-						border-top-right-radius: 10px
 					.food__cont
 						&::after
 							content: ''
 							background: url(../img/mount.svg) no-repeat center center/contain
-							transform: rotate(180deg)
 							bottom: -50px
-							right: -12px
 				&:last-child:hover
-					&::before
-						border-bottom-right-radius: 10px
 					.food__cont
 						&::after
 							display: none
@@ -2648,8 +2798,117 @@ footer
 
 
 
+	#steps
+		padding: 60px 0
+		.title
+			margin-bottom: 64px
+		.steps__step 
+			display: flex
+			justify-content: space-between
+			.owl-stage
+				padding-left: 0
+			li 
+				width: 100%
+				counter-increment: mylist
+				position: relative
+				&.last
+					&:after
+						display: none
+				&:after
+					content: url(../img/arrow-right.svg)
+					top: 30px
+					transform: scale(1)
+					right: -16%
+				&:nth-child(2)
+					.steps__conimg::before
+						left: 30px
+				&:nth-child(3)
+					&:after
+						display: none
+					.steps__conimg::before
+						left: 1px
+				.steps__conimg
+					min-height: 200px
+					flex-direction: column
+					align-items: center
+					justify-content: flex-end
+					margin-bottom: -18px
+					&:before
+						content: attr(data-item)
+						font: bold 7.5rem/1 $font
+						left: 40px
+						bottom: -12px
+					.steps__icon 
+						display: block
+						width: 50%
+					&.first
+						.steps__icon 
+							width: 30%
+					&.second
+						// margin-bottom: -28px
+						.steps__icon 
+							width: 30%
+				.steps__text1 
+					min-height: 250px
+					padding: 43px 27px 
+					font: .9rem/1.2 $font
+					span
+						font-size: 1.125rem
+						margin-bottom: 18px
+
+
+
 // xs
 @media (max-width: 576.98px)
+
+	header
+		&.header__slick
+			.header__smcont
+				min-width: calc(100% - 120px)
+				box-sizing: border-box
+			.header__order
+				width: 100%
+			.logo
+				width: 80px
+				min-width: 80px
+				transform: 0 all
+		.logo
+			width: 80px
+			width: 120px
+			min-width: 80px
+			min-width: 120px
+			transform: 0 all
+		.header__info
+			width: 100%
+			width: auto
+			padding-bottom: 5px
+			display: flex
+			flex-direction: column
+			justify-content: space-around
+			transform: 0 all
+			.header__text1
+				width: auto
+				font: 300 .8rem/1.25 $font
+				padding-left: 20px
+				margin-bottom: 5px
+				transform: 0 all
+
+		// order page
+		.header__order.without__btn
+			padding: 3px
+			padding: 8px
+			margin-right: 0px
+			margin-bottom: 6px
+			.header__phone
+				font: 600 .9rem/1.87 $font
+				padding-left: 15px
+				margin-right: 15px
+				svg 
+					width: 12px
+					top: calc(50% - 9px)
+					left: 0
+
+
 	#first
 		background: url(../img/first__bg-sm.jpg) no-repeat center 70%/cover
 		.first__title
@@ -2707,10 +2966,8 @@ footer
 			.owl-stage
 				padding-left: 0 !important
 			.owl-dots
-				width: 200px
 				position: absolute
 				bottom: -20px
-				left: calc(50% - 100px)
 
 			.rev__item
 				padding-bottom: 36px
@@ -2824,47 +3081,24 @@ footer
 				&:hover
 					&::before
 						content: ''
-						display: block
-						background: red
-						background: white
-						box-shadow: 0px 0px 0px 0px white
 						border-radius: 0
-						position: absolute
-						top: 0px
-						left: 0px
-						right: -5px
-						bottom: 0px
-						z-index: -1
 					.food__text2
-						font: bold 1rem/1.2 $font
-						color: $green
+						font: bold .8rem/1.2 $font
 					.food__cont
 						&::before
 							content: ''
 							background: url(../img/mount.svg) no-repeat center center/contain
-							transform: rotateY(-180deg)
-							top: -50px
-							right: -12px
-							left: auto
 						&::after
 							content: ''
 							background: url(../img/mount.svg) no-repeat center center/contain
-							transform: rotate(180deg)
-							bottom: -50px
-							right: -12px
 				&:first-child:hover
-					&::before
-						border-top-right-radius: 10px
 					.food__cont
 						&::after
 							content: ''
 							background: url(../img/mount.svg) no-repeat center center/contain
 							transform: rotate(180deg)
 							bottom: -50px
-							right: -12px
 				&:last-child:hover
-					&::before
-						border-bottom-right-radius: 10px
 					.food__cont
 						&::after
 							display: none
@@ -2876,9 +3110,9 @@ footer
 			.food__img
 				width: 100px
 				padding-top: 10px
-				margin-bottom: -5px
+				margin-bottom: -15px
 			.food__text2
-				font: bold .9rem/1.2 $font
+				font: bold .75rem/1.2 $font
 				margin-bottom: 4px
 				margin-top: 4px
 				order: 2
@@ -2894,13 +3128,13 @@ footer
 					width: 80%
 					padding: 2px 5px 2px 10px
 					border-radius: 0px 50px 50px 0
-					font: bold 1rem/1 $font
+					font: bold .75rem/1 $font
 					margin-bottom: -4px
 				.food__price
 					width: 90%
-					padding: 8px 5px 8px 10px
+					padding: 6px 5px 4px 10px
 					border-radius: 0 10px 10px 0
-					font: bold 1rem/1 $font
+					font: bold .75rem/1 $font
 		
 		// right
 		.food__details
@@ -2918,13 +3152,15 @@ footer
 				align-items: flex-start
 				flex-wrap: wrap
 				.food__subtitle
-					font: bold 1.25rem/1.2 $font
+					font: bold .85rem/1.2 $font
 					margin-bottom: 4px
 				.food__about
 					width: 100%
 					padding: 0 8px 5px 
 					.food__txt1
-						font: .9rem/1.2 $font
+						font: .75rem/1.2 $font
+						span
+							display: none
 				.food__prices
 					width: 100%
 					padding: 7px 8px
@@ -2937,7 +3173,10 @@ footer
 						li
 							width: calc(50% - 3px)
 							margin-bottom: 4px
+							font-size: .75rem
 							padding: 8px 4px 8px 12px
+							&::before
+								left: 10px
 					.food__cost
 						flex-wrap: wrap
 						.food__fullprice
@@ -2945,7 +3184,7 @@ footer
 							padding: 8px 15px 8px 15px
 							margin-bottom: 10px
 							.food__2price
-								font: bold 1.37rem/1.2 $font
+								font: bold 1.125rem/1.2 $font
 								margin-bottom: 4px
 								.old
 									display: inline-block
@@ -2977,13 +3216,14 @@ footer
 									font-weight: bold
 						.food__btn-order
 							width: 100%
-							padding: 14px
-							font: bold .9rem/1.2 $font
+							padding: 10px
+							font: bold .75rem/1.2 $font
 
 				.food__contb
 					max-width: 100%
 					.food__caltext
-						font: bold 1rem/1.2 $font
+						display: block
+						font: bold .85rem/1.2 $font
 						color: $grey3
 						padding-left: 40px
 						margin-bottom: 12px
@@ -3010,7 +3250,7 @@ footer
 						justify-content: space-between
 						.food__text2
 							min-height: 50px
-							font: bold .9rem/1.2 $font
+							font: bold .75rem/1.2 $font
 							text-align: left
 							color: $grey3
 							margin-bottom: 10px
@@ -3033,9 +3273,14 @@ footer
 			margin-top: -100px
 			.owl-stage
 				padding: 90px 0
+				// transform: translate(-50%, -50%)
 				.owl-item
 					&.active.center
-						transform: scale(1.25)
+						transform: scale(1.25) translateZ(0)
+						// zoom: 125%
+						// backface-visibility: hidden
+						// transform-style: preserve-3d
+						// -webkit-font-smoothing: subpixel-antialiased
 						z-index: 999
 						box-shadow: 0px 0px 48px rgba(0, 0, 0, 0.28)
 						& + .owl-item.active + .owl-item
@@ -3051,13 +3296,16 @@ footer
 			li
 				width: 100%
 				// min-height: 335px
-				padding: 5px 10px
+				padding: 5px
 				display: flex
 				flex-direction: column
 				align-items: space-between
 				&:before
-					top: 20px
-					left: 20px
+					top: 10px
+					top: 0px
+					left: 10px
+					left: -10px
+					transform: scale(.5)
 				&:nth-child(1),
 				&:nth-child(2),
 				&:nth-child(3) 
@@ -3068,12 +3316,23 @@ footer
 					height: 80px
 					margin-bottom: 20px
 					z-index: 5
+					margin-top: 10px
+					margin-bottom: 10px
+					&.tomato
+						width: 120px
+						margin-top: 10px
+						margin-bottom: 10px
 				.eggs__text1
-					font: bold .9rem/1.2 $font
+					font: bold .8rem/1.2 $font
 					text-align: center
-					padding-bottom: 25px
-
-
+					padding-bottom: 10px
+					// filter: blur(0)
+					// transform: perspective(1px) translateZ(0)
+					// backface-visibility: hidden
+					// transform-style: preserve-3d
+					// -webkit-font-smoothing: subpixel-antialiased
+					// transform: perspective(1px) translateZ(0)
+					// backface-visibility: hidden
 
 	// OTHER PAGE
 	#order
@@ -3115,8 +3374,6 @@ footer
 					content: url(../img/arrow-down.svg)
 					position: absolute
 					right: 13px
-					top: calc(50% - 8px)
-					pointer-events: none
 				select
 					cursor: pointer
 					margin-bottom: 0
@@ -3248,9 +3505,12 @@ footer
 				min-width: 80px
 				margin-bottom: -80px
 				left: -15px
+				left: -8px
 				svg
 					width: 80px
+					width: 62px
 					height: 80px
+					height: 62px
 			.header__smcont
 				// min-width: auto
 				width: calc(100% + 0px)
@@ -3278,7 +3538,19 @@ footer
 					padding: 8px 2px
 					font: 600 .8rem/1.25 $font
 					transition: none
-
+		.header__order.without__btn
+			padding: 3px
+			padding: 8px
+			margin-right: 0px
+			margin-bottom: 6px
+			.header__phone
+				font: 600 .9rem/1.87 $font
+				padding-left: 15px
+				margin-right: 15px
+				svg 
+					width: 12px
+					top: calc(50% - 9px)
+					left: 0
 
 
 	#rev
@@ -3290,10 +3562,8 @@ footer
 			.owl-stage
 				padding-left: 0 !important
 			.owl-dots
-				width: 200px
 				position: absolute
 				bottom: -0px
-				left: calc(50% - 100px)
 
 			.rev__item
 				padding-bottom: 34px
@@ -3393,29 +3663,24 @@ footer
 				padding: 90px 0
 				.owl-item
 					&.active.center
-						transform: scale(1.1)
+						// transform: scale(1.1)
 						z-index: 999
 						box-shadow: 0px 0px 48px rgba(0, 0, 0, 0.28)
 						& + .owl-item.active + .owl-item
 							opacity: 0
 						li
-							transform: scale(1) !important
+							// transform: scale(1) !important
 					li
-						transform: scale(.9)!important
+						// transform: scale(.9)!important
 						width: 190px
 						// width: 120%
 						min-height: 150px
 						// height: 120%
 			li
 				width: 100%
-				// min-height: 335px
-				padding: 5px 10px
 				display: flex
 				flex-direction: column
 				align-items: space-between
-				&:before
-					top: 20px
-					left: 20px
 				&:nth-child(1),
 				&:nth-child(2),
 				&:nth-child(3) 
@@ -3424,12 +3689,9 @@ footer
 				.eggs__icons
 					width: 80px
 					height: 80px
-					margin-bottom: 20px
 					z-index: 5
 				.eggs__text1
-					font: bold .9rem/1.2 $font
 					text-align: center
-					padding-bottom: 25px
 
 // xs for iphone5
 @media (max-width: 374.98px)
@@ -3460,15 +3722,12 @@ footer
 				margin-bottom: 8px
 			.food__text1
 				&:before
-					font: bold 1.5rem/1.2 $font
 					top: 0
 					left: 4px
 			.food__img
 				width: 100px
 				padding-top: 10px
-				margin-bottom: -5px
 			.food__text2
-				font: bold .9rem/1.2 $font
 				margin-bottom: 4px
 				margin-top: 4px
 				order: 2
@@ -3478,13 +3737,10 @@ footer
 					width: 80%
 					padding: 2px 5px 2px 10px
 					border-radius: 0px 50px 50px 0
-					font: bold 1rem/1 $font
 					margin-bottom: -4px
 				.food__price
 					width: 90%
-					padding: 8px 5px 8px 10px
 					border-radius: 0 10px 10px 0
-					font: bold 1rem/1 $font
 		
 		// right
 		.food__details
@@ -3502,13 +3758,11 @@ footer
 				align-items: flex-start
 				flex-wrap: wrap
 				.food__subtitle
-					font: bold 1.25rem/1.2 $font
 					margin-bottom: 4px
 				.food__about
 					width: 100%
 					padding: 0 8px 5px 
 					.food__txt1
-						font: .9rem/1.2 $font
 				.food__prices
 					width: 100%
 					padding: 7px 3px
@@ -3523,7 +3777,7 @@ footer
 							margin-bottom: 4px
 							padding: 8px 2px 8px 12px
 							&:before
-								left: 3px
+								// left: 3px
 					.food__cost
 						flex-wrap: wrap
 						.food__fullprice
@@ -3531,7 +3785,6 @@ footer
 							padding: 8px 1px 8px
 							margin-bottom: 10px
 							.food__2price
-								font: bold 1.1rem/1.2 $font
 								margin-bottom: 4px
 								.old
 									display: inline-block
@@ -3546,7 +3799,6 @@ footer
 										position: absolute
 										left: 0
 							.food__price-for-one
-								font: .75rem/1.2 $font
 								text-align: center
 							.food__promo
 								width: 37px
@@ -3564,12 +3816,10 @@ footer
 						.food__btn-order
 							width: 100%
 							padding: 14px
-							font: bold .9rem/1.2 $font
 
 				.food__contb
 					max-width: 100%
 					.food__caltext
-						font: bold 1rem/1.2 $font
 						color: $grey3
 						padding-left: 40px
 						margin-bottom: 12px
@@ -3596,7 +3846,6 @@ footer
 						justify-content: space-between
 						.food__text2
 							min-height: 50px
-							font: bold .9rem/1.2 $font
 							text-align: left
 							color: $grey3
 							margin-bottom: 10px
