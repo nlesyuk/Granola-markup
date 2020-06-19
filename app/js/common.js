@@ -36,9 +36,9 @@ if( mainPage ) {
 		animateOut: 'fadeOut',
 		animateIn: 'fadeIn',
 		smartSpeed:450,
-		loop: false,
+		loop: true,
 		nav: false,
-		autoplay: false,
+		autoplay: true,
 		autoplayHoverPause: true,
 		autoplayTimeout: 3000,
 		margin: 0,
@@ -48,11 +48,11 @@ if( mainPage ) {
 	});
 
 	$('.rev__slider').owlCarousel({
-		loop: false,
+		loop: true,
 		nav: false,
-		autoplay: false,
+		autoplay: true,
 		autoplayHoverPause: true,
-		autoplayTimeout: 9000,
+		autoplayTimeout: 3000,
 		margin: 20,
 		dots: true,
 		responsiveClass: true,
