@@ -30,16 +30,17 @@
 			background: $grey4
 
 .btn2
-	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1)
-	box-shadow: -1px 2px 3px rgba(0, 0, 0, 0.22)
-	box-shadow: inset 0 1px 1px $green, inset 0 -1px 0px $green2, 0 9px 16px 0 rgba(0,0,0,.1), 0 4px 3px 0 rgba(0,0,0,.1), 0 0 0 1px $green
-	// background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3b2751), color-stop(100%, #271739));
+	// box-shadow: x y blur color
+	background: linear-gradient(180deg, #5CB719 0%, #419702 100%) !important
+	box-shadow:  0px 4px 0px #3D8509, 0px 8px 7px rgba(118, 192, 64, 0.5)
 	&:hover
-		box-shadow: none
+		background: linear-gradient(180deg, $greenH  0%, $greenH  100%) !important
+		box-shadow:  0px 4px 0px #3D8509, 0px 8px 7px rgba(118, 192, 64, 0)
 	&.btn-grey
-		box-shadow: inset 0 1px 1px $btnBack, inset 0 -1px 0px #afaeae, 0 9px 16px 0 rgba(0,0,0,.1), 0 4px 3px 0 rgba(0,0,0,.1), 0 0 0 1px $btnBack
+		box-shadow:  0px 4px 0px $grey4 , 0px 8px 7px rgba(148, 155, 158, 0.5)
+		background: $btnBack !important
 		&:hover
-			box-shadow: none
+			box-shadow:  0px 4px 0px $grey4 , 0px 8px 7px rgba(148, 155, 158, 0)
 
 section,header,footer
 	width: 100%
@@ -131,6 +132,8 @@ header
 			text-transform: uppercase
 			letter-spacing: 1.5px
 			color: white
+			position: relative
+			z-index: 15
 			&:hover
 				background: $greenH
 	.header__social
@@ -157,14 +160,25 @@ header
 					text-decoration: none
 					color: $grey3
 					// text-shadow: 5px 3px 1px rgba(0,0,0,.2)
-					&:hover
+					transition: all .25s
+					&.instagram:hover
 						color: $green
 						svg
-							// filter: brightness(100%)
-							filter: drop-shadow(2px 2px 5px $green2)
+							path 
+								fill: $green !important
+								transition: all .25s
+					&.fb:hover
+						color: $green
+						svg
+							path:first-child
+								fill: $green !important
+								transition: all .25s
 					svg
 						display: block
 						margin-right: 6px
+						transition: all .25s
+						path
+							transition: all .25s
 
 	.header__lang
 		width: 43px
@@ -412,6 +426,7 @@ header
 					font-size: .7rem
 				b 
 					font-size: .87rem
+
 			.food__price
 				width: 47%
 				padding: 5px 10px
@@ -421,6 +436,9 @@ header
 				color: $brown
 				b 
 					font-size: .87rem
+					abbr
+						font-size: .7rem
+						text-decoration: none
 	.food__details
 		width: calc(100% + 36px)
 		margin-left: -18px
