@@ -86,30 +86,71 @@ if( mainPage ) {
 			$('.food__item').removeClass('active')
 			$('.food__item[data-item='+item+']').addClass('active')
 		});
+
 		// days 
 		$(document).on('click','.food__item.active .food__days li', function(e){
 			$('.food__item.active .food__days li').removeClass('choosed')
 			$(this).addClass('choosed')
+
+			// %
+			var percent = $(this).find('span').text()
+			var per = parseInt(percent)
+			per = Math.abs(per)
+			var perIsNaN = isNaN(per)
+			console.log( per )
+
 			// days
 			var text = $(this).text()
-			console.log(text, parseInt(text))
+
 			var days = parseInt(text)
+
 			// change price
-			var oldPrice = (days * 450) + 'грн'
-			var currentPrice = ((days * 450) * 0.9) + 'грн'
-			$('.food__item.active .food__2price .old').text(oldPrice)
-			$('.food__item.active .food__2price .current').text(currentPrice)
+			var oldPrice = (days * 450) + ' грн.';
+			var currentPrice = '450 грн';
+			switch(per) {
+				case 10  :
+					currentPrice = ((days * 450) * 0.9) + ' грн.'
+					perDay = (450 * 0.9) + 'грн.'
+
+					break
+				case 20  :
+					currentPrice = ((days * 450) * 0.8) + ' грн.'
+					perDay = (450 * 0.8) + 'грн.'
+					break
+				case 30  :
+					currentPrice = ((days * 450) * 0.7) + ' грн.'
+					perDay = (450 * 0.7) + 'грн.'
+					break
+			}
+
+			if( !perIsNaN ) {
+				$('.food__item.active .food__2price .old, .food__item.active .food__2price .sales, .food__item.active .food__2price .current, .food__item.active .food__price-for-one').removeClass('d-none')
+				$('.food__item.active .food__fullprice').removeClass('single')
+
+				$('.food__item.active .food__2price .old').text(oldPrice)
+				$('.food__item.active .food__2price .sales b').text(percent)
+				$('.food__item.active .food__2price .current').text(currentPrice)
+			} else {
+				$('.food__item.active .food__2price .old, .food__item.active .food__2price .sales, .food__item.active .food__price-for-one').addClass('d-none')
+
+				$('.food__item.active .food__fullprice').addClass('single')
+				$('.food__item.active .food__2price .current').text(currentPrice)
+			}
+
+			// price per day
+			$('.food__item.active .food__price-for-one b').text(perDay)
 		});
+
 		// make order
 		$(document).on('click', '.food__item.active .food__btn-order', function(){
 			// get name
-			// var food = $('.food__set li.active .food__text2').html()
-			// food = removeElements(food, 'span')
 			var food = $('.food__set li.active').data('name')
 			
 			var days = $('.food__item.active .food__days li.choosed').text()
 			var oldPrice = $('.food__item.active .food__2price .old').text()
 			var currentPrice = $('.food__item.active .food__2price .current').text()
+			var pricePerItem = $('.food__item.active .food__price-for-one b').text()
+			var sales = $('.food__item.active .food__2price .sales b').text()
 
 			// console.log(food, days, oldPrice, currentPrice)
 			var dataOrder = {
@@ -117,6 +158,8 @@ if( mainPage ) {
 				days: days,
 				oldPrice: oldPrice,
 				currentPrice: currentPrice,
+				pricePerItem: pricePerItem,
+				sales: sales,
 			}
 			console.log(dataOrder)
 			var isOK = setOrderInLS(dataOrder)
@@ -230,7 +273,7 @@ var orderPage = document.getElementById('order')
 if( orderPage ) {
 
 	$(document).on('click', function(e){
-		console.log(e.target.tagName)
+		// console.log(e.target.tagName)
 		if( e.target.tagName === 'SELECT') {
 			$('.order__select').toggleClass('opened')
 		} else {
@@ -251,10 +294,8 @@ if( orderPage ) {
 	$('.order__btn-back').on('click', function(){
 		window.history.back()
 	})
-	// $('.order__btn-order').on('submit', function(e){
 	$('.order__form').on('submit', function(e){
 		e.preventDefault()
-		console.log( $( this ).serialize() );
 
 		var form = $(this);
 		var url = form.attr('action');
@@ -278,7 +319,6 @@ if( orderPage ) {
 	// select order
 	var order = getOrderFromLS('order')
 	if( order ) {
-		console.log(order)
 		$('.order__select select option[value='+order.food+']').attr('selected', true)
 		$('.order__details').addClass('opened')
 
@@ -304,6 +344,8 @@ if( orderPage ) {
 		// set price
 		$('.order__2price .old').text(order.oldPrice)
 		$('.order__2price .current').text(order.currentPrice)
+		$('.order__2price .sales b').text(order.sales)
+		$('.order__price-for-one b').text(order.pricePerItem)
 		// set inputs
 		$('.order__form input[name=price_old]').val(order.oldPrice)
 		$('.order__form input[name=price_current]').val(order.currentPrice)
@@ -311,7 +353,7 @@ if( orderPage ) {
 	}
 
 	// days 
-	$(document).on('click','.order__days li', function(e){
+/* 	$(document).on('click','.order__days li', function(e){
 		$('.order__days li').removeClass('choosed')
 		$(this).addClass('choosed')
 		// days
@@ -322,12 +364,65 @@ if( orderPage ) {
 		var currentPrice = ((days * 450) * 0.9) + 'грн'
 		$('.order__2price .old').text(oldPrice)
 		$('.order__2price .current').text(currentPrice)
+
 		// set in inputs
 		$('.order__form input[name=price_old]').val(oldPrice)
 		$('.order__form input[name=price_current]').val(currentPrice)
 		$('.order__form input[name=days]').val(days)
-	});
+	}); */
+	// days 
+	$(document).on('click','.order__days li', function(e){
+		$('.order__days li').removeClass('choosed')
+		$(this).addClass('choosed')
 
+		// %
+		var percent = $(this).find('span').text()
+		var per = parseInt(percent)
+		per = Math.abs(per)
+		var perIsNaN = isNaN(per)
+		// console.log( per )
+
+		// days
+		var text = $(this).text()
+
+		var days = parseInt(text)
+
+		// change price
+		var oldPrice = (days * 450) + ' грн.';
+		var currentPrice = '450 грн';
+		switch(per) {
+			case 10  :
+				currentPrice = ((days * 450) * 0.9) + ' грн.'
+				perDay = (450 * 0.9) + 'грн.'
+
+				break
+			case 20  :
+				currentPrice = ((days * 450) * 0.8) + ' грн.'
+				perDay = (450 * 0.8) + 'грн.'
+				break
+			case 30  :
+				currentPrice = ((days * 450) * 0.7) + ' грн.'
+				perDay = (450 * 0.7) + 'грн.'
+				break
+		}
+
+		if( !perIsNaN ) {
+			$(' .order__2price .old,  .order__2price .sales,  .order__2price .current,  .order__price-for-one').removeClass('d-none')
+			$(' .order__fullprice').removeClass('single')
+		
+			$(' .order__2price .old').text(oldPrice)
+			$(' .order__2price .sales b').text(percent)
+			$(' .order__2price .current').text(currentPrice)
+		} else {
+			$(' .order__2price .old,  .order__2price .sales,  .order__price-for-one').addClass('d-none')
+		
+			$(' .order__fullprice').addClass('single')
+			$(' .order__2price .current').text(currentPrice)
+		}
+
+		// price per day
+		$('.order__price-for-one b').text(perDay)
+	});
 	$("input[name=phone]").mask("+38(099)999-99-99");
 }
 //end ready

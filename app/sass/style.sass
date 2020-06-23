@@ -38,9 +38,11 @@
 		box-shadow:  0px 4px 0px #3D8509, 0px 8px 7px rgba(118, 192, 64, 0)
 	&.btn-grey
 		box-shadow:  0px 4px 0px $grey4 , 0px 8px 7px rgba(148, 155, 158, 0.5)
-		background: $btnBack !important
+		// background: $btnBack !important
+		background: linear-gradient(180deg, $btnBack 0%, #757b74 100%) !important
 		&:hover
 			box-shadow:  0px 4px 0px $grey4 , 0px 8px 7px rgba(148, 155, 158, 0)
+			background: linear-gradient(180deg, #757b74 0%, #757b74 100%) !important
 
 section,header,footer
 	width: 100%
@@ -221,7 +223,7 @@ header
 	border-top: 100px solid white
 	background: url(../img/first__bg1.jpg) no-repeat center 70%/cover
 	min-height: 100vh
-	padding: 80px 0
+	padding: 40px 0 80px
 	position: relative
 	.first__title
 		display: flex
@@ -242,28 +244,51 @@ header
 			font: 800 1.5rem/1.2 $font
 			color: $brown
 
+	.first__list
+		width: 80%
+		margin: 0 auto
+		display: flex
+		justify-content: space-between
+		padding-top: 30px
+		li
+			font: 600 1.125rem/1.2 $font
+			text-align: center
+			color: $brown
+			position: relative
+			b
+				font-weight: bold
+			&:before
+				content: url(../img/top-check.svg)
+				display: block
+				margin-bottom: 11px
+
 
 	.parallax-scene
 		width: 100%
-		min-height: 50vh
+		min-height: 70vh
 		position: absolute
-		top: 20%
+		top: 10%
 		left: 0
 		right: 0
-		bottom: 10%
+		bottom: 0%
+		// background: rgba(255,0,0,.5)
 		.paralax
 			width: 100%
 			height: 100%
 			position: relative
 			z-index: 3
 			&.layer1
-				background: url(../img/first__paralax11.png) no-repeat bottom center/auto
+				background: url(../img/first__paralax2.png) no-repeat top center/auto
 			&.layer2
-				background: url(../img/first__paralax12.png) no-repeat 50% 70%/auto
+				background: url(../img/first__paralax21.png) no-repeat 40% 10%/auto
 			&.layer3
-				background: url(../img/first__paralax13.png) no-repeat 50% 30%/auto
+				background: url(../img/first__paralax22.png) no-repeat 55% 40%/auto
 			&.layer4
-				background: url(../img/first__paralax14.png) no-repeat center top/auto
+				background: url(../img/first__paralax23.png) no-repeat 55% 60%/auto
+			&.layer5
+				background: url(../img/first__paralax24.png) no-repeat 40% 100%/auto
+			&.layer6
+				background: url(../img/first__paralax25.png) no-repeat center bottom/auto
 
 
 
@@ -482,6 +507,7 @@ header
 				border-radius: 4px
 				.food__subtitle
 					margin-bottom: 16px
+
 				.food__days
 					display: flex
 					justify-content: space-between
@@ -491,61 +517,128 @@ header
 						width: 24%
 						border-radius: 7px
 						box-sizing: border-box
-						padding: 9px
+						padding: 3px 9px 3px 30px
 						background: white
-						font: 1rem/1.2 $font
+						font: .9rem/1.2 $font
 						text-align: center
 						color: $grey3
 						position: relative
 						&:before
 							content: ''
 							display: block
-							width: 12px
-							height: 12px
+							width: 20px
+							height: 20px
 							border-radius: 50%
 							background: $grey6
 							position: absolute
-							top: calc(50% - 6px)
+							top: calc(50% - 10px)
 							left: 10px
-						&.choosed
-							font-weight: bold
-							&:before
-								background: $green
+						&:after
+							content: ''
+							display: block
+							width: 11px
+							height: 8px
+							background: url(../img/days-check.svg) no-repeat center center/cover transparent
+							position: absolute
+							top: calc(50% - 4px)
+							left: 14px
 						&:hover
 							cursor: pointer
 							&::before
 								background: $green
+						span
+							display: block
+							font: .8rem/1.3 $font
+							color: $orange
+							&.first
+								font: .75rem/1.2 $font
+								color: $grey3
+						&.choosed
+							font-weight: bold
+							&:before
+								background: $green
+							span
+								font-weight: bold
+								&.first
+									font-weight: normal
+				
 				.food__cost
 					display: flex
 					justify-content: space-between
+					align-items: center
 					.food__fullprice
-						width: 60%
-						padding: 8px 40px 8px 15px
+						width: 65%
+						// padding: 8px 11px
+						padding: 2px
 						background: white
 						border-radius: 7px
 						position: relative
+
+						min-height: 80px
+						display: flex
+						flex-direction: column
+						justify-content: space-between
+						&.single
+							justify-content: center
+							.food__2price
+								justify-content: center
 						.food__2price
+							width: 100%
+							display: flex
+							justify-content: space-between
+							// justify-content: center
+							align-items: center
+							padding: 9px 13px
 							font: bold 1.37rem/1.2 $font
 							text-align: center
 							color: $black
 							margin-bottom: 4px
 							position: relative
+							.sales
+								display: flex
+								flex-direction: column
+								font: bold .75rem/1 $font
+								color: $orange
+								b 
+									font: bold 1.31rem/1 $font
+									margin-bottom: -2px
 							.old
 								display: inline-block
 								color: #979391
-								position: relative	
+								position: relative
 								&::before
 									content: ''
 									display: block
-									width: 80px
-									height: 100%
-									background: url(../img/lines.svg) no-repeat center center/contain 
+									width: 85px
+									height: 2px
+									background: #979391
+									transform: rotate(-12deg)
 									position: absolute
+									top: 13px
 									left: 0
 						.food__price-for-one
+							width: 100%
+							border-radius: 5px
+							padding: 4px 0
+							background: $grey6
 							font: .75rem/1.2 $font
 							text-align: center
 							color: #979391
+							span
+								position: relative
+								&::before
+									content: ''
+									display: block
+									width: 90%
+									height: 1px
+									background: #979391
+									transform: rotate(-15deg)
+									position: absolute
+									top: 8px
+									left: 0
+							b
+								font-weight: bold
+								color: $grey2
 						.food__promo
 							display: none
 							width: 70px
@@ -572,6 +665,7 @@ header
 					.food__btn-order
 						width: 30%
 						border: none
+						padding: 14px
 						background: $green
 						border-radius: 6px
 						font: bold .75rem/1.2 $font
@@ -583,6 +677,7 @@ header
 						&:hover
 							transition: all .25s
 							background: $greenH
+
 
 			.food__products
 				width: 100%
@@ -1118,93 +1213,6 @@ footer
 			display: none
 			&.opened
 				display: block
-		.order__days
-			display: flex
-			justify-content: space-between
-			margin-bottom: 8px
-			li
-				display: block
-				width: 24%
-				border-radius: 7px
-				box-sizing: border-box
-				padding: 9px
-				background: white
-				font: 1rem/1.2 $font
-				text-align: center
-				color: $grey3
-				position: relative
-				&:before
-					content: ''
-					display: block
-					width: 12px
-					height: 12px
-					border-radius: 50%
-					background: $grey6
-					position: absolute
-					top: calc(50% - 6px)
-					left: 10px
-				&.choosed
-					font-weight: bold
-					&:before
-						background: $green
-				&:hover
-					cursor: pointer
-					&::before
-						background: $green
-		.order__cost
-			display: flex
-			justify-content: space-between
-			.order__fullprice
-				width: 100%
-				padding: 8px 40px 8px 15px
-				background: white
-				border-radius: 7px
-				position: relative
-				.order__2price
-					font: bold 1.37rem/1.2 $font
-					text-align: center
-					color: $black
-					margin-bottom: 4px
-					position: relative
-					.old
-						display: inline-block
-						color: #979391
-						position: relative	
-						&::before
-							content: ''
-							display: block
-							width: 80px
-							height: 100%
-							background: url(../img/lines.svg) no-repeat center center/contain 
-							position: absolute
-							left: 0
-				.order__price-for-one
-					font: .75rem/1.2 $font
-					text-align: center
-					color: #979391
-				.order__promo
-					display: none
-					width: 70px
-					height: 60px
-					// display: flex
-					flex-direction: column
-					justify-content: center
-					align-items: center
-					background: $orange
-					border-radius: 5px
-					font: .75rem/1 $font
-					text-align: center
-					color: white
-					transform: rotate(4.75deg)
-					position: absolute
-					right: -25px
-					top: 0
-					&.active
-						display: flex
-					span
-						display: block
-						font-size: 1.3rem
-						font-weight: bold
 
 		.order__btncont
 			display: flex
@@ -1222,9 +1230,140 @@ footer
 				width: calc(60% - 5px)
 
 
+		.order__days
+			display: flex
+			justify-content: space-between
+			margin-bottom: 6px
+			li
+				display: block
+				width: 24%
+				border-radius: 7px
+				box-sizing: border-box
+				padding: 3px 9px 3px 30px
+				background: white
+				font: .9rem/1.2 $font
+				text-align: center
+				color: $grey3
+				position: relative
+				&:before
+					content: ''
+					display: block
+					width: 20px
+					height: 20px
+					border-radius: 50%
+					background: $grey6
+					position: absolute
+					top: calc(50% - 10px)
+					left: 10px
+				&:after
+					content: ''
+					display: block
+					width: 11px
+					height: 8px
+					background: url(../img/days-check.svg) no-repeat center center/cover transparent
+					position: absolute
+					top: calc(50% - 4px)
+					left: 14px
+				&:hover
+					cursor: pointer
+					&::before
+						background: $green
+				span
+					display: block
+					font: .8rem/1.3 $font
+					color: $orange
+					&.first
+						font: .75rem/1.2 $font
+						color: $grey3
+				&.choosed
+					font-weight: bold
+					&:before
+						background: $green
+					span
+						font-weight: bold
+						&.first
+							font-weight: normal
+		
+		.order__cost
+			display: flex
+			justify-content: space-between
+			align-items: center
+			.order__fullprice
+				width: 100%
+				// padding: 8px 11px
+				padding: 2px
+				background: white
+				border-radius: 7px
+				position: relative
+
+				min-height: 80px
+				display: flex
+				flex-direction: column
+				justify-content: space-between
+				&.single
+					justify-content: center
+					.order__2price
+						justify-content: center
+				.order__2price
+					width: 100%
+					display: flex
+					justify-content: space-between
+					// justify-content: center
+					align-items: center
+					padding: 9px 13px
+					font: bold 1.37rem/1.2 $font
+					text-align: center
+					color: $black
+					margin-bottom: 4px
+					position: relative
+					.sales
+						display: flex
+						flex-direction: column
+						font: bold .75rem/1 $font
+						color: $orange
+						b 
+							font: bold 1.31rem/1 $font
+							margin-bottom: -2px
+					.old
+						display: inline-block
+						color: #979391
+						position: relative
+						&::before
+							content: ''
+							display: block
+							width: 85px
+							height: 2px
+							background: #979391
+							transform: rotate(-12deg)
+							position: absolute
+							top: 13px
+							left: 0
+				.order__price-for-one
+					width: 100%
+					border-radius: 5px
+					padding: 4px 0
+					background: $grey6
+					font: .75rem/1.2 $font
+					text-align: center
+					color: #979391
+					span
+						position: relative
+						&::before
+							content: ''
+							display: block
+							width: 90%
+							height: 1px
+							background: #979391
+							transform: rotate(-15deg)
+							position: absolute
+							top: 8px
+							left: 0
+					b
+						font-weight: bold
+						color: $grey2
 
 
-
+	
 
 @media (max-width: 1550.98px)
 	header 
@@ -1318,8 +1457,7 @@ footer
 	#first
 		border-top: 105px solid white
 		border-top: 95px solid white
-		background: url(../img/first__bg1.jpg) no-repeat center 70%/cover
-		padding: 80px 0
+		// background: url(../img/first__bg1.jpg) no-repeat center 70%/cover
 		.first__title
 			.big
 				width: 50%
@@ -1331,26 +1469,20 @@ footer
 
 
 		.parallax-scene
-			width: 100%
-			min-height: 50vh
-			position: absolute
-			top: 20%
-			left: 0
-			right: 0
-			bottom: 10%
+			// width: 80%
+			// // min-height: 50vh
+			// position: absolute
+			// top: 10%
+			// left: 10%
+			// right: 0
+			// bottom: 0
+			// background: rgba(0,255,0,.4)
 			.paralax
 				width: 100%
 				height: 100%
 				position: relative
 				z-index: 3
-				&.layer1
-					background: url(../img/first__paralax11.png) no-repeat bottom center/auto
-				&.layer2
-					background: url(../img/first__paralax12.png) no-repeat 50% 70%/auto
-				&.layer3
-					background: url(../img/first__paralax13.png) no-repeat 50% 30%/auto
-				&.layer4
-					background: url(../img/first__paralax14.png) no-repeat center top/auto
+
 
 
 	#stars
@@ -1459,6 +1591,7 @@ footer
 	#first
 		border-top: 95px solid white
 
+
 	#stars
 		#stars__slider
 			.owl-dots
@@ -1478,6 +1611,176 @@ footer
 					font: 1rem/1.2 $font
 
 
+
+	#food
+		padding-top: 60px
+		.food__details
+			.food__item
+				.food__prices
+					width: calc(50% - 3px)
+					padding: 7px 8px
+
+					.food__days
+						justify-content: space-between
+						margin-bottom: 6px
+						li
+							display: block
+							width: calc(25% - 2px)
+							border-radius: 7px
+							box-sizing: border-box
+							padding: 3px 9px 3px 30px
+							background: white
+							font: .9rem/1.2 $font
+							text-align: center
+							color: $grey3
+							position: relative
+							&:before
+								content: ''
+								display: block
+								width: 20px
+								height: 20px
+								border-radius: 50%
+								background: $grey6
+								position: absolute
+								top: calc(50% - 10px)
+								left: 10px
+							&:after
+								content: ''
+								display: block
+								width: 11px
+								height: 8px
+								background: url(../img/days-check.svg) no-repeat center center/cover transparent
+								position: absolute
+								top: calc(50% - 4px)
+								left: 14px
+							&:hover
+								cursor: pointer
+								&::before
+									background: $green
+							span
+								display: block
+								font: .8rem/1.3 $font
+								color: $orange
+								&.first
+									font: .75rem/1.2 $font
+									color: $grey3
+							&.choosed
+								font-weight: bold
+								&:before
+									background: $green
+								span
+									font-weight: bold
+									&.first
+										font-weight: normal
+					
+					.food__cost
+						display: flex
+						justify-content: space-between
+						align-items: center
+						.food__fullprice
+							width: 68%
+							min-height: 80px
+							padding: 2px
+							background: white
+							border-radius: 7px
+							position: relative
+							display: flex
+							flex-direction: column
+							justify-content: space-between
+							&.single
+								justify-content: center
+							.food__2price
+								width: 100%
+								display: flex
+								justify-content: space-between
+								align-items: center
+								padding: 9px 13px
+								font: bold 1.3rem/1.2 $font
+								text-align: center
+								color: $black
+								margin-bottom: 4px
+								position: relative
+								.sales
+									display: flex
+									flex-direction: column
+									font: bold .75rem/1 $font
+									color: $orange
+									b 
+										font: bold 1.31rem/1 $font
+										margin-bottom: -2px
+								.old
+									display: inline-block
+									color: #979391
+									position: relative
+									&::before
+										content: ''
+										display: block
+										width: 85px
+										height: 2px
+										background: #979391
+										transform: rotate(-12deg)
+										position: absolute
+										top: 13px
+										left: 0
+							.food__price-for-one
+								width: 100%
+								border-radius: 5px
+								padding: 4px 0
+								background: $grey6
+								font: .75rem/1.2 $font
+								text-align: center
+								color: #979391
+								span
+									position: relative
+									&::before
+										content: ''
+										display: block
+										width: 90%
+										height: 1px
+										background: #979391
+										transform: rotate(-15deg)
+										position: absolute
+										top: 8px
+										left: 0
+								b
+									font-weight: bold
+									color: $grey2
+							.food__promo
+								display: none
+								width: 70px
+								height: 60px
+								flex-direction: column
+								justify-content: center
+								align-items: center
+								background: $orange
+								border-radius: 5px
+								font: .75rem/1 $font
+								text-align: center
+								color: white
+								transform: rotate(4.75deg)
+								position: absolute
+								right: -45px
+								top: 0
+								&.active
+									display: flex
+								span
+									display: block
+									font-size: 1.3rem
+									font-weight: bold
+						.food__btn-order
+							width: 30%
+							border: none
+							padding: 14px
+							background: $green
+							border-radius: 6px
+							font: bold .75rem/1.2 $font
+							text-transform: uppercase
+							letter-spacing: 1.5px
+							text-align: center
+							color: white
+							transition: all .25s
+							&:hover
+								transition: all .25s
 
 
 
@@ -1547,7 +1850,7 @@ footer
 			.header__order
 				flex-direction: row
 				padding: 3px
-				margin-right: 0px
+				margin-right: 25px
 				margin-bottom: 6px
 				&.without__btn
 					justify-content: center
@@ -2238,59 +2541,154 @@ footer
 					margin-bottom: 16px
 					.food__subtitle
 						margin-bottom: 16px
+
+					// .food__days
+					// 	flex-wrap: wrap
+					// 	margin-bottom: 6px
+					// 	li
+					// 		width: calc(50% - 3px)
+					// 		margin-bottom: 4px
+					// 		padding: 9px
+
+					// .food__cost
+					// 	flex-wrap: wrap
+					// 	.food__fullprice
+					// 		width: calc(100% - 50px)
+					// 		padding: 8px 40px 8px 15px
+					// 		margin-bottom: 10px
+					// 		.food__2price
+					// 			font: bold 1.37rem/1.2 $font
+					// 			margin-bottom: 4px
+					// 			.old
+					// 				display: inline-block
+					// 				color: #979391
+					// 				position: relative	
+					// 				&::before
+					// 					content: ''
+					// 					display: block
+					// 					width: 80px
+					// 					height: 100%
+					// 					background: url(../img/lines.svg) no-repeat center center/contain 
+					// 					position: absolute
+					// 					left: 0
+					// 		.food__price-for-one
+					// 			font: .75rem/1.2 $font
+					// 			text-align: center
+					// 		.food__promo
+					// 			display: none
+					// 			width: 70px
+					// 			height: 60px
+					// 			flex-direction: column
+					// 			justify-content: center
+					// 			align-items: center
+					// 			font: .75rem/1 $font
+					// 			transform: rotate(4.75deg)
+					// 			position: absolute
+					// 			right: -45px
+					// 			top: 0
+					// 			&.active
+					// 				display: flex
+					// 			span
+					// 				display: block
+					// 				font-size: 1.3rem
+					// 				font-weight: bold
+					// 	.food__btn-order
+					// 		width: 100%
+					// 		padding: 10px
+					// 		font: bold .75rem/1.2 $font
+
 					.food__days
+						justify-content: space-between
 						flex-wrap: wrap
 						margin-bottom: 6px
 						li
 							width: calc(50% - 3px)
+							padding: 3px 9px 3px 30px
+							font: .9rem/1.2 $font
 							margin-bottom: 4px
-							padding: 9px
+							&:before
+								content: ''
+								display: block
+								width: 20px
+								height: 20px
+								position: absolute
+								top: calc(50% - 10px)
+								left: 10px
+							&:after
+								content: ''
+								display: block
+								width: 11px
+								height: 8px
+								background: url(../img/days-check.svg) no-repeat center center/cover transparent
+								position: absolute
+								top: calc(50% - 4px)
+								left: 14px
+							span
+								display: block
+								font: .8rem/1.3 $font
+								&.first
+									font: .75rem/1.2 $font
+					
 					.food__cost
-						flex-wrap: wrap
+						flex-direction: column
 						.food__fullprice
-							width: calc(100% - 50px)
-							padding: 8px 40px 8px 15px
-							margin-bottom: 10px
+							width: 100%
+							padding: 2px
 							.food__2price
+								width: 100%
+								justify-content: center
+								align-items: center
+								padding: 9px 13px
 								font: bold 1.37rem/1.2 $font
 								margin-bottom: 4px
+								.sales
+									font: bold .75rem/1 $font
+									padding: 0 20px
+									b 
+										font: bold 1.31rem/1 $font
+										margin-bottom: -2px
 								.old
 									display: inline-block
-									color: #979391
-									position: relative	
+									&::before
+										content: ''
+										width: 85px
+										height: 2px
+										background: #979391
+										transform: rotate(-12deg)
+										top: 13px
+										left: 0
+							.food__price-for-one
+								width: 100%
+								padding: 4px 0
+								font: .75rem/1.2 $font
+								text-align: center
+								span
+									position: relative
 									&::before
 										content: ''
 										display: block
-										width: 80px
-										height: 100%
-										background: url(../img/lines.svg) no-repeat center center/contain 
+										width: 90%
+										height: 1px
+										transform: rotate(-15deg)
 										position: absolute
+										top: 8px
 										left: 0
-							.food__price-for-one
-								font: .75rem/1.2 $font
-								text-align: center
-							.food__promo
-								display: none
-								width: 70px
-								height: 60px
-								flex-direction: column
-								justify-content: center
-								align-items: center
-								font: .75rem/1 $font
-								transform: rotate(4.75deg)
-								position: absolute
-								right: -45px
-								top: 0
-								&.active
-									display: flex
-								span
-									display: block
-									font-size: 1.3rem
+								b
 									font-weight: bold
+
 						.food__btn-order
+							margin-top: 8px
 							width: 100%
-							padding: 10px
+							padding: 14px
 							font: bold .75rem/1.2 $font
+
+
+
+
+
+
+
+
 
 				.food__contb
 					max-width: 100%
@@ -2427,52 +2825,6 @@ footer
 				margin-bottom: 10px
 			.order__details
 				margin-bottom: 22px
-			.order__days
-				margin-bottom: 8px
-				li
-					width: 24%
-					padding: 9px
-					font: 1rem/1.2 $font
-					&:before
-						content: ''
-						width: 12px
-						height: 12px
-						position: absolute
-						top: calc(50% - 6px)
-						left: 10px
-			.order__cost
-				justify-content: space-between
-				.order__fullprice
-					padding: 8px 40px 8px 15px
-					.order__2price
-						font: bold 1.37rem/1.2 $font
-						margin-bottom: 4px
-						.old
-							display: inline-block
-							position: relative	
-							&::before
-								content: ''
-								width: 80px
-								height: 100%
-								background: url(../img/lines.svg) no-repeat center center/contain 
-								left: 0
-					.order__price-for-one
-						font: .75rem/1.2 $font
-					.order__promo
-						width: 37px
-						height: 30px
-						flex-direction: column
-						justify-content: center
-						align-items: center
-						font: .75rem/1 $font
-						transform: rotate(4.75deg)
-						right: 5px
-						top: auto
-						bottom: 0
-						span
-							font-size: 1rem
-						b 
-							display: none
 
 			.order__btncont
 				.order__btn-back
@@ -2483,6 +2835,73 @@ footer
 						margin-right: 9px
 				.order__btn-order
 					width: calc(60% - 5px)
+
+
+			.order__days
+				display: flex
+				justify-content: space-between
+				margin-bottom: 6px
+				li
+					width: 24%
+					padding: 3px 9px 3px 30px
+					font: .9rem/1.2 $font
+					&:before
+						content: ''
+						width: 20px
+						height: 20px
+						position: absolute
+						top: calc(50% - 10px)
+						left: 10px
+					&:after
+						content: ''
+						width: 11px
+						height: 8px
+						background: url(../img/days-check.svg) no-repeat center center/cover transparent
+						top: calc(50% - 4px)
+						left: 14px
+					span
+						font: .8rem/1.3 $font
+			
+			.order__cost
+				justify-content: space-between
+				align-items: center
+				.order__fullprice
+					width: 100%
+					padding: 2px
+					min-height: 80px
+					flex-direction: column
+					justify-content: space-between
+					.order__2price
+						justify-content: space-between
+						align-items: center
+						padding: 9px 13px
+						font: bold 1.37rem/1.2 $font
+						margin-bottom: 4px
+						.sales
+							flex-direction: column
+							font: bold .75rem/1 $font
+						.old
+							display: inline-block
+							&::before
+								content: ''
+								display: block
+								width: 85px
+								height: 2px
+								top: 13px
+								left: 0
+					.order__price-for-one
+						width: 100%
+						padding: 4px 0
+						font: .75rem/1.2 $font
+						span
+							position: relative
+							&::before
+								content: ''
+								display: block
+								width: 90%
+								height: 1px
+								top: 8px
+								left: 0
 
 
 
@@ -2667,59 +3086,92 @@ footer
 					margin-bottom: 16px
 					.food__subtitle
 						margin-bottom: 16px
+
 					.food__days
+						justify-content: space-between
 						flex-wrap: wrap
 						margin-bottom: 6px
 						li
 							width: calc(50% - 3px)
+							padding: 3px 9px 3px 30px
+							font: .9rem/1.2 $font
 							margin-bottom: 4px
-							padding: 9px
+							&:before
+								content: ''
+								display: block
+								width: 20px
+								height: 20px
+								position: absolute
+								top: calc(50% - 10px)
+								left: 10px
+							&:after
+								content: ''
+								display: block
+								width: 11px
+								height: 8px
+								background: url(../img/days-check.svg) no-repeat center center/cover transparent
+								position: absolute
+								top: calc(50% - 4px)
+								left: 14px
+							span
+								display: block
+								font: .8rem/1.3 $font
+								&.first
+									font: .75rem/1.2 $font
+					
 					.food__cost
-						flex-wrap: wrap
+						flex-direction: column
 						.food__fullprice
-							width: calc(100% - 50px)
-							padding: 8px 40px 8px 15px
-							margin-bottom: 10px
+							width: 100%
+							padding: 2px
 							.food__2price
-								font: bold 1.37rem/1.2 $font
+								width: 100%
+								justify-content: center
+								align-items: center
+								padding: 9px 13px
+								font: bold 1.3rem/1.2 $font
 								margin-bottom: 4px
+								.sales
+									font: bold .75rem/1 $font
+									padding: 0 20px
+									b 
+										font: bold 1.31rem/1 $font
+										margin-bottom: -2px
 								.old
 									display: inline-block
-									color: #979391
-									position: relative	
+									&::before
+										content: ''
+										width: 85px
+										height: 2px
+										background: #979391
+										transform: rotate(-12deg)
+										top: 13px
+										left: 0
+							.food__price-for-one
+								width: 100%
+								padding: 4px 0
+								font: .75rem/1.2 $font
+								text-align: center
+								span
+									position: relative
 									&::before
 										content: ''
 										display: block
-										width: 80px
-										height: 100%
-										background: url(../img/lines.svg) no-repeat center center/contain 
+										width: 90%
+										height: 1px
+										transform: rotate(-15deg)
 										position: absolute
+										top: 8px
 										left: 0
-							.food__price-for-one
-								font: .75rem/1.2 $font
-								text-align: center
-							.food__promo
-								display: none
-								width: 70px
-								height: 60px
-								flex-direction: column
-								justify-content: center
-								align-items: center
-								font: .75rem/1 $font
-								transform: rotate(4.75deg)
-								position: absolute
-								right: -45px
-								top: 0
-								&.active
-									display: flex
-								span
-									display: block
-									font-size: 1.3rem
+								b
 									font-weight: bold
+
 						.food__btn-order
+							margin-top: 8px
 							width: 100%
-							padding: 10px
+							padding: 14px
 							font: bold .75rem/1.2 $font
+
 
 				.food__contb
 					max-width: 100%
@@ -2901,6 +3353,8 @@ footer
 				width: 80px
 				min-width: 80px
 				transform: 0 all
+			.header__smbottom
+				width: calc(100% + 0px)
 		.logo
 			width: 80px
 			width: 120px
@@ -2922,6 +3376,8 @@ footer
 				margin-bottom: 5px
 				transform: 0 all
 
+		.header__smbottom
+			width: calc(100% + 15px)
 		// order page
 		.header__order.without__btn
 			padding: 3px
@@ -3174,7 +3630,6 @@ footer
 			margin-bottom: 0px
 			.food__item
 				height: 100%
-				justify-content: space-between
 				justify-content: center
 				align-items: flex-start
 				flex-wrap: wrap
@@ -3194,57 +3649,92 @@ footer
 					margin-bottom: 16px
 					.food__subtitle
 						margin-bottom: 16px
+
 					.food__days
+						justify-content: space-between
 						flex-wrap: wrap
 						margin-bottom: 6px
 						li
 							width: calc(50% - 3px)
+							padding: 3px 9px 3px 30px
+							font: .9rem/1.2 $font
 							margin-bottom: 4px
-							font-size: .75rem
-							padding: 8px 4px 8px 12px
-							&::before
+							&:before
+								content: ''
+								display: block
+								width: 20px
+								height: 20px
+								position: absolute
+								top: calc(50% - 10px)
 								left: 10px
+							&:after
+								content: ''
+								display: block
+								width: 11px
+								height: 8px
+								background: url(../img/days-check.svg) no-repeat center center/cover transparent
+								position: absolute
+								top: calc(50% - 4px)
+								left: 14px
+							span
+								display: block
+								font: .8rem/1.3 $font
+								&.first
+									font: .75rem/1.2 $font
+					
 					.food__cost
-						flex-wrap: wrap
+						flex-direction: column
 						.food__fullprice
 							width: 100%
-							padding: 8px 15px 8px 15px
-							margin-bottom: 10px
+							padding: 2px
 							.food__2price
-								font: bold 1.125rem/1.2 $font
+								width: 100%
+								justify-content: center
+								align-items: center
+								padding: 9px 13px
+								font: bold 1rem/1.2 $font
 								margin-bottom: 4px
+								.sales
+									font: bold .75rem/1 $font
+									padding: 0 4px
+									b 
+										font: bold 1rem/1 $font
+										margin-bottom: -2px
 								.old
 									display: inline-block
-									color: #979391
-									position: relative	
+									&::before
+										content: ''
+										width: 95%
+										height: 2px
+										background: #979391
+										transform: rotate(-12deg)
+										top: 10px
+										left: 0
+							.food__price-for-one
+								width: 100%
+								padding: 4px 0
+								font: .75rem/1.2 $font
+								text-align: center
+								span
+									position: relative
 									&::before
 										content: ''
 										display: block
-										width: 80px
-										height: 100%
-										background: url(../img/lines.svg) no-repeat center center/contain 
+										width: 90%
+										height: 1px
+										transform: rotate(-15deg)
 										position: absolute
+										top: 8px
 										left: 0
-							.food__price-for-one
-								font: .75rem/1.2 $font
-								text-align: center
-							.food__promo
-								width: 37px
-								height: 25px
-								transform: rotate(4.75deg)
-								right: 5px
-								top: auto
-								bottom: 0
 								b
-									display: none
-								span
-									display: block
-									font-size: .9rem
 									font-weight: bold
+
 						.food__btn-order
+							margin-top: 8px
 							width: 100%
-							padding: 10px
+							padding: 14px
 							font: bold .75rem/1.2 $font
+
 
 				.food__contb
 					max-width: 100%
@@ -3262,6 +3752,7 @@ footer
 							position: absolute
 							left: 10px
 							top: calc(50% - 13px)
+
 				.food__products
 					margin-top: 12px
 					align-items: space-between
@@ -3413,55 +3904,6 @@ footer
 			.order__details
 				margin-bottom: 22px
 
-			.order__days
-				margin-bottom: 8px
-				flex-wrap: wrap
-				li
-					width: calc(50% - 3px)
-					margin-bottom: 6px
-					padding: 9px
-					font: 1rem/1.2 $font
-					&:before
-						content: ''
-						width: 12px
-						height: 12px
-						position: absolute
-						top: calc(50% - 6px)
-						left: 10px
-
-			.order__cost
-				justify-content: space-between
-				.order__fullprice
-					padding: 4px 15px
-					.order__2price
-						font: bold 1.37rem/1.2 $font
-						margin-bottom: 4px
-						.old
-							display: inline-block
-							&::before
-								content: ''
-								width: 80px
-								height: 100%
-								background: url(../img/lines.svg) no-repeat center center/contain 
-								left: 0
-					.order__price-for-one
-						font: .75rem/1.2 $font
-					.order__promo
-						width: 37px
-						height: 30px
-						flex-direction: column
-						justify-content: center
-						align-items: center
-						font: .75rem/1 $font
-						transform: rotate(4.75deg)
-						right: 5px
-						top: auto
-						bottom: 0
-						span
-							font-size: 1rem
-						b 
-							display: none
-
 			.order__btncont
 				.order__btn-back
 					width: calc(40% - 0px)
@@ -3473,12 +3915,84 @@ footer
 					width: calc(60% - 4px)
 
 
+
+			.order__days
+				flex-wrap: wrap
+				margin-bottom: 6px
+				li
+					width: calc(50% - 3px)
+					margin-bottom: 6px
+					padding: 3px 9px 3px 30px
+					font: .9rem/1.2 $font
+					&:before
+						content: ''
+						width: 20px
+						height: 20px
+						background: 
+						position: absolute
+						top: calc(50% - 10px)
+						left: 10px
+					&:after
+						content: ''
+						width: 11px
+						height: 8px
+						background: url(../img/days-check.svg) no-repeat center center/cover transparent
+						top: calc(50% - 4px)
+						left: 14px
+					span
+						font: .8rem/1.3 $font
+			
+			.order__cost
+				justify-content: space-between
+				align-items: center
+				.order__fullprice
+					width: 100%
+					padding: 2px
+					min-height: 80px
+					flex-direction: column
+					justify-content: space-between
+					.order__2price
+						justify-content: space-between
+						align-items: center
+						padding: 9px 13px
+						font: bold 1.3rem/1.2 $font
+						margin-bottom: 4px
+						.sales
+							flex-direction: column
+							font: bold .75rem/1 $font
+						.old
+							display: inline-block
+							&::before
+								content: ''
+								display: block
+								width: 85px
+								height: 2px
+								top: 13px
+								left: 0
+					.order__price-for-one
+						width: 100%
+						padding: 4px 0
+						font: .75rem/1.2 $font
+						span
+							position: relative
+							&::before
+								content: ''
+								display: block
+								width: 90%
+								height: 1px
+								top: 8px
+								left: 0
+
+
+
+
+
+
 // xs for iphoneX
 @media (width: 375px) and (height: 812px)
 	#first
 		background: url(../img/first__bg-sm.jpg) no-repeat center 110%/cover
 		min-height: 88vh
-
 
 
 
@@ -3778,7 +4292,6 @@ footer
 			margin-bottom: 0px
 			.food__item
 				height: 100%
-				justify-content: space-between
 				justify-content: center
 				align-items: flex-start
 				flex-wrap: wrap
@@ -3793,53 +4306,104 @@ footer
 					margin-bottom: 16px
 					.food__subtitle
 						margin-bottom: 16px
+
 					.food__days
+						justify-content: space-between
 						flex-wrap: wrap
 						margin-bottom: 6px
 						li
 							width: calc(50% - 3px)
+							padding: 3px 9px 3px 30px
+							font: .9rem/1.2 $font
 							margin-bottom: 4px
-							padding: 8px 2px 8px 12px
 							&:before
-								// left: 3px
+								content: ''
+								display: block
+								width: 20px
+								height: 20px
+								position: absolute
+								top: calc(50% - 10px)
+								left: 10px
+							&:after
+								content: ''
+								display: block
+								width: 11px
+								height: 8px
+								background: url(../img/days-check.svg) no-repeat center center/cover transparent
+								position: absolute
+								top: calc(50% - 4px)
+								left: 14px
+							span
+								display: block
+								font: .8rem/1.3 $font
+								&.first
+									font: .65rem/1.2 $font
+					
 					.food__cost
-						flex-wrap: wrap
+						flex-direction: column
 						.food__fullprice
 							width: 100%
-							padding: 8px 1px 8px
-							margin-bottom: 10px
+							padding: 2px
+							min-height: 80px
+							display: flex
+							flex-direction: column
+							justify-content: space-between
+							&.single
+								justify-content: center
 							.food__2price
+								width: 100%
+								// background: red
+								justify-content: center
+								align-items: center
+								padding: 9px 13px
+								font: bold .9rem/1 $font
 								margin-bottom: 4px
+								.sales
+									font: bold .75rem/1 $font
+									b 
+										font: bold 1rem/1 $font
+										margin-bottom: -2px
 								.old
 									display: inline-block
-									color: #979391
-									position: relative	
+									&::before
+										content: ''
+										width: 95%
+										width: 50px
+										height: 2px
+										background: #979391
+										transform: rotate(-12deg)
+										top: 8px
+										left: calc(50% - 25px)
+							.food__price-for-one
+								width: 100%
+								padding: 4px 0
+								font: .75rem/1.2 $font
+								text-align: center
+								span
+									position: relative
 									&::before
 										content: ''
 										display: block
-										width: 80px
-										height: 100%
-										background: url(../img/lines.svg) no-repeat center center/contain 
+										width: 90%
+										height: 1px
+										transform: rotate(-15deg)
 										position: absolute
+										top: 8px
 										left: 0
-							.food__price-for-one
-								text-align: center
-							.food__promo
-								width: 37px
-								height: 25px
-								transform: rotate(4.75deg)
-								right: 0px
-								top: auto
-								bottom: 0
 								b
-									display: none
-								span
-									display: block
-									font-size: .9rem
 									font-weight: bold
+
 						.food__btn-order
+							margin-top: 8px
 							width: 100%
 							padding: 14px
+							font: bold .75rem/1.2 $font
+
+
+
+
+
+
 
 				.food__contb
 					max-width: 100%
@@ -3889,9 +4453,13 @@ footer
 		padding: 0
 		height: auto
 		&.header__slick
+			.header__smtop .header__info .header__text1
+				font: 300 .85rem/1.25 $font
+				padding-left: 15px
 			.header__smcont
 				// min-width: auto
 				width: calc(100% + 0px)
+				width: calc(100% + 15px)
 				left: -15px
 				flex-shrink: 0.75
 				position: relative
