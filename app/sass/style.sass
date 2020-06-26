@@ -32,16 +32,16 @@
 .btn2
 	// box-shadow: x y blur color
 	background: linear-gradient(180deg, #5CB719 0%, #419702 100%) !important
-	box-shadow:  0px 4px 0px #3D8509, 0px 8px 7px rgba(118, 192, 64, 0.5)
+	box-shadow: 0px 4px 0px #3D8509, 0px 8px 7px rgba(118, 192, 64, 0.5)
 	&:hover
 		background: linear-gradient(180deg, $greenH  0%, $greenH  100%) !important
-		box-shadow:  0px 4px 0px #3D8509, 0px 8px 7px rgba(118, 192, 64, 0)
+		box-shadow: 0px 4px 0px #3D8509, 0px 8px 7px rgba(118, 192, 64, 0)
 	&.btn-grey
-		box-shadow:  0px 4px 0px $grey4 , 0px 8px 7px rgba(148, 155, 158, 0.5)
+		box-shadow: 0px 4px 0px $grey4 , 0px 8px 7px rgba(148, 155, 158, 0.5)
 		// background: $btnBack !important
 		background: linear-gradient(180deg, $btnBack 0%, #757b74 100%) !important
 		&:hover
-			box-shadow:  0px 4px 0px $grey4 , 0px 8px 7px rgba(148, 155, 158, 0)
+			box-shadow: 0px 4px 0px $grey4 , 0px 8px 7px rgba(148, 155, 158, 0)
 			background: linear-gradient(180deg, #757b74 0%, #757b74 100%) !important
 
 section,header,footer
@@ -61,7 +61,7 @@ header
 	padding: 16px 0
 	background: white
 	position: fixed
-	border: 1px solid #E4E4E4
+	border-bottom: 1px solid #E4E4E4
 	z-index: 101
 	.header__container
 		max-width: 1500px
@@ -222,7 +222,7 @@ header
 #first
 	border-top: 100px solid white
 	background: url(../img/first__bg1.jpg) no-repeat center 70%/cover
-	min-height: 100vh
+	min-height: 105vh
 	padding: 40px 0 80px
 	position: relative
 	.first__title
@@ -1128,9 +1128,9 @@ footer
 		display: flex
 		justify-content: space-between
 		li,	a
-			font: 300 .9rem/1.4 $font
-			text-decoration: none
-			color: white
+		font: 300 .9rem/1.4 $font
+		text-decoration: none
+		color: white
 		a:hover
 			opacity: .5
 
@@ -1792,7 +1792,6 @@ footer
 		padding: 0
 		height: auto
 		&.header__slick
-			// background: red
 			// top
 			.header__social
 				width: 60px
@@ -1834,22 +1833,28 @@ footer
 				.header__info
 					display: none
 			.logo
-				width: 80px
-				// width: 62px
-				// min-width: 80px
+				width: 60px
+				min-width: 60px
 				margin-bottom: -80px
 				left: -15px
 				left: -8px
 				svg
-					width: 80px
 					width: 62px
-					height: 80px
 					height: 62px
+				.header__notslicksvg
+					display: none
+				.header__slicksvg
+					display: block
+					height: 48px
+					margin-top: -3px
+					box-shadow: -14px 14px 29px rgba(166, 94, 21, 0.2)
+
 			.header__smcont
 				min-width: calc(100% - 80px)
 			.header__order
 				flex-direction: row
 				padding: 3px
+				// padding: 3px 3px 7px
 				margin-right: 25px
 				margin-bottom: 6px
 				&.without__btn
@@ -1873,7 +1878,7 @@ footer
 					padding: 8px
 					font: 600 .8rem/1.25 $font
 					transition: none
-
+					margin-bottom: 4px
 
 		.header__container
 			max-width: 720px
@@ -1888,6 +1893,7 @@ footer
 			width: calc(100% + 30px)
 			margin-left: -15px
 			background: #F6F6F6
+			background: $yellow2
 			display: flex
 			justify-content: space-between
 			align-items: center
@@ -1943,21 +1949,20 @@ footer
 			display: block
 			width: 120px
 			min-width: 120px
-			margin-bottom: -80px
+			margin-bottom: -50px
 			position: relative
 			left: -15px
 			left: -8px
 			svg
-				width: 135px
-				width: 121px
-				height: 135px
-				height: 121px
-
+				width: 108px
+				height: 108px
+			.header__slicksvg
+				display: none
 		.header__smcont
 			width: auto
 			width: 100%
 		.header__order
-			padding: 3px
+			padding: 3px 3px 7px 
 			margin-right: 0px
 			margin-bottom: 6px
 			.header__phone
@@ -1979,13 +1984,15 @@ footer
 			width: auto
 			padding-bottom: 5px
 			display: flex
-			flex-direction: row
-			justify-content: space-around
+			flex-direction: column
+			justify-content: center
+			align-items: center
 			.header__text1
-				display: block
-				width: 200px
+				display: inline-block
+				width: 200p8x
 				width: auto
 				font: 300 .8rem/1.25 $font
+				// text-align: center
 				padding-left: 20px
 				margin-bottom: 5px
 				svg
@@ -1996,6 +2003,7 @@ footer
 	#first
 		border-top: 110px solid white
 		background: url(../img/first__bg-md.jpg) no-repeat center 70%/cover
+		min-height: 145vh
 		.first__title
 			flex-direction: column
 			.big
@@ -2014,6 +2022,29 @@ footer
 			.paralax
 				background: none !important
 
+		.first__list
+			width: 80%
+			margin: 0 auto
+			display: flex
+			justify-content: flex-start
+			flex-wrap: wrap
+			padding-top: 30px
+			li
+				width: 100%
+				font: 600 1rem/1.2 $font
+				text-align: left
+				padding-left: 35px
+				margin-bottom: 10px
+				br
+					display: none
+				&:before
+					content: url(../img/top-check.svg)
+					display: block
+					margin-bottom: 11px
+					position: absolute
+					left: 0
+					top: calc(50% - 19px)
+					transform: scale(.5)
 
 
 
@@ -2918,6 +2949,41 @@ footer
 			margin: 0 auto
 
 
+	#first
+		border-top: 110px solid white
+		min-height: 105vh
+		.first__title
+			.big
+				font: 800 4.25rem/1.25 $font
+				padding-right: 0px
+			.small
+				width: 100%
+				font: 800 1.5rem/1.2 $font
+
+		.first__list
+			margin: 0 auto
+			display: flex
+			justify-content: flex-start
+			flex-wrap: wrap
+			padding-top: 30px
+			li
+				width: 100%
+				font: 600 1rem/1.2 $font
+				text-align: left
+				padding-left: 35px
+				margin-bottom: 10px
+				br
+					display: none
+				&:before
+					content: url(../img/top-check.svg)
+					display: block
+					margin-bottom: 11px
+					position: absolute
+					left: 0
+					top: calc(50% - 19px)
+					transform: scale(.5)
+
+
 
 	#insta
 		padding: 50px 0
@@ -3356,10 +3422,8 @@ footer
 			.header__smbottom
 				width: calc(100% + 0px)
 		.logo
-			width: 80px
-			width: 120px
-			min-width: 80px
-			min-width: 120px
+			width: 100px
+			min-width: 100px
 			transform: 0 all
 		.header__info
 			width: 100%
@@ -3396,13 +3460,41 @@ footer
 
 	#first
 		background: url(../img/first__bg-sm.jpg) no-repeat center 70%/cover
+		padding: 45px 0 80px
+		min-height: 115vh
 		.first__title
 			.big
 				font: 800 3rem/1.25 $font
 			.small
 				font: 800 1.125rem/1.2 $font
-	.parallax-scene
-		display: none
+
+		.first__list
+			width: 100%
+			margin: 0 auto
+			display: flex
+			justify-content: flex-start
+			flex-wrap: wrap
+			padding-top: 30px
+			li
+				width: 100%
+				font: 600 1rem/1.2 $font
+				text-align: left
+				padding-left: 35px
+				margin-bottom: 10px
+				br
+					display: block
+				&:before
+					content: url(../img/top-check.svg)
+					display: block
+					margin-bottom: 11px
+					position: absolute
+					left: 0
+					top: calc(50% - 19px)
+					top: calc(50% - 27px)
+					transform: scale(.5)
+		.parallax-scene
+			display: none
+
 
 
 	#deliv
@@ -3992,7 +4084,8 @@ footer
 @media (width: 375px) and (height: 812px)
 	#first
 		background: url(../img/first__bg-sm.jpg) no-repeat center 110%/cover
-		min-height: 88vh
+		// min-height: 88vh
+		min-height: 105vh
 
 
 
@@ -4093,6 +4186,8 @@ footer
 					top: calc(50% - 9px)
 					left: 0
 
+	#first
+		min-height: 130vh
 
 	#rev
 		padding-bottom: 60px
@@ -4236,6 +4331,7 @@ footer
 // xs for iphone5
 @media (max-width: 374.98px)
 	#first
+		min-height: 145vh
 		background: url(../img/first__bg-sm.jpg) no-repeat center 50%/cover
 		.first__title
 			.big
@@ -4484,3 +4580,7 @@ footer
 					padding: 7px 2px
 					font: 600 .7rem/1.25 $font
 					transition: none
+			.logo
+				.header__slicksvg
+					height: 42px
+					margin-top: -4px
