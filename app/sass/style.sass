@@ -1078,7 +1078,9 @@ header
 		margin-bottom: 16px
 	.team__cert
 		display: block
+		width: 100%
 		max-width: 100%
+		margin-bottom: -40px
 
 
 
@@ -1127,12 +1129,12 @@ footer
 	ul
 		display: flex
 		justify-content: space-between
-		li,	a
-		font: 300 .9rem/1.4 $font
-		text-decoration: none
-		color: white
-		a:hover
-			opacity: .5
+		li, a
+			font: 300 .9rem/1.4 $font
+			text-decoration: none
+			color: white
+			a:hover
+				opacity: .5
 
 
 
@@ -1363,7 +1365,7 @@ footer
 						color: $grey2
 
 
-	
+
 
 @media (max-width: 1550.98px)
 	header 
@@ -1457,6 +1459,7 @@ footer
 	#first
 		border-top: 105px solid white
 		border-top: 95px solid white
+		min-height: 945px
 		// background: url(../img/first__bg1.jpg) no-repeat center 70%/cover
 		.first__title
 			.big
@@ -1468,20 +1471,45 @@ footer
 				font: 800 1.5rem/1.2 $font
 
 
+		// .parallax-scene
+		// 	.paralax
+		// 		width: 100%
+		// 		height: 100%
+		// 		position: relative
+		// 		z-index: 3
+
 		.parallax-scene
-			// width: 80%
-			// // min-height: 50vh
-			// position: absolute
-			// top: 10%
-			// left: 10%
-			// right: 0
-			// bottom: 0
-			// background: rgba(0,255,0,.4)
+			width: 100%
+			min-height: 70vh
+			position: absolute
+			top: 10%
+			left: 0
+			right: 0
+			bottom: 0%
+			overflow: visible
 			.paralax
-				width: 100%
+				// width: 90%
+				// margin-left: 5%
 				height: 100%
+				background: red
 				position: relative
 				z-index: 3
+				&.layer1
+					background: url(../img/first__paralax2.png) no-repeat -5% top/contain
+				&.layer2
+					background: url(../img/first__paralax21.png) no-repeat 40% 10%/auto
+					background: url(../img/first__paralax21.png) no-repeat 70% 22%/auto
+				&.layer3
+					background: url(../img/first__paralax22.png) no-repeat 55% 40%/auto
+					background: url(../img/first__paralax22.png) no-repeat 55% 55%/auto
+				&.layer4
+					background: url(../img/first__paralax23.png) no-repeat 55% 60%/auto
+				&.layer5
+					display: none
+					background: url(../img/first__paralax24.png) no-repeat 40% 100%/contain
+					background: transparent
+				&.layer6
+					background: url(../img/first__paralax25.png) no-repeat center bottom/contain
 
 
 
@@ -3462,6 +3490,7 @@ footer
 		background: url(../img/first__bg-sm.jpg) no-repeat center 70%/cover
 		padding: 45px 0 80px
 		min-height: 115vh
+		min-height: 900px
 		.first__title
 			.big
 				font: 800 3rem/1.25 $font
@@ -4227,6 +4256,11 @@ footer
 				.rev__descr
 					padding: 0 20px
 					font: 1rem/1.4 $font
+
+
+	#food
+		.title
+			font: 700 1.125rem/1.2 $font
 
 
 	#steps
