@@ -342,6 +342,8 @@ header
 
 #food
 	padding-top: 60px
+	.title 
+		font-size: 1.25rem
 	.food__set
 		width: 99%
 		margin: 0 auto
@@ -358,7 +360,7 @@ header
 				.food__text1,
 				.food__text2
 					color: $green2
-			// &.active,
+			&.active,
 			&:hover
 				opacity: 1
 				&::before
@@ -573,7 +575,6 @@ header
 						background: white
 						border-radius: 7px
 						position: relative
-
 						min-height: 80px
 						display: flex
 						flex-direction: column
@@ -1977,6 +1978,8 @@ footer
 				background: transparent
 				font: bold .9rem/1.87 $font
 				color: $grey3
+				&:focus
+					outline: none
 
 		// bottom
 		.header__smbottom
@@ -2410,8 +2413,12 @@ footer
 						min-height: 180px
 				.owl-item.active.center
 					li
+						opacity: 1
+						border: 2px solid  $green
 						&::before
 							display: none
+						.food__text1
+							color: $green
 						.food__text2
 							font: bold .75rem/1.2 $font
 							color: $green
@@ -2425,12 +2432,13 @@ footer
 				display: flex
 				flex-direction: column
 				box-sizing: border-box
-				background: #FFFFFF
-				border: 2px solid $green
+				background: white
+				border: 2px solid  $grey5
 				box-sizing: border-box
 				border-radius: 11px
 				opacity: 1
 				z-index: 10
+				opacity: .5
 				margin-bottom: 0px
 				// &.active,
 				&:hover
@@ -2493,34 +2501,13 @@ footer
 					position: relative
 					z-index: 2
 					span
-						// display: inline
 						font-size: 80%
 				.food__price
 					width: 50%
 					box-sizing: border-box
 					padding: 2px
 					span
-						// font-size: 80%
 						display: inline
-
-				// .food__kkal
-				// 	width: 53%
-				// 	font: .75rem/1.2 $font
-				// 	span
-				// 		// font-size: .7rem
-				// 	b 
-				// 		// font-size: .87rem
-
-				// .food__price
-				// 	padding: 5px 1px
-				// 	font: .75rem/1.2 $font
-				// 	b 
-				// 		font-size: .87rem
-				// 		abbr
-				// 			font-size: .7rem
-				// 			text-decoration: none
-
-
 
 
 
@@ -2533,6 +2520,7 @@ footer
 			box-shadow: 0px 4px 65px rgba(0, 0, 0, 0.06)
 			border-radius: 11px
 			margin-bottom: 0px
+			overflow: hidden
 			position: relative
 			top: -4px
 			.food__item
@@ -3005,283 +2993,6 @@ footer
 
 
 
-	// #food
-	// 	padding-top: 60px
-	// 	.title
-	// 		text-align: center
-	// 	.food__globalcont
-	// 		display: flex
-	// 		justify-content: space-between
-	// 		align-items: stretch
-	// 		margin-bottom: 40px
-	// 	//left
-	// 	.food__set
-	// 		width: 150px
-	// 		margin: 0 auto
-	// 		display: flex
-	// 		flex-direction: column
-	// 		justify-content: space-between
-	// 		margin-bottom: 0px
-	// 		li
-	// 			width: 100%
-	// 			display: flex
-	// 			flex-direction: column
-	// 			box-sizing: border-box
-	// 			opacity: 1
-	// 			z-index: 10
-	// 			margin-bottom: 8px
-	// 			&.active,
-	// 			&:hover
-	// 				&::before
-	// 					content: ''
-	// 					display: block
-	// 					// border-radius: 0
-	// 					z-index: -1
-	// 				.food__text2
-	// 					font: bold 1rem/1.2 $font
-	// 					color: $green
-	// 				.food__cont
-	// 					&::before
-	// 						content: ''
-	// 						transform: rotateY(-180deg)
-	// 						top: -50px
-	// 						left: auto
-	// 					&::after
-	// 						content: ''
-	// 						background: url(../img/mount.svg) no-repeat center center/contain
-	// 						bottom: -50px
-	// 			&:first-child:hover
-	// 				.food__cont
-	// 					&::after
-	// 						content: ''
-	// 						background: url(../img/mount.svg) no-repeat center center/contain
-	// 						bottom: -50px
-	// 			&:last-child:hover
-	// 				.food__cont
-	// 					&::after
-	// 						display: none
-	// 		.food__text1
-	// 			width: 1px
-	// 			height: 1px
-	// 			color: transparent
-	// 			margin-bottom: 0px
-	// 			position: relative
-	// 			&:before
-	// 				content: attr(data-count)
-	// 				font: bold 2rem/1.2 $font
-	// 				color: $grey4
-	// 				position: absolute
-	// 				top: 0
-	// 				left: 4px
-	// 		.food__img
-	// 			width: 100px
-	// 			padding-top: 10px
-	// 			margin-bottom: -12px
-	// 		.food__text2
-	// 			font: bold .9rem/1.2 $font
-	// 			margin-bottom: 4px
-	// 			margin-top: 4px
-	// 			order: 2
-	// 			span
-	// 				display: none
-	// 		.food__cont
-	// 			display: flex
-	// 			justify-content: flex-start
-	// 			align-items: stretch
-	// 			flex-direction: column
-	// 			background: none
-	// 			border-radius: 0
-	// 			order: 1
-	// 			.food__kkal
-	// 				width: 80%
-	// 				padding: 2px 5px 2px 20%
-	// 				border-radius: 0px 50px 50px 0
-	// 				background: #E1E1E1
-	// 				text-align: left
-	// 				margin-bottom: -4px
-	// 				position: relative
-	// 				z-index: 2
-	// 				span
-	// 					display: none
-	// 			.food__price
-	// 				width: 90%
-	// 				padding: 8px 5px 8px 20%
-	// 				border-radius: 0 50px 50px 0
-	// 				text-align: left
-	// 				span
-	// 					display: none
-	// 	// right
-	// 	.food__details
-	// 		width: calc(100% - 150px)
-	// 		margin-left: 0px
-	// 		padding: 12px 6px
-	// 		box-shadow: 0px 4px 65px rgba(0, 0, 0, 0.06)
-	// 		border-radius: 11px
-	// 		margin-bottom: 0px
-	// 		.food__item
-	// 			height: 100%
-	// 			justify-content: space-between
-	// 			justify-content: center
-	// 			align-items: flex-start
-	// 			flex-wrap: wrap
-	// 			.food__subtitle
-	// 				font: bold 1.25rem/1.2 $font
-	// 				margin-bottom: 4px
-	// 			.food__about
-	// 				width: 100%
-	// 				padding: 0 8px 5px 
-	// 			.food__prices
-	// 				width: 100%
-	// 				padding: 7px 8px
-	// 				margin-bottom: 16px
-	// 				.food__subtitle
-	// 					margin-bottom: 16px
-
-	// 				.food__days
-	// 					justify-content: space-between
-	// 					flex-wrap: wrap
-	// 					margin-bottom: 6px
-	// 					li
-	// 						width: calc(50% - 3px)
-	// 						padding: 3px 9px 3px 30px
-	// 						font: .9rem/1.2 $font
-	// 						margin-bottom: 4px
-	// 						&:before
-	// 							content: ''
-	// 							display: block
-	// 							width: 20px
-	// 							height: 20px
-	// 							position: absolute
-	// 							top: calc(50% - 10px)
-	// 							left: 10px
-	// 						&:after
-	// 							content: ''
-	// 							display: block
-	// 							width: 11px
-	// 							height: 8px
-	// 							background: url(../img/days-check.svg) no-repeat center center/cover transparent
-	// 							position: absolute
-	// 							top: calc(50% - 4px)
-	// 							left: 14px
-	// 						span
-	// 							display: block
-	// 							font: .8rem/1.3 $font
-	// 							&.first
-	// 								font: .75rem/1.2 $font
-					
-	// 				.food__cost
-	// 					flex-direction: column
-	// 					.food__fullprice
-	// 						width: 100%
-	// 						padding: 2px
-	// 						.food__2price
-	// 							width: 100%
-	// 							justify-content: center
-	// 							align-items: center
-	// 							padding: 9px 13px
-	// 							font: bold 1.3rem/1.2 $font
-	// 							margin-bottom: 4px
-	// 							.sales
-	// 								font: bold .75rem/1 $font
-	// 								padding: 0 20px
-	// 								b 
-	// 									font: bold 1.31rem/1 $font
-	// 									margin-bottom: -2px
-	// 							.old
-	// 								display: inline-block
-	// 								&::before
-	// 									content: ''
-	// 									width: 85px
-	// 									height: 2px
-	// 									background: #979391
-	// 									transform: rotate(-12deg)
-	// 									top: 13px
-	// 									left: 0
-	// 						.food__price-for-one
-	// 							width: 100%
-	// 							padding: 4px 0
-	// 							font: .75rem/1.2 $font
-	// 							text-align: center
-	// 							span
-	// 								position: relative
-	// 								&::before
-	// 									content: ''
-	// 									display: block
-	// 									width: 90%
-	// 									height: 1px
-	// 									transform: rotate(-15deg)
-	// 									position: absolute
-	// 									top: 8px
-	// 									left: 0
-	// 							b
-	// 								font-weight: bold
-
-	// 					.food__btn-order
-	// 						margin-top: 8px
-	// 						width: 100%
-	// 						padding: 14px
-	// 						font: bold .75rem/1.2 $font
-
-
-	// 			.food__contb
-	// 				max-width: 100%
-	// 				.food__caltext
-	// 					font: bold 1rem/1.2 $font
-	// 					color: $grey3
-	// 					padding-left: 40px
-	// 					margin-bottom: 12px
-	// 					position: relative
-	// 					span
-	// 						color: $green
-	// 					&:before
-	// 						content: url(../img/food__calendar.svg)
-	// 						position: absolute
-	// 						left: 10px
-	// 						top: calc(50% - 13px)
-	// 			.food__products
-	// 				margin-top: 12px
-	// 				align-items: space-between
-	// 				margin-bottom: 10px
-	// 				.owl-stage
-	// 					padding-left: 10px !important
-	// 				li 
-	// 					width: 100%
-	// 					min-height: 220px
-	// 					display: flex
-	// 					align-items: center
-	// 					flex-direction: column
-	// 					justify-content: space-between
-	// 					.food__text2
-	// 						min-height: 50px
-	// 						font: bold .9rem/1.2 $font
-	// 						text-align: left
-	// 						color: $grey3
-	// 						margin-bottom: 10px
-	// 						span
-	// 							display: block
-	// 							font-weight: normal
-	// 							color: #949B9E
-	// 					.food__dish
-	// 						display: block
-	// 						max-width: 100%
-	// 						width: auto
-	// 						margin: 0 auto
-
-
-	// 	.food__detox
-	// 		flex-wrap: wrap
-	// 		padding: 25px 10px 25px 10px
-	// 		.food__bootle 
-	// 			width: 250px
-	// 			margin-right: 0px
-	// 			margin: 0 auto
-	// 			margin-bottom: 14px
-	// 			max-width: 100%
-	// 		.food__text3
-	// 			text-align: center
-
-
-
 	#eggs
 		.eggs__list
 			margin-top: -100px
@@ -3440,8 +3151,9 @@ footer
 					left: 0
 
 
+
 	#first
-		background: url(../img/first__bg-sm.jpg) no-repeat center 70%/cover
+		background: url(../img/first__bg-sm3.jpg) no-repeat center 70%/cover
 		padding: 45px 0 80px
 		min-height: 115vh
 		min-height: 900px
@@ -3452,7 +3164,8 @@ footer
 				font: 800 1.125rem/1.2 $font
 
 		.first__list
-			width: 100%
+			width: 260px
+			max-width: 100%
 			margin: 0 auto
 			display: flex
 			justify-content: flex-start
@@ -3504,6 +3217,7 @@ footer
 						font: bold 3.37rem/1.2 $font
 
 
+
 	#team
 		padding: 0 0 28px 0
 		.team__peaple
@@ -3515,6 +3229,7 @@ footer
 			margin-bottom: 12px
 		.team__cert
 			width: 100%
+
 
 
 	#rev
@@ -3555,6 +3270,7 @@ footer
 				.rev__descr
 					padding: 0 20px
 					font: 1rem/1.4 $font
+
 
 
 	#steps
@@ -3613,254 +3329,11 @@ footer
 						margin-bottom: 18px
 
 
-	// #food
-	// 	padding-top: 60px
-	// 	overflow: hidden
-	// 	.food__globalcont
-	// 		width: calc(100% + 30px)
-	// 		margin-left: -15px
-	// 	//left
-	// 	.food__set
-	// 		width: 124px
-	// 		margin: 0 auto
-	// 		display: flex
-	// 		flex-direction: column
-	// 		justify-content: space-between
-	// 		margin-bottom: 0px
-	// 		li
-	// 			width: 100%
-	// 			display: flex
-	// 			flex-direction: column
-	// 			box-sizing: border-box
-	// 			opacity: 1
-	// 			z-index: 10
-	// 			margin-bottom: 8px
-	// 			&.active,
-	// 			&:hover
-	// 				&::before
-	// 					content: ''
-	// 					border-radius: 0
-	// 				.food__text2
-	// 					font: bold .8rem/1.2 $font
-	// 				.food__cont
-	// 					&::before
-	// 						content: ''
-	// 						background: url(../img/mount.svg) no-repeat center center/contain
-	// 					&::after
-	// 						content: ''
-	// 						background: url(../img/mount.svg) no-repeat center center/contain
-	// 			&:first-child:hover
-	// 				.food__cont
-	// 					&::after
-	// 						content: ''
-	// 						background: url(../img/mount.svg) no-repeat center center/contain
-	// 						transform: rotate(180deg)
-	// 						bottom: -50px
-	// 			&:last-child:hover
-	// 				.food__cont
-	// 					&::after
-	// 						display: none
-	// 		.food__text1
-	// 			&:before
-	// 				font: bold 1.5rem/1.2 $font
-	// 				top: 0
-	// 				left: 4px
-	// 		.food__img
-	// 			width: 100px
-	// 			padding-top: 10px
-	// 			margin-bottom: -15px
-	// 		.food__text2
-	// 			font: bold .75rem/1.2 $font
-	// 			margin-bottom: 4px
-	// 			margin-top: 4px
-	// 			order: 2
-	// 		.food__cont
-	// 			display: flex
-	// 			justify-content: flex-start
-	// 			align-items: stretch
-	// 			flex-direction: column
-	// 			background: none
-	// 			border-radius: 0
-	// 			order: 1
-	// 			.food__kkal
-	// 				width: 80%
-	// 				padding: 2px 5px 2px 10px
-	// 				border-radius: 0px 50px 50px 0
-	// 				font: bold .75rem/1 $font
-	// 				margin-bottom: -4px
-	// 			.food__price
-	// 				width: 90%
-	// 				padding: 6px 5px 4px 10px
-	// 				border-radius: 0 10px 10px 0
-	// 				font: bold .75rem/1 $font
-		
-	// 	// right
-	// 	.food__details
-	// 		width: calc(100% - 120px)
-	// 		margin-left: 0px
-	// 		margin-right: -4px
-	// 		padding: 12px 6px
-	// 		box-shadow: 0px 4px 65px rgba(0, 0, 0, 0.06)
-	// 		border-radius: 11px 0 0 11px
-	// 		margin-bottom: 0px
-	// 		.food__item
-	// 			height: 100%
-	// 			justify-content: center
-	// 			align-items: flex-start
-	// 			flex-wrap: wrap
-	// 			.food__subtitle
-	// 				font: bold .85rem/1.2 $font
-	// 				margin-bottom: 4px
-	// 			.food__about
-	// 				width: 100%
-	// 				padding: 0 8px 5px 
-	// 				.food__txt1
-	// 					font: .75rem/1.4 $font
-	// 					span
-	// 						display: none
-	// 			.food__prices
-	// 				width: 100%
-	// 				padding: 7px 8px
-	// 				margin-bottom: 16px
-	// 				.food__subtitle
-	// 					margin-bottom: 16px
-
-	// 				.food__days
-	// 					justify-content: space-between
-	// 					flex-wrap: wrap
-	// 					margin-bottom: 6px
-	// 					li
-	// 						width: calc(50% - 3px)
-	// 						padding: 3px 9px 3px 30px
-	// 						font: .9rem/1.2 $font
-	// 						margin-bottom: 4px
-	// 						&:before
-	// 							content: ''
-	// 							display: block
-	// 							width: 20px
-	// 							height: 20px
-	// 							position: absolute
-	// 							top: calc(50% - 10px)
-	// 							left: 10px
-	// 						&:after
-	// 							content: ''
-	// 							display: block
-	// 							width: 11px
-	// 							height: 8px
-	// 							background: url(../img/days-check.svg) no-repeat center center/cover transparent
-	// 							position: absolute
-	// 							top: calc(50% - 4px)
-	// 							left: 14px
-	// 						span
-	// 							display: block
-	// 							font: .8rem/1.3 $font
-	// 							&.first
-	// 								font: .75rem/1.2 $font
-					
-	// 				.food__cost
-	// 					flex-direction: column
-	// 					.food__fullprice
-	// 						width: 100%
-	// 						padding: 2px
-	// 						.food__2price
-	// 							width: 100%
-	// 							justify-content: center
-	// 							align-items: center
-	// 							padding: 9px 13px
-	// 							font: bold 1rem/1.2 $font
-	// 							margin-bottom: 4px
-	// 							.sales
-	// 								font: bold .75rem/1 $font
-	// 								padding: 0 4px
-	// 								b 
-	// 									font: bold 1rem/1 $font
-	// 									margin-bottom: -2px
-	// 							.old
-	// 								display: inline-block
-	// 								&::before
-	// 									content: ''
-	// 									width: 95%
-	// 									height: 2px
-	// 									background: #979391
-	// 									transform: rotate(-12deg)
-	// 									top: 10px
-	// 									left: 0
-	// 						.food__price-for-one
-	// 							width: 100%
-	// 							padding: 4px 0
-	// 							font: .75rem/1.2 $font
-	// 							text-align: center
-	// 							span
-	// 								position: relative
-	// 								&::before
-	// 									content: ''
-	// 									display: block
-	// 									width: 90%
-	// 									height: 1px
-	// 									transform: rotate(-15deg)
-	// 									position: absolute
-	// 									top: 8px
-	// 									left: 0
-	// 							b
-	// 								font-weight: bold
-
-	// 					.food__btn-order
-	// 						margin-top: 8px
-	// 						width: 100%
-	// 						padding: 14px
-	// 						font: bold .75rem/1.2 $font
-
-
-	// 			.food__contb
-	// 				max-width: 100%
-	// 				.food__caltext
-	// 					display: block
-	// 					font: bold .85rem/1.2 $font
-	// 					color: $grey3
-	// 					padding-left: 40px
-	// 					margin-bottom: 12px
-	// 					position: relative
-	// 					span
-	// 						color: $green
-	// 					&:before
-	// 						content: url(../img/food__calendar.svg)
-	// 						position: absolute
-	// 						left: 10px
-	// 						top: calc(50% - 13px)
-
-	// 			.food__products
-	// 				margin-top: 12px
-	// 				align-items: space-between
-	// 				margin-bottom: 10px
-	// 				.owl-stage
-	// 					padding-left: 10px !important
-	// 				li 
-	// 					width: 100%
-	// 					min-height: 220px
-	// 					display: flex
-	// 					align-items: center
-	// 					flex-direction: column
-	// 					justify-content: space-between
-	// 					.food__text2
-	// 						min-height: 50px
-	// 						font: bold .75rem/1.2 $font
-	// 						text-align: left
-	// 						color: $grey3
-	// 						margin-bottom: 10px
-	// 						span
-	// 							display: block
-	// 							font-weight: normal
-	// 							color: #949B9E
-	// 					.food__dish
-	// 						display: block
-	// 						max-width: 100%
-	// 						width: auto
-	// 						margin: 0 auto
-
-
 
 	#food
 		padding-top: 60px
+		.title 
+			font-size: 1.125rem
 		.food__globalcont
 			display: flex
 			justify-content: space-between
@@ -3891,6 +3364,7 @@ footer
 					padding: 3px
 					margin: 0 2px 4px 2px
 					.food__subtitle
+						font-size: .9rem
 						margin-bottom: 8px
 					// day plan
 					.food__days
@@ -3931,21 +3405,28 @@ footer
 								font: bold .9rem/1.2 $font
 								padding: 0px
 								margin-bottom: 0px
+								.current b
+									font-size: .8rem
 								.sales
 									flex-direction: column
-									font: bold .7rem/1 $font
+									font: bold .6rem/1 $font
 									b 
 										font: bold .75rem/1 $font
+										font: bold .95rem/1 $font
 										margin-bottom: -2px
 								.old
 									display: inline-block
+									b
+										display: none
 									&::before
 										content: ''
-										width: 62px
+										width: 105%
 										top: 9px
 										left: 0
 							.food__price-for-one
 								font: .75rem/1.2 $font
+								i
+									font-size: 80%
 						.food__btn-order
 							width: 35%
 							font: bold .75rem/1.2 $font
@@ -3954,7 +3435,7 @@ footer
 				.food__contb
 					max-width: 100%
 					.food__caltext
-						font: bold 1rem/1.2 $font
+						font: bold .87rem/1.2 $font
 						color: $grey3
 						padding-left: 70px
 						margin-bottom: 12px
@@ -3964,12 +3445,13 @@ footer
 						&:before
 							content: url(../img/food__calendar1.svg)
 							position: absolute
-							left: 10px
+							left: 15px
 							top: calc(50% - 13px)
+							transform: scale(.8)
 				.food__products
 					margin-top: 12px
 					align-items: space-between
-					margin-bottom: 10px
+					margin-bottom: 0px
 					&.mobile
 						.owl-stage
 							padding-left: 10px !important
@@ -3982,11 +3464,11 @@ footer
 							// background: red
 							.food__dish
 								width: 40%
-								width: 90px
-								max-width: 90px
+								width: 50px
+								max-width: 50px
 							.food__rigthside
 								width: 60%
-								width: calc(100% - 90px)
+								width: calc(100% - 50px)
 								height: 100%
 								// background: blue
 								padding-left: 8px
@@ -4034,14 +3516,6 @@ footer
 							max-width: 100%
 							width: auto
 							margin: 0 auto
-
-
-
-
-
-
-
-
 
 
 
@@ -4253,9 +3727,16 @@ footer
 // xs for iphoneX
 @media (width: 375px) and (height: 812px)
 	#first
-		background: url(../img/first__bg-sm.jpg) no-repeat center 110%/cover
+		background: url(../img/first__bg-sm3.jpg) no-repeat center 110%/cover
 		// min-height: 88vh
 		min-height: 105vh
+
+
+
+@media (max-width: 460.98px)
+	#first
+		padding: 45px 0 80px
+		min-height: 800px
 
 
 
@@ -4356,8 +3837,6 @@ footer
 					top: calc(50% - 9px)
 					left: 0
 
-	#first
-		min-height: 130vh
 
 	#rev
 		padding-bottom: 60px
@@ -4397,11 +3876,6 @@ footer
 				.rev__descr
 					padding: 0 20px
 					font: 1rem/1.4 $font
-
-
-	// #food
-	// 	.title
-	// 		font: 700 1.125rem/1.2 $font
 
 
 	#steps
@@ -4503,220 +3977,56 @@ footer
 				.eggs__text1
 					text-align: center
 
+
+	#food
+		.food__details
+			.food__item
+				.food__products
+					margin-top: 12px
+					align-items: space-between
+					margin-bottom: 0px
+					&.mobile
+						.owl-stage
+							padding-left: 10px !important
+						li
+							min-height: 100px
+							display: flex
+							flex-direction: row
+							justify-content: space-between
+							align-items: flex-start
+							.food__dish
+								width: 50px
+								max-width: 50px
+							.food__rigthside
+								width: calc(100% - 50px)
+								height: 100%
+								padding-left: 4px
+								.food__prod-kkal
+									display: inline-block
+									padding: 5px 7px
+									font: bold .5rem/1.2 $font
+									margin-bottom: 2px
+								.food__text2
+									min-height: 0px
+									font: bold .65rem/1.2 $font
+									shite-space: nowrap
+									span
+										font: bold .6rem/1.2 $font
+										display: block
+										font-weight: normal
+
 // xs for iphone5
 @media (max-width: 374.98px)
 	#first
-		min-height: 145vh
-		background: url(../img/first__bg-sm.jpg) no-repeat center 50%/cover
+		background: url(../img/first__bg-sm3.jpg) no-repeat center 50%/cover
+		min-height: 750px
 		.first__title
 			.big
 				font: 800 2.75rem/1.25 $font
 			.small
 				font: 800 1rem/1.2 $font
-
-
-	// #food
-	// 	padding-top: 60px
-	// 	.food__globalcont
-	// 		width: calc(100% + 30px)
-	// 		margin-left: -15px
-	// 	//left
-	// 	.food__set
-	// 		width: 124px
-	// 		margin: 0 auto
-	// 		display: flex
-	// 		flex-direction: column
-	// 		justify-content: space-between
-	// 		margin-bottom: 0px
-	// 		li
-	// 			margin-bottom: 8px
-	// 		.food__text1
-	// 			&:before
-	// 				top: 0
-	// 				left: 4px
-	// 		.food__img
-	// 			width: 100px
-	// 			padding-top: 10px
-	// 		.food__text2
-	// 			margin-bottom: 4px
-	// 			margin-top: 4px
-	// 			order: 2
-	// 		.food__cont
-	// 			background: none
-	// 			.food__kkal
-	// 				width: 80%
-	// 				padding: 2px 5px 2px 10px
-	// 				border-radius: 0px 50px 50px 0
-	// 				margin-bottom: -4px
-	// 			.food__price
-	// 				width: 90%
-	// 				border-radius: 0 10px 10px 0
-		
-	// 	// right
-	// 	.food__details
-	// 		width: calc(100% - 120px)
-	// 		margin-left: 0px
-	// 		margin-right: -4px
-	// 		padding: 12px 6px
-	// 		box-shadow: 0px 4px 65px rgba(0, 0, 0, 0.06)
-	// 		border-radius: 11px 0 0 11px
-	// 		margin-bottom: 0px
-	// 		.food__item
-	// 			height: 100%
-	// 			justify-content: center
-	// 			align-items: flex-start
-	// 			flex-wrap: wrap
-	// 			.food__subtitle
-	// 				margin-bottom: 4px
-	// 			.food__about
-	// 				width: 100%
-	// 				padding: 0 8px 5px 
-	// 			.food__prices
-	// 				width: 100%
-	// 				padding: 7px 3px
-	// 				margin-bottom: 16px
-	// 				.food__subtitle
-	// 					margin-bottom: 16px
-
-	// 				.food__days
-	// 					justify-content: space-between
-	// 					flex-wrap: wrap
-	// 					margin-bottom: 6px
-	// 					li
-	// 						width: calc(50% - 3px)
-	// 						padding: 3px 9px 3px 30px
-	// 						font: .9rem/1.2 $font
-	// 						margin-bottom: 4px
-	// 						&:before
-	// 							content: ''
-	// 							display: block
-	// 							width: 20px
-	// 							height: 20px
-	// 							position: absolute
-	// 							top: calc(50% - 10px)
-	// 							left: 10px
-	// 						&:after
-	// 							content: ''
-	// 							display: block
-	// 							width: 11px
-	// 							height: 8px
-	// 							background: url(../img/days-check.svg) no-repeat center center/cover transparent
-	// 							position: absolute
-	// 							top: calc(50% - 4px)
-	// 							left: 14px
-	// 						span
-	// 							display: block
-	// 							font: .8rem/1.3 $font
-	// 							&.first
-	// 								font: .65rem/1.2 $font
-					
-	// 				.food__cost
-	// 					flex-direction: column
-	// 					.food__fullprice
-	// 						width: 100%
-	// 						padding: 2px
-	// 						min-height: 80px
-	// 						display: flex
-	// 						flex-direction: column
-	// 						justify-content: space-between
-	// 						&.single
-	// 							justify-content: center
-	// 						.food__2price
-	// 							width: 100%
-	// 							// background: red
-	// 							justify-content: center
-	// 							align-items: center
-	// 							padding: 9px 13px
-	// 							font: bold .9rem/1 $font
-	// 							margin-bottom: 4px
-	// 							.sales
-	// 								font: bold .75rem/1 $font
-	// 								b 
-	// 									font: bold 1rem/1 $font
-	// 									margin-bottom: -2px
-	// 							.old
-	// 								display: inline-block
-	// 								&::before
-	// 									content: ''
-	// 									width: 95%
-	// 									width: 50px
-	// 									height: 2px
-	// 									background: #979391
-	// 									transform: rotate(-12deg)
-	// 									top: 8px
-	// 									left: calc(50% - 25px)
-	// 						.food__price-for-one
-	// 							width: 100%
-	// 							padding: 4px 0
-	// 							font: .75rem/1.2 $font
-	// 							text-align: center
-	// 							span
-	// 								position: relative
-	// 								&::before
-	// 									content: ''
-	// 									display: block
-	// 									width: 90%
-	// 									height: 1px
-	// 									transform: rotate(-15deg)
-	// 									position: absolute
-	// 									top: 8px
-	// 									left: 0
-	// 							b
-	// 								font-weight: bold
-
-	// 					.food__btn-order
-	// 						margin-top: 8px
-	// 						width: 100%
-	// 						padding: 14px
-	// 						font: bold .75rem/1.2 $font
-
-
-
-
-
-
-
-	// 			.food__contb
-	// 				max-width: 100%
-	// 				.food__caltext
-	// 					color: $grey3
-	// 					padding-left: 40px
-	// 					margin-bottom: 12px
-	// 					position: relative
-	// 					span
-	// 						color: $green
-	// 					&:before
-	// 						content: url(../img/food__calendar.svg)
-	// 						position: absolute
-	// 						left: 10px
-	// 						top: calc(50% - 13px)
-	// 			.food__products
-	// 				margin-top: 12px
-	// 				align-items: space-between
-	// 				margin-bottom: 10px
-	// 				.owl-stage
-	// 					padding-left: 10px !important
-	// 				li 
-	// 					width: 100%
-	// 					min-height: 220px
-	// 					display: flex
-	// 					align-items: center
-	// 					flex-direction: column
-	// 					justify-content: space-between
-	// 					.food__text2
-	// 						min-height: 50px
-	// 						text-align: left
-	// 						color: $grey3
-	// 						margin-bottom: 10px
-	// 						span
-	// 							display: block
-	// 							font-weight: normal
-	// 							color: #949B9E
-	// 					.food__dish
-	// 						display: block
-	// 						max-width: 100%
-	// 						width: auto
-	// 						margin: 0 auto
+		.first__list
+			width: 100%
 
 // xs for iphone5
 @media (max-width: 354.98px)

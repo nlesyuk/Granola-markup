@@ -78,15 +78,16 @@ $(document).ready(function (e) {
 		});
 
 		// FOOD Menu
-		// $('.food__set li').on('click', function (e) {
-		// 	$('.food__set li').removeClass('active')
-		// 	$(this).addClass('active')
-		// 	var item = $(this).data('item')
+		if (window.innerWidth > 992) {
+			$('.food__set li').on('click', function (e) {
+				$('.food__set li').removeClass('active')
+				$(this).addClass('active')
+				var item = $(this).data('item')
 
-		// 	$('.food__item').removeClass('active')
-		// 	$('.food__item[data-item=' + item + ']').addClass('active')
-		// });
-
+				$('.food__item').removeClass('active')
+				$('.food__item[data-item=' + item + ']').addClass('active')
+			});
+		}
 		// days 
 		$(document).on('click', '.food__item.active .food__days li', function (e) {
 			$('.food__item.active .food__days li').removeClass('choosed')
@@ -101,25 +102,27 @@ $(document).ready(function (e) {
 
 			// days
 			var text = $(this).text()
-
 			var days = parseInt(text)
 
 			// change price
-			var oldPrice = (days * 450) + ' грн.';
-			var currentPrice = '450 грн';
+			// var showCurrency = ' грн.';
+			// if (window.innerWidth < 576) { showCurrency = '' }
+			// var oldPrice = (days * 450) + showCurrency;
+			var oldPrice = (days * 450) + (window.innerWidth < 576 ? '' : ' грн');
+			// var oldPrice = (days * 450) + ((days * 450) >= 9000 ? '' : ' грн.');
+			var currentPrice = '450 <b>грн.<b>';
 			switch (per) {
 				case 10:
-					currentPrice = ((days * 450) * 0.9) + ' грн.'
-					perDay = (450 * 0.9) + 'грн.'
-
+					currentPrice = ((days * 450) * 0.9) + ' <b>грн.<b>'
+					perDay = (450 * 0.9) + ' <i>грн.</i>'
 					break
 				case 20:
-					currentPrice = ((days * 450) * 0.8) + ' грн.'
-					perDay = (450 * 0.8) + 'грн.'
+					currentPrice = ((days * 450) * 0.8) + ' <b>грн.<b>'
+					perDay = (450 * 0.8) + ' <i>грн.</i>'
 					break
 				case 30:
-					currentPrice = ((days * 450) * 0.7) + ' грн.'
-					perDay = (450 * 0.7) + 'грн.'
+					currentPrice = ((days * 450) * 0.7) + ' <b>грн.<b>'
+					perDay = (450 * 0.7) + ' <i>грн.</i>'
 					break
 			}
 
@@ -129,16 +132,16 @@ $(document).ready(function (e) {
 
 				$('.food__item.active .food__2price .old').text(oldPrice)
 				$('.food__item.active .food__2price .sales b').text(percent)
-				$('.food__item.active .food__2price .current').text(currentPrice)
+				$('.food__item.active .food__2price .current').html(currentPrice)
 			} else {
 				$('.food__item.active .food__2price .old, .food__item.active .food__2price .sales, .food__item.active .food__price-for-one').addClass('d-none')
 
 				$('.food__item.active .food__fullprice').addClass('single')
-				$('.food__item.active .food__2price .current').text(currentPrice)
+				$('.food__item.active .food__2price .current').html(currentPrice)
 			}
 
 			// price per day
-			$('.food__item.active .food__price-for-one b').text(perDay)
+			$('.food__item.active .food__price-for-one b').html(perDay)
 		});
 
 		// make order
@@ -177,13 +180,29 @@ $(document).ready(function (e) {
 			// top paralax
 			var scene = document.getElementById('scene');
 			var parallaxInstance = new Parallax(scene);
+
+			// food set make active tab
+			$('.food__set li[data-item=1]').addClass('active');
+
 		} else {
 			$('#scene').remove()
 		}
+
+
 		// md <992
 		if (window.innerWidth < 992) {
 
+			// slider for food sets
 			var owlSet = $('.food__set');
+			var breakPion = 560;
+			// in table add 2 li
+			if (window.innerWidth > breakPion) {
+				owlSet.append('<li></li><li></li>')
+			}
+			// in mobile add 1 li
+			if (window.innerWidth < breakPion) {
+				owlSet.append('<li></li>')
+			}
 			owlSet.addClass('owl-carousel')
 			owlSet.owlCarousel({
 				center: true,
@@ -198,35 +217,31 @@ $(document).ready(function (e) {
 					}
 				}
 			});
-			owlSet.on('drag.owl.carousel', function (event) {
-				// FOOD Menu
-				// $('.food__set li').on('click', function (e) {
-				// 	$('.food__set li').removeClass('active')
-				// 	$(this).addClass('active')
-				// 	var item = $(this).data('item')
-
-				// 	$('.food__item').removeClass('active')
-				// 	$('.food__item[data-item=' + item + ']').addClass('active')
-				// });
-				console.log(event)
+			owlSet.trigger('next.owl.carousel');
+			owlSet.on('dragged.owl.carousel', function (event) {
+				var item = $('.food__set .owl-item.active.center li').data('item')
+				$('.food__item').removeClass('active')
+				$('.food__item[data-item=' + item + ']').animate({ opacity: 0 }, 300)
+				$('.food__item[data-item=' + item + ']').addClass('active')
+				$('.food__item[data-item=' + item + ']').animate({ opacity: 1 }, 300)
 			})
 
 
-
+			// slider of food in basket
 			var owlFood = $('.food__products.mobile');
 			owlFood.addClass('owl-carousel')
 			owlFood.owlCarousel({
-				loop: false,
+				loop: true,
 				nav: false,
-				autoplay: false,
-				autoplayTimeout: 99000,
+				autoplay: true,
+				autoplayTimeout: 3000,
 				margin: 0,
-				dots: true,
+				dots: false,
 				responsiveClass: true,
 				// items: 3,
 				responsive: {
 					0: {
-						items: 1,
+						items: 2,
 						stagePadding: 25,
 						margin: 10
 					},
