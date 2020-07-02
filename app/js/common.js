@@ -13,9 +13,30 @@ $(document).ready(function (e) {
 	});
 	$("input[name=phone]").mask("+38(099)999-99-99");
 
-	// HEADER
+  // HEADER
+  function redirect(){
+    var isRu = (location.pathname).indexOf('ru');
+    var isOrderPage = (location.pathname).indexOf('order.html');
+    if( isRu ){
+      // ru
+      if ( isOrderPage != -1) {
+        window.location.href = '/ru/order.html'
+      } else {
+        window.location.href = '/ru/'
+      }
+    } else {
+      // ua
+      if ( isOrderPage != -1) {
+        window.location.href = '/order.html'
+      } else {
+        window.location.href = '/'
+      }
+    }
+  }
 	$(document).on('click', '.header__btn', function () {
-		window.location.href = window.location.href + 'order.html'
+    var isRu = (location.pathname).indexOf('ru');
+    if( isRu != -1 ) location.href = location.origin + '/ru/order.html'
+    else location.href = location.origin + '/order.html'
 	})
 	if (window.innerWidth < 992) {
 		$(window).on('scroll', function () {
@@ -26,6 +47,38 @@ $(document).ready(function (e) {
 			}
 		})
 	}
+  // Lang
+  // LG
+  $('.header__btn-lang').on('click', function(){
+    redirect()
+  })
+  // SM
+  $(".header__smlang select").on('change', function(e){
+    var isRu = (location.pathname).indexOf('ru');
+    var isOrderPage = (location.pathname).indexOf('order.html');
+    var locale = e.target.value;
+    switch(locale) {
+      case 'ua':
+        if( isRu != -1 ) {
+          if ( isOrderPage != -1) {
+            window.location.href = '/order.html'
+          } else {
+            window.location.href = '/'
+          }
+        }
+        break
+      case 'ru':
+        if( isRu === -1 ) {
+          if ( isOrderPage != -1) {
+            window.location.href = '/ru/order.html'
+          } else {
+            window.location.href = '/ru/'
+          }
+        }
+        break
+    }
+  })
+
 
 	// MAIN PAGE
 	var mainPage = document.getElementById('first')
@@ -88,7 +141,7 @@ $(document).ready(function (e) {
 				$('.food__item[data-item=' + item + ']').addClass('active')
 			});
 		}
-		// days 
+		// days
 		$(document).on('click', '.food__item.active .food__days li', function (e) {
 			$('.food__item.active .food__days li').removeClass('choosed')
 			$(this).addClass('choosed')
@@ -167,7 +220,13 @@ $(document).ready(function (e) {
 			console.log(dataOrder)
 			var isOK = setOrderInLS(dataOrder)
 			if (isOK) {
-				window.location.href = window.location.href + 'order.html'
+        var isRu = (location.pathname).indexOf('ru');
+        if(isRu != -1){
+          window.location.href = '/ru/order.html'
+        } else {
+          window.location.href = '/order.html'
+        }
+				// window.location.href = window.location.href + 'order.html'
 			} else {
 				alert('Something went wrong')
 			}
@@ -425,7 +484,7 @@ $(document).ready(function (e) {
 			$('.order__form input[name=days]').val(days)
 		}
 
-		// days 
+		// days
 		$(document).on('click', '.order__days li', function (e) {
 			$('.order__days li').removeClass('choosed')
 			$(this).addClass('choosed')
@@ -470,7 +529,7 @@ $(document).ready(function (e) {
 				$(' .order__2price .old,  .order__2price .sales,  .order__price-for-one').addClass('d-none')
 
 				$(' .order__fullprice').addClass('single')
-				$(' .order__2price .current').text(currentPrice)
+				$(' .order__2price .current').html(currentPrice)
 			}
 
 			// price per day

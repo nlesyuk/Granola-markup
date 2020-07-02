@@ -1883,9 +1883,9 @@ footer
 							svg
 								margin-right: 0
 			.header__smlang
-				width: 60px
+				width: 50px
 				&:before
-					right: 5px
+					// right: 5px
 			.header__smtop
 				.header__info
 					display: flex
@@ -2009,6 +2009,7 @@ footer
 				position: absolute
 				top: calc(50% - 2px)
 				right: 10px
+				pointer-events: none
 			select
 				width: 100% 
 				border: none
@@ -3797,9 +3798,9 @@ footer
 							svg
 								margin-right: 0
 			.header__smlang
-				width: 60px
+				// width: 60px
 				&:before
-					right: 5px
+					// right: 5px
 			.header__smtop
 				.header__info
 					display: flex
@@ -4071,6 +4072,12 @@ footer
 	header 
 		padding: 0
 		height: auto
+		&.header__orderpage
+			&.header__slick
+				.logo 
+					.header__slicksvg
+						height: 39px
+						margin-top: -5px
 		&.header__slick
 			.header__smtop .header__info .header__text1
 				font: 300 .85rem/1.25 $font
