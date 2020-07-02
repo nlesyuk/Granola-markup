@@ -11,6 +11,7 @@ $(document).ready(function (e) {
 			window.location.hash = target;
 		});
 	});
+	$("input[name=phone]").mask("+38(099)999-99-99");
 
 	// HEADER
 	$(document).on('click', '.header__btn', function () {
@@ -18,7 +19,6 @@ $(document).ready(function (e) {
 	})
 	if (window.innerWidth < 992) {
 		$(window).on('scroll', function () {
-
 			if (window.pageYOffset > 100) {
 				$('header').addClass('header__slick')
 			} else {
@@ -342,20 +342,50 @@ $(document).ready(function (e) {
 
 			var form = $(this);
 			var url = form.attr('action');
-
+			var responseText = {
+				ua: {
+					text1: 'Дякуюємо за заказ! ',
+					text2: 'Ми з Вами звяжемося',
+					text1Fail: 'Щось поламалось або попробуйте почистити кеш і спробувати знову! ',
+					text2Fail: 'Вибачте за незручність'
+				},
+				ru: {
+					text1: 'Дякуюємо за заказ! ',
+					text2: 'Ми з Вами звяжемося',
+					text1Fail: 'Щось поламалось або попробуйте почистити кеш і спробувати знову! ',
+					text2Fail: 'Вибачте за незручність'
+				}
+			}
 			$.ajax({
 				type: 'POST',
 				url: url,
 				data: form.serialize(),
 				success: function (data) {
-					console.log(data)
-					alert('Заказ був відправлений! Дякуюємо!')
+
+					$("#order__ok .modal-title").text(responseText.ua.text1)
+					$("#order__ok .modal-text1").text(responseText.ua.text2)
+
+					$("#order__ok").modal('show')
+					setTimeout(function () {
+						$("#order__ok").modal('hide')
+					}, 2000)
+
 					clearAfterSubmit()
 				},
 				fail: function (data) {
-					console.log(data)
-					alert('Щось поламалось або попробуйте почистити кеш і спробувати знову! Вибачте за незручність')
+
+					$("#order__ok .modal-title").text(responseText.ua.text1Fail)
+					$("#order__ok .modal-text1").text(responseText.ua.text2Fail)
+
+					$("#order__ok").modal('show')
+					setTimeout(function () {
+						$("#order__ok").modal('hide')
+					}, 2000)
+
 				},
+				always: function () {
+					console.log('test')
+				}
 			})
 		})
 
@@ -396,24 +426,6 @@ $(document).ready(function (e) {
 		}
 
 		// days 
-		/* 	$(document).on('click','.order__days li', function(e){
-				$('.order__days li').removeClass('choosed')
-				$(this).addClass('choosed')
-				// days
-				var text = $(this).text()
-				var days = parseInt(text)
-				// change price
-				var oldPrice = (days * 450) + 'грн'
-				var currentPrice = ((days * 450) * 0.9) + 'грн'
-				$('.order__2price .old').text(oldPrice)
-				$('.order__2price .current').text(currentPrice)
-		
-				// set in inputs
-				$('.order__form input[name=price_old]').val(oldPrice)
-				$('.order__form input[name=price_current]').val(currentPrice)
-				$('.order__form input[name=days]').val(days)
-			}); */
-		// days 
 		$(document).on('click', '.order__days li', function (e) {
 			$('.order__days li').removeClass('choosed')
 			$(this).addClass('choosed')
@@ -427,25 +439,23 @@ $(document).ready(function (e) {
 
 			// days
 			var text = $(this).text()
-
 			var days = parseInt(text)
 
 			// change price
-			var oldPrice = (days * 450) + ' грн.';
-			var currentPrice = '450 грн';
+			var oldPrice = (days * 450) + (window.innerWidth < 576 ? '' : ' грн');
+			var currentPrice = '450 <b>грн.<b>';
 			switch (per) {
 				case 10:
-					currentPrice = ((days * 450) * 0.9) + ' грн.'
-					perDay = (450 * 0.9) + 'грн.'
-
+					currentPrice = ((days * 450) * 0.9) + ' <b>грн.<b>'
+					perDay = (450 * 0.9) + ' <i>грн.</i>'
 					break
 				case 20:
-					currentPrice = ((days * 450) * 0.8) + ' грн.'
-					perDay = (450 * 0.8) + 'грн.'
+					currentPrice = ((days * 450) * 0.8) + ' <b>грн.<b>'
+					perDay = (450 * 0.8) + ' <i>грн.</i>'
 					break
 				case 30:
-					currentPrice = ((days * 450) * 0.7) + ' грн.'
-					perDay = (450 * 0.7) + 'грн.'
+					currentPrice = ((days * 450) * 0.7) + ' <b>грн.<b>'
+					perDay = (450 * 0.7) + ' <i>грн.</i>'
 					break
 			}
 
@@ -455,7 +465,7 @@ $(document).ready(function (e) {
 
 				$(' .order__2price .old').text(oldPrice)
 				$(' .order__2price .sales b').text(percent)
-				$(' .order__2price .current').text(currentPrice)
+				$(' .order__2price .current').html(currentPrice)
 			} else {
 				$(' .order__2price .old,  .order__2price .sales,  .order__price-for-one').addClass('d-none')
 
@@ -464,9 +474,8 @@ $(document).ready(function (e) {
 			}
 
 			// price per day
-			$('.order__price-for-one b').text(perDay)
+			$('.order__price-for-one b').html(perDay)
 		});
-		$("input[name=phone]").mask("+38(099)999-99-99");
 	}
 	//end ready
 });
