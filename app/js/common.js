@@ -236,12 +236,11 @@ $(document).ready(function (e) {
     // 3-5 per day
     !function () {
       var fromCount = 5567;
-      var step = 3;
       var date = new Date('2020-07-02:00:00:00');
       var currentDate = new Date();
       var oneDay = 60 * 60 * 24 * 1000;
       var getDays = parseInt(((currentDate - date) / oneDay))
-      var result = fromCount + (getDays * step)
+      var result = fromCount + getDays
       var markup = String(result).split('').map(function (item) {
         return '<span>' + item + '</span>'
       }).join('')
