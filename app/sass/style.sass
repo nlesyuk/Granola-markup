@@ -679,24 +679,43 @@ header
 							transition: all .25s
 							background: $greenH
 
-
+			.food__contb
+				width: 100%
 			.food__products
 				width: 100%
 				margin-top: 12px
 				display: flex
 				align-items: space-between
 				margin-bottom: 10px
+				&.food__individual
+					width: 100%
+					li:last-child
+						width: 80%
+						display: flex
+						justify-content: center
+						flex-direction: column
+						align-items: center
+						border: none
 				li
-					width: 20%
 					width: calc(80% / 5)
+					padding: 5px 9px
 					display: flex
 					align-items: center
 					flex-direction: column
-					justify-content: space-between
+					// justify-content: space-between
+					position: relative
+					border: 2px solid #F6F6F6
+					box-sizing: border-box
+					border-radius: 13px
+					margin-right: 6px
+					&:last-child
+						margin-right: 0px
+
 					&.first
 						width: 20%
 						justify-content: space-around
 						justify-content: center
+						border: none
 						.food__text2
 							font-size: 1.125rem
 							span
@@ -706,14 +725,97 @@ header
 						.food__calendar
 							display: block
 							width: 90%
+
+					// hidden
+					.food__btn-more
+						display: flex
+						align-items: center
+						justify-content: center
+						width: 22px
+						height: 22px
+						background: $orange
+						border-radius: 50%
+						border: none
+						font: bold .9rem/1 $font
+						color: white
+						position: absolute
+						right: 3px
+						top: 3px
+						&:hover
+							z-index: 2
+							cursor: pointer
+							& + .food__more
+								opacity: 1
+								z-index: 1
+								transition: all .25s
+					// hidden block
+					.food__more
+						opacity: 0
+						position: absolute
+						right: -1px
+						top: -1px
+						bottom: -1px
+						left: -180px
+						background: white
+						padding: 14px 10px
+						display: flex
+						justify-content: space-between
+						align-items: center
+						box-sizing: border-box
+						box-shadow: 8px 3px 12px rgba(166, 94, 21, 0.2)
+						border-radius: 13px
+						border: 1px solid $green2
+						z-index: -1
+						transition: all .25s
+						.food__more-cont1
+							height: 100%
+							// background: red
+							display: flex
+							// align-items: center
+							justify-content: center
+							flex-direction: column
+							position: relative
+							.food__text2
+								align-self: start
+								font-size: 1.125rem
+								white-space: nowrap
+								margin-bottom: 0px
+								position: absolute
+								top: 0
+								left: 0
+							.food__text3
+								font: bold .8rem/1 $font
+								text-align: left
+								color: $grey3
+								margin-bottom: 4px
+							.food__kcal
+						.food__dish
+							display: block
+							width: 55%
+							max-width: 180px
+							margin: 0
+
+
 					.food__text2
-						width: 80%
-						// background: red
-						min-height: 50px
+						width: 100%
+						min-height: 0px
 						font: bold .9rem/1.2 $font
-						text-align: center
+						text-align: left
 						color: $grey3
 						margin-bottom: 10px
+						span
+							display: block
+							font-weight: normal
+							color: #949B9E
+					.food__kcal
+						padding: 5px 10px
+						background: $grey7
+						border-radius: 4px
+						font: bold .9rem/1.2 $font
+						text-align: left
+						color: $grey4
+						margin-bottom: 10px
+						margin-right: auto
 						span
 							display: block
 							font-weight: normal
@@ -723,6 +825,8 @@ header
 						max-width: 100%
 						// width: 80%
 						margin: 0 auto
+
+
 
 	.food__caltext
 		display: none
@@ -2712,6 +2816,11 @@ footer
 							position: absolute
 							left: 10px
 							top: calc(50% - 13px)
+						&:after
+							content: url(../img/swipe-right.svg)
+							position: absolute
+							right: 10px
+							top: calc(50% - 13px)
 				.food__products
 					margin-top: 12px
 					align-items: space-between
@@ -2726,6 +2835,7 @@ footer
 							justify-content: space-between
 							align-items: flex-start
 							// background: red
+							border: none
 							.food__dish
 								width: 40%
 								width: 90px
@@ -2742,20 +2852,36 @@ footer
 									border-radius: 4px
 									padding: 5px 7px
 									font: bold .5rem/1.2 $font
-									font: bold .8rem/1.2 $font
+									font: bold .7rem/1.2 $font
 									text-align: center
 									color: $grey4
-									margin-bottom: 2px
+									margin-bottom: 6px
 								.food__text2
 									min-height: 0px
-									font: bold .7rem/1.2 $font
-									font: bold .9rem/1.2 $font
+									font: .8rem/1.2 $font
 									text-align: left
 									color: $grey3
-									span
-										display: block
-										font-weight: normal
-										color: #949B9E
+									&.title
+										font-weight: bold
+										color: black
+										padding-left: 22px
+										margin-bottom: 9px
+										position: relative
+										&:before
+											content: attr(data-num)
+											display: flex
+											justify-content: center
+											align-items: center
+											width: 18px
+											height: 18px
+											background: $orange
+											border-radius: 50%
+											box-sizing: border-box
+											font: bold .9rem/1 $font
+											color: white
+											position: absolute
+											top: calc(50% - 9px)
+											left: 0
 					.owl-stage
 						padding-left: 0px !important
 					li
@@ -2765,6 +2891,11 @@ footer
 						align-items: center
 						flex-direction: column
 						justify-content: space-between
+						position: relative
+						// hidden
+						.food__btn-more
+						.food__more
+						// shown
 						.food__text2
 							min-height: 50px
 							font: bold .9rem/1.2 $font
@@ -2775,6 +2906,7 @@ footer
 								display: block
 								font-weight: normal
 								color: #949B9E
+						.food__kcal
 						.food__dish
 							display: block
 							max-width: 100%
@@ -3487,8 +3619,6 @@ footer
 						span
 							color: $green
 						&:before
-							content: url(../img/food__calendar1.svg)
-							position: absolute
 							left: 15px
 							top: calc(50% - 13px)
 							transform: scale(.8)
@@ -3501,6 +3631,7 @@ footer
 							padding-left: 10px !important
 						li
 							min-height: 130px
+							padding-left: 0px
 							display: flex
 							flex-direction: row
 							justify-content: space-between
@@ -3508,34 +3639,35 @@ footer
 							// background: red
 							.food__dish
 								width: 40%
-								width: 50px
-								max-width: 50px
+								width: 100px
+								margin: 0
+								margin-right: auto
 							.food__rigthside
 								width: 60%
-								width: calc(100% - 50px)
+								width: calc(100% - 100px)
 								height: 100%
 								// background: blue
 								padding-left: 8px
+								padding-left: 0px
 								.food__prod-kkal
 									display: inline-block
 									background: #E5E5E5
 									border-radius: 4px
 									padding: 5px 7px
-									font: bold .5rem/1.2 $font
 									font: bold .8rem/1.2 $font
 									text-align: center
-									color: $grey4
 									margin-bottom: 2px
 								.food__text2
 									min-height: 0px
-									font: bold .7rem/1.2 $font
-									font: bold .9rem/1.2 $font
+									font: .8rem/1.2 $font
 									text-align: left
 									color: $grey3
-									span
-										display: block
-										font-weight: normal
-										color: #949B9E
+									&.title
+										font-weight: bold
+										color: black
+										padding-left: 22px
+										margin-bottom: 9px
+										position: relative
 					.owl-stage
 						padding-left: 0px !important
 					li
@@ -4039,26 +4171,26 @@ footer
 							justify-content: space-between
 							align-items: flex-start
 							.food__dish
-								width: 50px
-								max-width: 50px
+								width: 100px
+								max-width: 100px
 							.food__rigthside
-								width: calc(100% - 50px)
+								width: calc(100% - 100px)
 								height: 100%
 								padding-left: 4px
+								padding-left: 0px
 								.food__prod-kkal
 									display: inline-block
 									padding: 5px 7px
-									font: bold .5rem/1.2 $font
+									font: bold .65rem/1.2 $font
 									margin-bottom: 2px
 								.food__text2
-									min-height: 0px
-									font: bold .65rem/1.2 $font
 									shite-space: nowrap
-									span
-										font: bold .6rem/1.2 $font
-										display: block
-										font-weight: normal
-
+									font: .8rem/1.2 $font
+									font: .65rem/1.2 $font
+									text-align: left
+									color: $grey3
+									&.title
+										padding-left: 22px
 // xs for iphone5
 @media (max-width: 374.98px)
 	#first

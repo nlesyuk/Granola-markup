@@ -306,7 +306,7 @@ $(document).ready(function (e) {
       owlFood.owlCarousel({
         loop: true,
         nav: false,
-        autoplay: true,
+        autoplay: false,
         autoplayTimeout: 3000,
         margin: 0,
         dots: false,
@@ -314,13 +314,13 @@ $(document).ready(function (e) {
         // items: 3,
         responsive: {
           0: {
-            items: 2,
-            stagePadding: 25,
-            margin: 10
+            items: 1,
+            stagePadding: 40,
+            margin: 0
           },
           556: {
             items: 2,
-            stagePadding: 40
+            stagePadding: 20
           },
           768: {
             items: 2,
