@@ -716,6 +716,7 @@ header
 							text-align: center
 							color: $grey3
 							margin-bottom: 17px
+							margin-bottom: 47px
 						.food__btn
 							font: 400 1rem/1.1 $font
 							letter-spacing: normal
@@ -2271,10 +2272,26 @@ footer
 
 
 	#stars
+		#stars__slider
+			.owl-dots
+				align-items: center
+				bottom: 20px
+				left: calc(50% - 50px)
 		.stars__item
+			flex-wrap: wrap
+			.stars__ava
+				width: 100%
 			.stars__cont
+				width: 100%
 				min-height: 200px
-
+				padding: 15px 11px 40px
+				background: url(../img/slider__top-sm1.svg) no-repeat top right/auto $green
+				.stars__title
+					font: bold 1.5rem/1.2 $font
+				.stars__text1
+					width: 100%
+					font: 1rem/1.2 $font
+					padding-bottom: 40px
 
 
 	#deliv
@@ -2864,6 +2881,7 @@ footer
 								.food__text-info
 									font: bold 1rem/1.2 $font
 									margin-bottom: 17px
+									margin-bottom: 75px
 								.food__btn
 									display: block
 									max-width: 100%
@@ -3684,9 +3702,9 @@ footer
 									opacity: .5
 								.food__text-info
 									font: bold .8rem/1.2 $font
-									margin-bottom: 17px
+									// margin-bottom: 17px
 									br
-										display: none
+										// display: none
 								.food__btn
 									font: 400 .8rem/1.1 $font
 									span

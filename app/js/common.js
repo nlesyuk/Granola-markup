@@ -156,32 +156,87 @@ $(document).ready(function (e) {
       var per = parseInt(percent)
       per = Math.abs(per)
       var perIsNaN = isNaN(per)
-      console.log(per)
 
       // days
       var text = $(this).text()
       var days = parseInt(text)
+      console.log(per, days, text)
+
+      // cost
+      var baseCost = parseInt( $('.food__item.active .food__price-for-one span').text() )
+      console.log(baseCost)
 
       // change price
       // var showCurrency = ' грн.';
       // if (window.innerWidth < 576) { showCurrency = '' }
       // var oldPrice = (days * 450) + showCurrency;
-      var oldPrice = (days * 450) + (window.innerWidth < 576 ? '' : ' грн');
+      var oldPrice = (days * baseCost) + (window.innerWidth < 576 ? '' : ' грн');
       // var oldPrice = (days * 450) + ((days * 450) >= 9000 ? '' : ' грн.');
-      var currentPrice = '450 <b>грн.<b>';
+      var currentPrice = baseCost+' <b>грн.<b>';
       switch (per) {
-        case 10:
-          currentPrice = ((days * 450) * 0.9) + ' <b>грн.<b>'
-          perDay = (450 * 0.9) + ' <i>грн.</i>'
+        case 7:
+          // 1 - 0.7 (7%) = 0.93
+          currentPrice = ((days * baseCost) * 0.93)
+          perDay = (baseCost * 0.93)
+
+          // correction
+          // max light, light, (everyday, individ), vegan
+          var p = parseInt(currentPrice)
+          currentPrice = p === 2929
+            ? 2940
+            : p === 3189
+              ? 3150
+              : p === 3580
+                ? 3640
+                : null
+
+          var d = parseInt(perDay)
+          console.log(d)
+          perDay = d === 418
+            ? 420
+            : d === 455
+              ? 450
+              : d === 511
+                ? 520
+                : null
+
+
+          currentPrice += ' <b>грн.<b>'
+          perDay += ' <i>грн.</i>'
           break
-        case 20:
-          currentPrice = ((days * 450) * 0.8) + ' <b>грн.<b>'
-          perDay = (450 * 0.8) + ' <i>грн.</i>'
+        case 13:
+          currentPrice = ((days * baseCost) * 0.87)
+          perDay = (baseCost * 0.87)
+
+          // correction
+          // max light, light, (everyday, individ), vegan
+          var p = parseInt(currentPrice)
+          currentPrice = p === 8221
+            ? 8190
+            : p === 8952
+              ? 8820
+              : p === 10048
+                ? 10290
+                : null
+
+          var d = parseInt(perDay)
+          perDay = d === 391
+            ? 390
+            : d === 426
+              ? 420
+              : d === 478
+                ? 490
+                : null
+
+
+          currentPrice += ' <b>грн.<b>'
+          perDay += ' <i>грн.</i>'
+
           break
-        case 30:
-          currentPrice = ((days * 450) * 0.7) + ' <b>грн.<b>'
-          perDay = (450 * 0.7) + ' <i>грн.</i>'
-          break
+        // case 30:
+        //   currentPrice = ((days * 450) * 0.7) + ' <b>грн.<b>'
+        //   perDay = (450 * 0.7) + ' <i>грн.</i>'
+        //   break
       }
 
       if (!perIsNaN) {
