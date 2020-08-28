@@ -675,9 +675,11 @@
                   <img src="img/food__set1.svg" alt="" class="food__img" loading="lazy" />
                   <p class="food__text2"><span>Раціон “</span>Max Light<span>”</span></p>
                   <div class="food__cont">
-                    <div class="food__kkal"><b>2200</b> ккал <span>Зниження ваги</span></div>
+                    <div class="food__kkal">
+                      <i><b>1200</b> ккал </i><span>Зниження ваги</span>
+                    </div>
                     <div class="food__price">
-                      від <b>490 <abbr title="гривня">грн</abbr></b>
+                      від <b>390 <abbr title="гривня">грн</abbr></b>
                       <span>на день</span>
                     </div>
                   </div>
@@ -687,9 +689,11 @@
                   <img src="img/food__set2.svg" alt="" class="food__img d-none1 d-lg-block" loading="lazy" />
                   <p class="food__text2"><span>Раціон “</span>Light<span>”</span></p>
                   <div class="food__cont">
-                    <div class="food__kkal"><b>2200</b> ккал <span>Зниження ваги</span></div>
+                    <div class="food__kkal">
+                      <i><b>1500</b> ккал </i><span>Зниження ваги</span>
+                    </div>
                     <div class="food__price">
-                      від <b>490 <abbr title="гривня">грн</abbr></b>
+                      від <b>420 <abbr title="гривня">грн</abbr></b>
                       <span>на день</span>
                     </div>
                   </div>
@@ -699,7 +703,9 @@
                   <img src="img/food__set3.svg" alt="" class="food__img" loading="lazy" />
                   <p class="food__text2"><span>Раціон “</span>На кожен день<span>”</span></p>
                   <div class="food__cont">
-                    <div class="food__kkal"><b>2200</b> ккал</div>
+                    <div class="food__kkal">
+                      <i><b>2200</b> ккал</i>
+                    </div>
                     <div class="food__price">
                       від <b>490 <abbr title="гривня">грн</abbr></b>
                       <span>на день</span>
@@ -711,7 +717,9 @@
                   <img src="img/food__set4.svg" alt="" class="food__img" loading="lazy" />
                   <p class="food__text2"><span>Раціон “</span><b>Індивідуальний</b><span>”</span></p>
                   <div class="food__cont">
-                    <div class="food__kkal"><b>2200</b> ккал</div>
+                    <div class="food__kkal">
+                      <i><b>0</b> ккал</i>
+                    </div>
                     <div class="food__price">
                       від <b>490 <abbr title="гривня">грн</abbr></b>
                       <span>на день</span>
@@ -723,9 +731,11 @@
                   <img src="img/food__set5.svg" alt="" class="food__img" loading="lazy" />
                   <p class="food__text2"><span>Раціон “</span>Vegan<span>”</span></p>
                   <div class="food__cont">
-                    <div class="food__kkal"><b>2200</b> ккал</div>
+                    <div class="food__kkal">
+                      <i><b>0</b> ккал</i>
+                    </div>
                     <div class="food__price">
-                      від <b>490 <abbr title="гривня">грн</abbr></b>
+                      від <b>420 <abbr title="гривня">грн</abbr></b>
                       <span>на день</span>
                     </div>
                   </div>
@@ -1252,14 +1262,10 @@
 
                 <div class="food__item" data-item="4">
                   <div class="food__about">
-                    <h5 class="food__subtitle d-none d-lg-block">Раціон на кожен день <b>2200 ккал</b></h5>
+                    <h5 class="food__subtitle d-none d-lg-block">Раціон “Індивідуальний” <b>0 ккал</b></h5>
                     <p class="food__txt1">
-                      4 Це програма збалансованого харчування на кожен день. Розроблено для підтримання маси тіла при середніх фізичних навантаженнях, підходить
-                      вагітним.
-                      <span>
-                        Ретельно підібрані поєднання продуктів, баланс рослинних і тваринних жирів, обмежена кількість цукру в меню цієї програми дозволяють
-                        забезпечити організм всіма необхідними речовинами</span
-                      >
+                      Індивідуальне меню складається на підставі побажань Клієнта з урахуванням рекомендацій його лікаря, тренера або іншого фахівця. <br />
+                      Підходить людям з харчовою алергією, годуючим мамам, діабетикам так як в ньому можна виключити всі небажані продукти.
                     </p>
                   </div>
 
@@ -1285,7 +1291,7 @@
                   </div>
 
                   <div class="food__contb">
-                    <p class="food__caltext d-block d-lg-none"><span>Приклад</span> меню на один день:</p>
+                    <p class="food__caltext d-none d-block1 d-lg-none"><span>Приклад</span> меню на один день:</p>
 
                     <ul class="food__products food__individual d-none d-lg-flex">
                       <li class="first">
@@ -1293,49 +1299,21 @@
                         <img src="img/calendar.svg" alt="" class="food__calendar" loading="lazy" />
                       </li>
                       <li>
-                        <p class="food__info">
+                        <p class="food__text-info">
                           У цьому розділі меню складається під <br />
                           кожного користувача окремо
                         </p>
-                        <a href="#" class="btn btn-green">Для цього позвоніть нам, чи залиште заявку на зворотній зв’язок</a>
+                        <button class="food__btn btn btn-green">Для цього позвоніть нам, чи залиште <span>заявку на зворотній зв’язок</span></button>
                       </li>
                     </ul>
 
-                    <ul class="food__products mobile d-block d-lg-none">
+                    <ul class="food__products food__individual mobile d-block d-lg-none">
                       <li>
-                        <img src="img/dish11.png" alt="" class="food__dish" loading="lazy" />
-                        <div class="food__rigthside">
-                          <p class="food__prod-kkal">250г. 272kcal.</p>
-                          <p class="food__text2"><span>Сніданок</span>Сирники з ягодами</p>
-                        </div>
-                      </li>
-                      <li>
-                        <img src="img/dish21.png" alt="" class="food__dish" loading="lazy" />
-                        <div class="food__rigthside">
-                          <p class="food__prod-kkal">250г. 272kcal.</p>
-                          <p class="food__text2"><span>Другий сніданок</span>Кавун і диня</p>
-                        </div>
-                      </li>
-                      <li>
-                        <img src="img/dish31.png" alt="" class="food__dish" loading="lazy" />
-                        <div class="food__rigthside">
-                          <p class="food__prod-kkal">250г. 272kcal.</p>
-                          <p class="food__text2"><span>Обід</span>Салат Цезар з індичкою та сиром Чедер</p>
-                        </div>
-                      </li>
-                      <li>
-                        <img src="img/dish41.png" alt="" class="food__dish" loading="lazy" />
-                        <div class="food__rigthside">
-                          <p class="food__prod-kkal">250г. 272kcal.</p>
-                          <p class="food__text2"><span>Полудень</span>Смузі смородини та банана</p>
-                        </div>
-                      </li>
-                      <li>
-                        <img src="img/dish51.png" alt="" class="food__dish" loading="lazy" />
-                        <div class="food__rigthside">
-                          <p class="food__prod-kkal">250г. 272kcal.</p>
-                          <p class="food__text2"><span>Вечеря</span>Паста з овочами та куриною грудкою</p>
-                        </div>
+                        <p class="food__text-info">
+                          У цьому розділі меню складається під <br />
+                          кожного користувача окремо
+                        </p>
+                        <button class="food__btn btn btn-green">Для цього позвоніть нам, чи залиште <span>заявку на зворотній зв’язок</span></button>
                       </li>
                     </ul>
                   </div>
@@ -1572,38 +1550,10 @@
     <section id="stars">
       <div class="fluid-container">
         <div id="stars__slider" class="owl-carousel">
-          <!-- <div class="stars__item">
-            <img src="img/slider__ava11.jpg" alt="" class="stars__ava" />
-            <div class="stars__cont">
-              <h5 class="stars__title">Зірки та їх раціони</h5>
-              <p class="stars__text1">
-                Правила схуднення від Наді Дорофєєвccої
-                <br />
-                <br />
-                1.Садіться за стіл потрібно 4-6 разів на день з періодичністю в
-                2-3 години, обсяги порцій при цьому повинні бути невеликими;
-                <br />
-                2.В першій половині дня рекомендується їсти вуглеводну їжу -
-                вона дає енергію організму, а в другій - білкову;
-                <br />
-                3.Якщо хочеться солодкого, можна з'їсти трохи гіркого шоколаду
-                або жменю сухофруктів;
-                <br />
-                4.Випечку, копченості, смажене і іншу жирну їжу слід прибрати з
-                меню.
-                <br />
-                <br />
-                Однак іноді співачка, все ж, не в силах встояти перед різними
-                солодкими "смакотою" і тоді сідає на легку дієту, яка допомагає
-                привести тіло в форму.
-              </p>
-            </div>
-          </div> -->
-
           <div class="stars__item">
             <img src="img/slider_zirka1.jpg" alt="" class="stars__ava" />
             <div class="stars__cont">
-              <h5 class="stars__title">Зірки та їх раціони</h5>
+              <!-- <h5 class="stars__title">Зірки та їх раціони</h5> -->
               <p class="stars__text1">
                 Власниця не тільки прекрасної фігури, але й красивої шкіри обличчя - з рівним тоном і без вікових недосконалостей. Головний секрет - у
                 харчуванні. Співачка зізнається, що їсть лосось на сніданок, обід і вечерю - ця жирна риба багата на вітамін D, білки, вітаміни групи В і
@@ -1615,7 +1565,7 @@
           <div class="stars__item">
             <img src="img/slider_zirka2.jpg" alt="" class="stars__ava" />
             <div class="stars__cont">
-              <h5 class="stars__title">Зірки та їх раціони</h5>
+              <!-- <h5 class="stars__title">Зірки та їх раціони</h5> -->
               <p class="stars__text1">
                 Додайте до свого раціону різноманітні овочі! Кожен овоч по-своєму чудовий. Проте не слід надавати перевагу виключно якомусь одному виду.
                 Збалансуйте свою дієту овочевим різноманіттям, тим паче, що більшість з них однаково смачно поєднуються з м’ясом та рибою.
@@ -1626,7 +1576,7 @@
           <div class="stars__item">
             <img src="img/slider_zirka3.jpg" alt="" class="stars__ava" />
             <div class="stars__cont">
-              <h5 class="stars__title">Зірки та їх раціони</h5>
+              <!-- <h5 class="stars__title">Зірки та їх раціони</h5> -->
               <p class="stars__text1">
                 Ми завжди приділяємо багато уваги вибору продуктів, але чомусь забуваємо про те, що не менш важливо їх правильно готувати: адже навіть куряча
                 грудка, обсмажена в маслі, буде небезпечна для фігури так само, як і шматок торта. Обов’язково обирайте правильні методи приготування їжі, щоб

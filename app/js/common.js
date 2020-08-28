@@ -37,6 +37,11 @@ $(document).ready(function (e) {
     if (isRu != -1) location.href = location.origin + '/ru/order.html'
     else location.href = location.origin + '/order.html'
   })
+  $(document).on('click', '.food__btn', function () {
+    var isRu = (location.pathname).indexOf('ru');
+    if (isRu != -1) location.href = location.origin + '/ru/order.html'
+    else location.href = location.origin + '/order.html'
+  })
   if (window.innerWidth < 992) {
     $(window).on('scroll', function () {
       if (window.pageYOffset > 100) {
@@ -301,7 +306,7 @@ $(document).ready(function (e) {
 
 
       // slider of food in basket
-      var owlFood = $('.food__products.mobile');
+      var owlFood = $('.food__products.mobile:not(.food__individual)');
       owlFood.addClass('owl-carousel')
       owlFood.owlCarousel({
         loop: true,
