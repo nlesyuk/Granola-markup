@@ -13,6 +13,25 @@ $(document).ready(function (e) {
   });
   $("input[name=phone]").mask("+38(099)999-99-99");
 
+  // Define Lang & redirect
+  defineLang()
+  function defineLang(){
+    var LANG = window.navigator.language.slice(0,2);
+    console.log(LANG)
+    var to = ''
+    switch(LANG) {
+      case('ua'):
+        to = 'ukr'
+        break
+      case('ru'):
+      default:
+        to = 'rus'
+    }
+    var origin = window.location.origin +'/'
+    var href = window.location.href
+    if( href.indexOf(to) === -1) window.location.href = origin + to
+  }
+
   // HEADER
   function redirect(lang) {
     var isOrderPage = (location.pathname).indexOf('order.html');
@@ -375,7 +394,7 @@ $(document).ready(function (e) {
         responsive: {
           0: {
             items: 1,
-            stagePadding: 40,
+            stagePadding: 60,
             margin: 0
           },
           556: {
