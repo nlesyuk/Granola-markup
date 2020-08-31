@@ -1,0 +1,519 @@
+<html>
+<head>
+<!-- revisium.com/ai/ -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+<META NAME="ROBOTS" CONTENT="NOINDEX,NOFOLLOW">
+<title>Отчет по /home/granolakiev/public_html</title>
+<style type="text/css" title="currentStyle">
+	@import "https://revisium.com/extra/media/css/demo_page2.css";
+	@import "https://revisium.com/extra/media/css/jquery.dataTables2.css";
+</style>
+
+<script type="text/javascript" language="javascript" src="https://yandex.st/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://datatables.net/download/build/jquery.dataTables.js"></script>
+
+<style type="text/css">
+ body 
+ {
+   font-family: Tahoma;
+   color: #5a5a5a;
+   background: #FFFFFF;
+   font-size: 14px;
+   margin: 20px;
+   padding: 0;
+ }
+
+.header
+ {
+   font-size: 34px;
+   margin: 0 0 10px 0;
+ }
+
+ .hidd
+ {
+    display: none;
+ }
+ 
+ .ok
+ {
+    color: green;
+ }
+ 
+ .line_no
+ {
+   -webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   border-radius: 6px;
+
+   background: #DAF2C1;
+   padding: 2px 5px 2px 5px;
+   margin: 0 5px 0 5px;
+ }
+ 
+ .credits_header 
+ {
+  -webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   border-radius: 6px;
+
+   background: #F2F2F2;
+   padding: 10px;
+   font-size: 11px;
+    margin: 0 0 10px 0;
+ }
+ 
+ .marker
+ {
+    color: #FF0090;
+	font-weight: 100;
+	background: #FF0090;
+	padding: 2px 0px 2px 0px;
+	width: 2px;
+ }
+ 
+ .title
+ {
+   font-size: 24px;
+   margin: 20px 0 10px 0;
+   color: #9CA9D1;
+}
+
+.summary 
+{
+  float: left;
+  width: 500px;
+}
+
+.summary TD
+{
+  font-size: 12px;
+  border-bottom: 1px solid #F0F0F0;
+  font-weight: 700;
+  padding: 10px 0 10px 0;
+}
+ 
+.crit, .vir
+{
+  color: #D84B55;
+}
+
+.intitem
+{
+  color:#4a6975;
+}
+
+.spacer
+{
+   margin: 0 0 50px 0;
+   clear:both;
+}
+
+.warn
+{
+  color: #F6B700;
+}
+
+.clear
+{
+   clear: both;
+}
+
+.offer
+{
+  -webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   border-radius: 6px;
+
+   width: 500px;
+   background: #ECF7DE;
+   color: #747474;
+   font-size: 11px;
+   font-family: Arial;
+   padding: 20px;
+   margin: 20px 0 0 500px;
+   
+   font-size: 16px;
+}
+ 
+.flist
+{
+   font-family: Arial;
+}
+
+.flist TD
+{
+   font-size: 11px;
+   padding: 5px;
+}
+
+.flist TH
+{
+   font-size: 12px;
+   height: 30px;
+   padding: 5px;
+   background: #CEE9EF;
+}
+
+
+.it
+{
+   font-size: 14px;
+   font-weight: 100;
+   margin-top: 10px;
+}
+
+.crit .it A {
+   color: #E50931; 
+   line-height: 25px;
+   text-decoration: none;
+}
+
+.warn .it A {
+   color: #F2C900; 
+   line-height: 25px;
+   text-decoration: none;
+}
+
+
+
+.details
+{
+   font-family: Calibri;
+   font-size: 12px;
+   margin: 10px 10px 10px 0px;
+}
+
+.crit .details
+{
+   color: #A08080;
+}
+
+.warn .details
+{
+   color: #808080;
+}
+
+.details A
+{
+  color: #FFF;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 2px;
+  background: #E5CEDE;
+  -webkit-border-radius: 7px;
+   -moz-border-radius: 7px;
+   border-radius: 7px;
+}
+
+.details A:hover
+{
+   background: #A0909B;
+}
+
+.ctd
+{
+   margin: 10px 0px 10px 0;
+   align:center;
+}
+
+.ctd A 
+{
+   color: #0D9922;
+}
+
+.disclaimer
+{
+   color: darkgreen;
+   margin: 10px 10px 10px 0;
+}
+
+.note_vir
+{
+   margin: 10px 0 10px 0;
+   //padding: 10px;
+   color: #FF4F4F;
+   font-size: 15px;
+   font-weight: 700;
+   clear:both;
+  
+}
+
+.note_warn
+{
+   margin: 10px 0 10px 0;
+   color: #F6B700;
+   font-size: 15px;
+   font-weight: 700;
+   clear:both;
+}
+
+.note_int
+{
+   margin: 10px 0 10px 0;
+   color: #60b5d6;
+   font-size: 15px;
+   font-weight: 700;
+   clear:both;
+}
+
+.updateinfo
+{
+  color: #FFF;
+  text-decoration: none;
+  background: #E5CEDE;
+  -webkit-border-radius: 7px;
+   -moz-border-radius: 7px;
+   border-radius: 7px;
+
+  margin: 10px 0 10px 0px;   
+  padding: 10px;
+}
+
+
+.caution
+{
+  color: #EF7B75;
+  text-decoration: none;
+  margin: 20px 0 0px 0px;   
+  font-size: 12px;
+}
+
+.footer
+{
+  color: #303030;
+  text-decoration: none;
+  background: #F4F4F4;
+  -webkit-border-radius: 7px;
+   -moz-border-radius: 7px;
+   border-radius: 7px;
+
+  margin: 80px 0 10px 0px;   
+  padding: 10px;
+}
+
+.rep
+{
+  color: #303030;
+  text-decoration: none;
+  background: #94DDDB;
+  -webkit-border-radius: 7px;
+   -moz-border-radius: 7px;
+   border-radius: 7px;
+
+  margin: 10px 0 10px 0px;   
+  padding: 10px;
+  font-size: 12px;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="header">Отчет сканера <a href="https://revisium.com/ai/">AI-Bolit</a> v20170612: /home/granolakiev/public_html/ (1/1)</div>
+<div class="credits_header">Скрипт бесплатный только для личного некоммерческого использования. Есть <a href="https://revisium.com/ai/faq.php#faq11" target=_blank>коммерческая лицензия</a> (пункт №11).</div>
+<div class="details_header">
+   Затрачено времени: <b>0 s</b>. Сканирование начато 23-06-2017 в 18:10:25, сканирование завершено 23-06-2017 в 18:10:25<br/>
+   Всего проверено 7 директорий и 60 файлов. Использовано памяти при сканировании: 2.13 Mb.
+ </div>
+
+ 
+ 
+ <div class="summary">
+<div class="title">Сводный отчет</div><table cellspacing=0 border=0><tr><td class="crit" width=400>Ошибок чтения файлов</td><td class="crit">60</td></tr><tr><td class="warn" width=400>Пропущенных больших файлов</td><td class="warn">4</td></tr></table><!--[json]{"redirect":0,"critical_php":0,"critical_js":0,"phishing":0,"unix_exec":0,"iframes":0,"not_read":60,"base64":0,"heuristics":0,"symlinks":0,"big_files_skipped":4}[/json]--><div class=details style="margin: 20px 20px 20px 0">Обращаем внимание, что обнаруженные файлы не всегда являются вирусами и хакерскими скриптами. Сканер старается минимизировать число ложных обнаружений, но это не всегда возможно, так как найденный фрагмент может встречаться как во вредоносных скриптах, так и в обычных.</div>
+
+ </div>
+ 
+ <div class="offer">
+Обращаем внимание на то, что большинство CMS <b>без дополнительной защиты</b> рано или поздно <b>взламывают</b>.<p> Компания <a href="https://revisium.com/">"Ревизиум"</a> предлагает услугу превентивной защиты сайта от взлома с использованием уникальной <b>процедуры "цементирования сайта"</b>. Подробно на <a href="https://revisium.com/ru/client_protect/">странице услуги</a>. <p>Лучшее лечение &mdash; это профилактика.
+ </div>
+  
+ <div class="clear"></div>
+ 
+ <div class="title">Критические замечания</div><div class="ok"><b>Вирусы и вредоносные скрипты не обнаружены.</b></div><div class="note_vir">Непроверенные файлы - ошибка чтения (60)</div><div class="crit"><div class="flist"><table cellspacing=1 cellpadding=4 border=0 id="table_7718463"><thead><tr class="tbgh0"><th width=70%>Путь</th><th>Изменение свойств</th><th>Изменение содержимого</th><th width=90>Размер</th><th width=0 class="hidd">CRC32</th><th width=0 class="hidd"></th><th width=0 class="hidd"></th><th width=0 class="hidd"></th></tr></thead><tbody><tr class="tbg0" o="id_z8572925"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/css/style.css</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z8572925</div></td></tr><tr class="tbg1" o="id_z8126985"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/css/bootstrap.min.css</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z8126985</div></td></tr><tr class="tbg0" o="id_z6665767"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/google9fc377168ed9332b.html</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z6665767</div></td></tr><tr class="tbg1" o="id_z3766582"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/index.html</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z3766582</div></td></tr><tr class="tbg0" o="id_z3620095"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/ai-bolit.php</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z3620095</div></td></tr><tr class="tbg1" o="id_z7003088"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/fonts/OpenSansRegular.woff</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z7003088</div></td></tr><tr class="tbg0" o="id_z1217915"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/mailer.php</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z1217915</div></td></tr><tr class="tbg1" o="id_z7013288"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/images/menu_pic2.png</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z7013288</div></td></tr><tr class="tbg0" o="id_z2843974"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/images/green_bg2.png</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z2843974</div></td></tr><tr class="tbg1" o="id_z4711452"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/images/logo.png</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z4711452</div></td></tr><tr class="tbg0" o="id_z1564927"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/images/ava1.png</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z1564927</div></td></tr><tr class="tbg1" o="id_z7734961"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/images/green_bg.png</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z7734961</div></td></tr><tr class="tbg0" o="id_z4657963"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/images/close.png</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z4657963</div></td></tr><tr class="tbg1" o="id_z4758501"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/images/12948614_1133995823318622_1783423211_o.png</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z4758501</div></td></tr><tr class="tbg0" o="id_z5578659"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/images/12935243_1133985973319607_1762897147_n.png</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z5578659</div></td></tr><tr class="tbg1" o="id_z5360437"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/images/foto_16.jpg</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z5360437</div></td></tr><tr class="tbg0" o="id_z2326844"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/images/ava2.png</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z2326844</div></td></tr><tr class="tbg1" o="id_z2434202"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/images/payment_ico.png</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z2434202</div></td></tr><tr class="tbg0" o="id_z5796930"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/images/coffee.png</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z5796930</div></td></tr><tr class="tbg1" o="id_z7154035"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/images/foto_3.jpg</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z7154035</div></td></tr><tr class="tbg0" o="id_z6119586"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/images/menu_pic1.png</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z6119586</div></td></tr><tr class="tbg1" o="id_z1394754"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/images/foto_4.jpg</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z1394754</div></td></tr><tr class="tbg0" o="id_z6294369"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/images/green_point.png</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z6294369</div></td></tr><tr class="tbg1" o="id_z7755872"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/images/ava3.png</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z7755872</div></td></tr><tr class="tbg0" o="id_z6891564"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/images/popup_bg.png</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z6891564</div></td></tr><tr class="tbg1" o="id_z1006972"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/images/check.png</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z1006972</div></td></tr><tr class="tbg0" o="id_z3302014"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/images/cake.png</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z3302014</div></td></tr><tr class="tbg1" o="id_z1061982"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/images/cake_act.png</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z1061982</div></td></tr><tr class="tbg0" o="id_z6577200"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/images/deliv_ico.png</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z6577200</div></td></tr><tr class="tbg1" o="id_z2699003"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/images/krysh.png</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z2699003</div></td></tr><tr class="tbg0" o="id_z6635660"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/images/tarel.png</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z6635660</div></td></tr><tr class="tbg1" o="id_z7498833"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/images/partners_pic.png</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z7498833</div></td></tr><tr class="tbg0" o="id_z6010712"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/images/coffee_act.png</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z6010712</div></td></tr><tr class="tbg1" o="id_z6739893"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/images/vegans_act.png</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z6739893</div></td></tr><tr class="tbg0" o="id_z7450026"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/images/vegans.png</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z7450026</div></td></tr><tr class="tbg1" o="id_z8714969"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/images/krysh_act.png</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z8714969</div></td></tr><tr class="tbg0" o="id_z3510670"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/images/tarel_act.png</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z3510670</div></td></tr><tr class="tbg1" o="id_z7277612"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/images/menu_pic3.png</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z7277612</div></td></tr><tr class="tbg0" o="id_z1790945"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/error_log</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z1790945</div></td></tr><tr class="tbg1" o="id_z3614686"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/favicon.ico</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z3614686</div></td></tr><tr class="tbg0" o="id_z6199398"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/js/jquery-2.2.0.min.js</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z6199398</div></td></tr><tr class="tbg1" o="id_z8426954"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/js/scripts.js</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z8426954</div></td></tr><tr class="tbg0" o="id_z3449011"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/js/jquery.validate.js</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z3449011</div></td></tr><tr class="tbg1" o="id_z1291399"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/js/fancybox/fancybox_sprite@2x.png</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z1291399</div></td></tr><tr class="tbg0" o="id_z8470697"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/js/fancybox/fancybox_sprite.png</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z8470697</div></td></tr><tr class="tbg1" o="id_z6012087"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/js/fancybox/fancybox_loading@2x.gif</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z6012087</div></td></tr><tr class="tbg0" o="id_z2158561"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/js/fancybox/jquery.fancybox.pack.js</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z2158561</div></td></tr><tr class="tbg1" o="id_z3868079"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/js/fancybox/fancybox_overlay.png</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z3868079</div></td></tr><tr class="tbg0" o="id_z6582752"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/js/fancybox/blank.gif</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z6582752</div></td></tr><tr class="tbg1" o="id_z1419354"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/js/fancybox/helpers/jquery.fancybox-buttons.js</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z1419354</div></td></tr><tr class="tbg0" o="id_z4814884"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/js/fancybox/helpers/jquery.fancybox-thumbs.css</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z4814884</div></td></tr><tr class="tbg1" o="id_z2252118"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/js/fancybox/helpers/jquery.fancybox-thumbs.js</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z2252118</div></td></tr><tr class="tbg0" o="id_z1279946"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/js/fancybox/helpers/fancybox_buttons.png</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z1279946</div></td></tr><tr class="tbg1" o="id_z7010399"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/js/fancybox/helpers/jquery.fancybox-buttons.css</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z7010399</div></td></tr><tr class="tbg0" o="id_z7078049"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/js/fancybox/helpers/jquery.fancybox-media.js</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z7078049</div></td></tr><tr class="tbg1" o="id_z5241581"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/js/fancybox/jquery.fancybox.css</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z5241581</div></td></tr><tr class="tbg0" o="id_z7992128"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/js/fancybox/fancybox_loading.gif</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z7992128</div></td></tr><tr class="tbg1" o="id_z6787076"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/js/fancybox/jquery.fancybox.js</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z6787076</div></td></tr><tr class="tbg0" o="id_z3258086"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/js/messages_ru.js</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z3258086</div></td></tr><tr class="tbg1" o="id_z3676168"><td><div class="it"><a class="it">[io] /home/granolakiev/public_html/js/bootstrap.min.js</a></div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td align=center><div class="ctd">-</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">id_z3676168</div></td></tr></tbody></table></div><div class=clear style="margin: 20px 0 0 0"></div></div><div class="spacer"></div>
+<div style="margin-top: 20px" class="title">Предупреждения</div><div class="note_warn">Большие файлы (больше чем 600.00 Kb). Пропущено</div><div class="warn"><div class="flist"><table cellspacing=1 cellpadding=4 border=0 id="table_3090526"><thead><tr class="tbgh0"><th width=70%>Путь</th><th>Изменение свойств</th><th>Изменение содержимого</th><th width=90>Размер</th><th width=0 class="hidd">CRC32</th><th width=0 class="hidd"></th><th width=0 class="hidd"></th><th width=0 class="hidd"></th></tr></thead><tbody><tr class="tbg0" o="id_z2969670"><td><div class="it"><a class="it">/home/granolakiev/public_html/images/foto_2.png</a></div></td><td align=center><div class="ctd">27/01/2017 07:47:18</div></td><td align=center><div class="ctd">07/04/2016 17:05:29</div></td><td align=center><div class="ctd">665.59 Kb</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd">1460037929</div></td><td class="hidd"><div class="hidd">id_z2969670</div></td></tr><tr class="tbg1" o="id_z1610892"><td><div class="it"><a class="it">/home/granolakiev/public_html/images/foto_1.png</a></div></td><td align=center><div class="ctd">27/01/2017 07:47:17</div></td><td align=center><div class="ctd">07/04/2016 17:05:26</div></td><td align=center><div class="ctd">1.06 Mb</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd">1460037926</div></td><td class="hidd"><div class="hidd">id_z1610892</div></td></tr><tr class="tbg0" o="id_z4017802"><td><div class="it"><a class="it">/home/granolakiev/public_html/images/background.png</a></div></td><td align=center><div class="ctd">27/01/2017 07:47:17</div></td><td align=center><div class="ctd">07/04/2016 17:05:35</div></td><td align=center><div class="ctd">4.61 Mb</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd">1460037935</div></td><td class="hidd"><div class="hidd">id_z4017802</div></td></tr><tr class="tbg1" o="id_z6744239"><td><div class="it"><a class="it">/home/granolakiev/public_html/images/foto_3.png</a></div></td><td align=center><div class="ctd">27/01/2017 07:47:18</div></td><td align=center><div class="ctd">07/04/2016 17:05:30</div></td><td align=center><div class="ctd">616.25 Kb</div></td><td class="hidd"><div class="hidd"></div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd">1460037930</div></td><td class="hidd"><div class="hidd">id_z6744239</div></td></tr></tbody></table></div><div class=clear style="margin: 20px 0 0 0"></div></div>
+ 
+	<div class="footer">
+	   <div class="disclaimer"><span class="vir">[!]</span> Отказ от гарантий: невозможно гарантировать обнаружение всех вредоносных скриптов. Поэтому разработчик сканера не несет ответственности за возможные последствия работы сканера AI-Bolit или неоправданные ожидания пользователей относительно функциональности и возможностей.
+   </div>
+   <div class="thanx">
+      Замечания и предложения по работе скрипта, а также не обнаруженные вредоносные скрипты вы можете присылать на <a href="mailto:ai@revisium.com">ai@revisium.com</a>.<br/>
+      Также будем чрезвычайно благодарны за любые упоминания сканера AI-Bolit на вашем сайте, в блоге, среди друзей, знакомых и клиентов. <br/>Ссылку можно поставить на страницу <a href="https://revisium.com/ai/">https://revisium.com/ai/</a>.<br/> 
+     <p>Получить консультацию или задать вопросы можно по email <a href="mailto:ai@revisium.com">ai@revisium.com</a>.</p> 
+	</div>
+	</div>
+	
+<script language="javascript">
+
+function hsig(id) {
+  var divs = document.getElementsByTagName("tr");
+  for(var i = 0; i < divs.length; i++){
+     
+     if (divs[i].getAttribute('o') == id) {
+        divs[i].innerHTML = '';
+     }
+  }
+
+  return false;
+}
+
+
+$(document).ready(function(){
+    $('#table_crit').dataTable({
+       "aLengthMenu": [[100 , 500, -1], [100, 500, "All"]],
+       "aoColumns": [
+                                     {"iDataSort": 7, "width":"70%"},
+                                     {"iDataSort": 5},
+                                     {"iDataSort": 6},
+                                     {"bSortable": true},
+                                     {"bVisible": false},
+                                     {"bVisible": false},
+                                     {"bVisible": false},
+                                     {"bVisible": false}
+                     ],
+		"paging": true,
+       "iDisplayLength": 500,
+		"oLanguage": {
+			"sLengthMenu": "Отображать по _MENU_ записей",
+			"sZeroRecords": "Ничего не найдено",
+			"sInfo": "Отображается c _START_ по _END_ из _TOTAL_ файлов",
+			"sInfoEmpty": "Нет файлов",
+			"sInfoFiltered": "(всего записей _MAX_)",
+			"sSearch":       "Поиск:",
+			"sUrl":          "",
+			"oPaginate": {
+				"sFirst": "Первая",
+				"sPrevious": "Предыдущая",
+				"sNext": "Следующая",
+				"sLast": "Последняя"
+			},
+			"oAria": {
+				"sSortAscending": ": активировать для сортировки столбца по возрастанию",
+				"sSortDescending": ": активировать для сортировки столбцов по убыванию"	
+			}
+		}
+
+     } );
+
+});
+
+$(document).ready(function(){
+    $('#table_vir').dataTable({
+       "aLengthMenu": [[100 , 500, -1], [100, 500, "All"]],
+		"paging": true,
+       "aoColumns": [
+                                     {"iDataSort": 7, "width":"70%"},
+                                     {"iDataSort": 5},
+                                     {"iDataSort": 6},
+                                     {"bSortable": true},
+                                     {"bVisible": false},
+                                     {"bVisible": false},
+                                     {"bVisible": false},
+                                     {"bVisible": false}
+                     ],
+       "iDisplayLength": 500,
+		"oLanguage": {
+			"sLengthMenu": "Отображать по _MENU_ записей",
+			"sZeroRecords": "Ничего не найдено",
+			"sInfo": "Отображается c _START_ по _END_ из _TOTAL_ файлов",
+			"sInfoEmpty": "Нет файлов",
+			"sInfoFiltered": "(всего записей _MAX_)",
+			"sSearch":       "Поиск:",
+			"sUrl":          "",
+			"oPaginate": {
+				"sFirst": "Первая",
+				"sPrevious": "Предыдущая",
+				"sNext": "Следующая",
+				"sLast": "Последняя"
+			},
+			"oAria": {
+				"sSortAscending":  ": активировать для сортировки столбца по возрастанию",
+				"sSortDescending": ": активировать для сортировки столбцов по убыванию"	
+			}
+		},
+
+     } );
+
+});
+
+if ($('#table_warn0')) {
+    $('#table_warn0').dataTable({
+       "aLengthMenu": [[100 , 500, -1], [100, 500, "All"]],
+		"paging": true,
+       "aoColumns": [
+                                     {"iDataSort": 7, "width":"70%"},
+                                     {"iDataSort": 5},
+                                     {"iDataSort": 6},
+                                     {"bSortable": true},
+                                     {"bVisible": false},
+                                     {"bVisible": false},
+                                     {"bVisible": false},
+                                     {"bVisible": false}
+                     ],
+			         "iDisplayLength": 500,
+			  		"oLanguage": {
+			  			"sLengthMenu": "Отображать по _MENU_ записей",
+			  			"sZeroRecords": "Ничего не найдено",
+			  			"sInfo": "Отображается c _START_ по _END_ из _TOTAL_ файлов",
+			  			"sInfoEmpty": "Нет файлов",
+			  			"sInfoFiltered": "(всего записей _MAX_)",
+			  			"sSearch":       "Поиск:",
+			  			"sUrl":          "",
+			  			"oPaginate": {
+			  				"sFirst": "Первая",
+			  				"sPrevious": "Предыдущая",
+			  				"sNext": "Следующая",
+			  				"sLast": "Последняя"
+			  			},
+			  			"oAria": {
+			  				"sSortAscending":  ": активировать для сортировки столбца по возрастанию",
+			  				"sSortDescending": ": активировать для сортировки столбцов по убыванию"	
+			  			}
+		}
+
+     } );
+}
+
+if ($('#table_warn1')) {
+    $('#table_warn1').dataTable({
+       "aLengthMenu": [[100 , 500, -1], [100, 500, "All"]],
+		"paging": true,
+       "aoColumns": [
+                                     {"iDataSort": 7, "width":"70%"},
+                                     {"iDataSort": 5},
+                                     {"iDataSort": 6},
+                                     {"bSortable": true},
+                                     {"bVisible": false},
+                                     {"bVisible": false},
+                                     {"bVisible": false},
+                                     {"bVisible": false}
+                     ],
+			         "iDisplayLength": 500,
+			  		"oLanguage": {
+			  			"sLengthMenu": "Отображать по _MENU_ записей",
+			  			"sZeroRecords": "Ничего не найдено",
+			  			"sInfo": "Отображается c _START_ по _END_ из _TOTAL_ файлов",
+			  			"sInfoEmpty": "Нет файлов",
+			  			"sInfoFiltered": "(всего записей _MAX_)",
+			  			"sSearch":       "Поиск:",
+			  			"sUrl":          "",
+			  			"oPaginate": {
+			  				"sFirst": "Первая",
+			  				"sPrevious": "Предыдущая",
+			  				"sNext": "Следующая",
+			  				"sLast": "Последняя"
+			  			},
+			  			"oAria": {
+			  				"sSortAscending":  ": активировать для сортировки столбца по возрастанию",
+			  				"sSortDescending": ": активировать для сортировки столбцов по убыванию"	
+			  			}
+		}
+
+     } );
+}
+
+
+</script>
+<!-- [][0]  -->
+ </body>
+</html>
